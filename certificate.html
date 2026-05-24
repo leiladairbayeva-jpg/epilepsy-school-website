@@ -4,310 +4,405 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Сертификат — Школа Эпилептологии</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Sora',sans-serif;background:#F1F5F9;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;-webkit-font-smoothing:antialiased}
+body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;-webkit-font-smoothing:antialiased}
 
-/* ACCESS GATE */
-.gate{background:#fff;border-radius:20px;padding:2.5rem;width:100%;max-width:440px;box-shadow:0 4px 24px rgba(0,0,0,.08);text-align:center}
+/* GATE */
+.gate{background:#fff;border-radius:16px;padding:2.5rem;width:100%;max-width:440px;box-shadow:0 4px 24px rgba(0,0,0,.08);text-align:center}
 .gate-icon{width:64px;height:64px;background:#EFF6FF;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
-.gate-title{font-size:1.2rem;font-weight:800;color:#0D1B2A;margin-bottom:.4rem;letter-spacing:-0.02em}
+.gate-title{font-size:1.2rem;font-weight:700;color:#0D1B2A;margin-bottom:.4rem}
 .gate-sub{font-size:13px;color:#64748B;margin-bottom:1.5rem;line-height:1.55}
-.gate-inp{width:100%;font-family:'Sora',sans-serif;font-size:18px;font-weight:700;letter-spacing:.25em;text-align:center;border:2px solid #E2E8F0;border-radius:10px;padding:14px;color:#0D1B2A;outline:none;transition:border-color .2s;text-transform:uppercase;margin-bottom:10px}
-.gate-inp:focus{border-color:#2563EB}
-.gate-btn{width:100%;padding:13px;background:#2563EB;color:#fff;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;border:none;border-radius:10px;cursor:pointer;transition:background .2s}
-.gate-btn:hover{background:#1D4ED8}
+.gate-inp{width:100%;font-family:'Raleway',sans-serif;font-size:20px;font-weight:700;letter-spacing:.3em;text-align:center;border:2px solid #E2E8F0;border-radius:10px;padding:14px;color:#0D1B2A;outline:none;transition:border-color .2s;text-transform:uppercase;margin-bottom:10px}
+.gate-inp:focus{border-color:#1B3A6B}
+.gate-btn{width:100%;padding:13px;background:#1B3A6B;color:#fff;font-family:'Raleway',sans-serif;font-size:14px;font-weight:700;border:none;border-radius:10px;cursor:pointer;transition:background .2s}
+.gate-btn:hover{background:#243358}
 .gate-error{color:#EF4444;font-size:12px;font-weight:600;margin-top:8px;display:none}
-.gate-hint{font-size:11px;color:#94A3B8;margin-top:12px}
+.gate-hint{font-size:11px;color:#94A3B8;margin-top:12px;line-height:1.5}
 
 /* FORM */
-.form-wrap{display:none;background:#fff;border-radius:20px;padding:2rem;width:100%;max-width:480px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:1.5rem}
+.form-wrap{display:none;background:#fff;border-radius:16px;padding:2rem;width:100%;max-width:480px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:1.5rem}
 .form-title{font-size:1rem;font-weight:700;color:#0D1B2A;margin-bottom:1.25rem}
-.form-name-display{background:#EFF6FF;border-radius:10px;padding:12px 16px;font-size:15px;font-weight:700;color:#1D4ED8;margin-bottom:1rem;text-align:center}
+.form-name-display{background:#EFF6FF;border-radius:10px;padding:12px 16px;font-size:15px;font-weight:700;color:#1B3A6B;margin-bottom:1rem;text-align:center}
 .fg{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
 .fg label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748B}
-.fg input,.fg select{font-family:'Sora',sans-serif;font-size:14px;border:1.5px solid #E2E8F0;border-radius:8px;padding:10px 12px;color:#0D1B2A;outline:none;transition:border-color .2s}
-.fg input:focus{border-color:#2563EB}
-.gen-btn{width:100%;padding:13px;background:#0D1B2A;color:#fff;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;border:none;border-radius:8px;cursor:pointer;transition:background .2s;margin-top:6px}
-.gen-btn:hover{background:#1B3A6B}
+.fg input{font-family:'Raleway',sans-serif;font-size:14px;border:1.5px solid #E2E8F0;border-radius:8px;padding:10px 12px;color:#0D1B2A;outline:none;transition:border-color .2s;width:100%}
+.fg input:focus{border-color:#1B3A6B}
+.gen-btn{width:100%;padding:13px;background:#1B3A6B;color:#fff;font-family:'Raleway',sans-serif;font-size:14px;font-weight:700;border:none;border-radius:8px;cursor:pointer;margin-top:6px}
 
 /* CERTIFICATE */
-.cert-outer{display:none;width:100%;max-width:840px}
-.cert-wrap{background:#fff;border-radius:4px;padding:56px 64px;position:relative;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.12)}
-.cert-wrap::before{content:'';position:absolute;inset:12px;border:2px solid #1B3A6B;border-radius:2px;pointer-events:none;z-index:1}
-.cert-wrap::after{content:'';position:absolute;inset:17px;border:0.5px solid rgba(27,58,107,.2);border-radius:1px;pointer-events:none;z-index:1}
-.corner{position:absolute;width:44px;height:44px;z-index:2}
-.corner.tl{top:6px;left:6px}.corner.tr{top:6px;right:6px;transform:scaleX(-1)}
-.corner.bl{bottom:6px;left:6px;transform:scaleY(-1)}.corner.br{bottom:6px;right:6px;transform:scale(-1)}
-.cert-bg{position:absolute;inset:0;opacity:.025;background-image:repeating-linear-gradient(45deg,#1B3A6B 0,#1B3A6B 1px,transparent 0,transparent 50%);background-size:18px 18px}
-.cert-content{position:relative;z-index:3;text-align:center}
-.cert-logo{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px}
-.cert-logo-name{font-size:16px;font-weight:700;color:#1B3A6B;letter-spacing:-0.01em;text-align:left}
-.cert-logo-sub{font-size:10px;color:#64748B;font-weight:500;letter-spacing:.1em;text-transform:uppercase}
-.cert-divider{width:100%;height:1px;background:linear-gradient(to right,transparent,#1B3A6B 30%,#C8A84B 50%,#1B3A6B 70%,transparent);margin:18px 0}
-.cert-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#64748B;margin-bottom:14px}
-.cert-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#1B3A6B;line-height:1.1;margin-bottom:6px}
-.cert-title-en{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:#64748B;margin-bottom:22px}
-.cert-presented{font-size:13px;color:#64748B;margin-bottom:8px}
-.cert-name{font-family:'Playfair Display',serif;font-size:34px;font-weight:600;color:#0D1B2A;letter-spacing:-0.01em}
-.cert-name-line{width:280px;height:2px;background:linear-gradient(to right,transparent,#C8A84B,transparent);margin:8px auto 20px}
-.cert-desc{font-size:12.5px;color:#475569;line-height:1.7;max-width:520px;margin:0 auto 22px}
-.cert-details{display:flex;justify-content:center;gap:36px;margin-bottom:24px}
-.cert-detail-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#94A3B8;margin-bottom:3px}
-.cert-detail-val{font-size:13px;font-weight:600;color:#1B3A6B}
-.cert-footer{display:flex;justify-content:space-between;align-items:flex-end;padding-top:20px;border-top:1px solid #E2E8F0;gap:16px}
-.cert-sign{text-align:center;flex:1}
-.cert-sign-line{width:150px;height:1px;background:#0D1B2A;margin:0 auto 5px}
-.cert-sign-name{font-size:12px;font-weight:600;color:#0D1B2A}
-.cert-sign-title{font-size:10px;color:#64748B;margin-top:2px}
-.cert-seal{width:76px;height:76px;border-radius:50%;border:2px solid #1B3A6B;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#1B3A6B;flex-shrink:0}
-.cert-seal-text{font-size:6.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;line-height:1.3;text-align:center;margin-top:2px}
-/* QR */
-.cert-qr-block{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
-.cert-qr-box{width:64px;height:64px;border:1px solid #E2E8F0;border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
-.cert-qr-box canvas,.cert-qr-box img{width:60px!important;height:60px!important}
-.cert-qr-label{font-size:8px;color:#94A3B8;margin-top:4px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
-.cert-number{font-size:9px;color:#94A3B8;margin-top:3px}
+.cert-outer{display:none;width:100%;max-width:900px}
 
-/* VERIFY PAGE */
+.cert-wrap{
+  background:#fff;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 8px 48px rgba(0,0,0,.15);
+  font-family:'Raleway',sans-serif;
+}
+
+/* Top stripe */
+.cert-stripe-top{
+  height:28px;
+  background:linear-gradient(to right, #8B0000, #C0392B, #8B0000);
+  position:relative;
+}
+.cert-stripe-top::after{
+  content:'';
+  position:absolute;
+  bottom:-10px;left:0;right:0;
+  height:10px;
+  background:linear-gradient(to right, #1B3A6B, #2C5282, #1B3A6B);
+}
+
+/* Bottom stripe */
+.cert-stripe-bottom{
+  height:28px;
+  background:linear-gradient(to right, #8B0000, #C0392B, #8B0000);
+  position:relative;
+  margin-top:0;
+}
+.cert-stripe-bottom::before{
+  content:'';
+  position:absolute;
+  top:-10px;left:0;right:0;
+  height:10px;
+  background:linear-gradient(to right, #1B3A6B, #2C5282, #1B3A6B);
+}
+
+.cert-body{padding:32px 56px 28px}
+
+/* Header with logos */
+.cert-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+.cert-logo-left{display:flex;align-items:center}
+.cert-logo-right{display:flex;align-items:center}
+
+/* Center title */
+.cert-center{text-align:center;flex:1;padding:0 20px}
+.cert-main-title{
+  font-family:'EB Garamond',serif;
+  font-size:46px;
+  font-weight:600;
+  color:#1B3A6B;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  line-height:1;
+  margin-bottom:4px;
+}
+.cert-sub-title{
+  font-family:'EB Garamond',serif;
+  font-size:22px;
+  font-weight:600;
+  color:#8B0000;
+  letter-spacing:.04em;
+  margin-bottom:0;
+}
+
+/* Divider */
+.cert-divider{
+  height:2px;
+  background:linear-gradient(to right, transparent, #1B3A6B 20%, #8B0000 50%, #1B3A6B 80%, transparent);
+  margin:16px 0;
+}
+
+/* Content */
+.cert-presented{
+  text-align:center;
+  font-size:13px;
+  font-weight:600;
+  color:#1B3A6B;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.cert-name{
+  text-align:center;
+  font-family:'EB Garamond',serif;
+  font-size:44px;
+  font-weight:700;
+  color:#0D1B2A;
+  margin-bottom:16px;
+  line-height:1.1;
+}
+.cert-contribution{
+  text-align:center;
+  font-size:14px;
+  color:#1B3A6B;
+  font-weight:600;
+  line-height:1.6;
+  margin-bottom:8px;
+}
+.cert-highlight{color:#8B0000;font-style:italic}
+.cert-dates{
+  text-align:center;
+  font-size:14px;
+  font-weight:700;
+  color:#1B3A6B;
+  margin-bottom:4px;
+}
+.cert-credits{
+  text-align:center;
+  font-size:12px;
+  color:#64748B;
+  margin-bottom:20px;
+}
+
+/* Details row */
+.cert-details{
+  display:flex;
+  justify-content:center;
+  gap:32px;
+  margin-bottom:20px;
+  padding:12px;
+  border-top:1px solid #E2E8F0;
+  border-bottom:1px solid #E2E8F0;
+}
+.cert-detail{text-align:center}
+.cert-dl{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#94A3B8;margin-bottom:3px}
+.cert-dv{font-size:13px;font-weight:700;color:#1B3A6B}
+
+/* Footer signatures */
+.cert-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:16px;
+}
+.sign-block{text-align:center;flex:1}
+.sign-img{height:44px;object-fit:contain;display:block;margin:0 auto 4px}
+.sign-line{width:180px;height:1px;background:#0D1B2A;margin:0 auto 5px}
+.sign-name{font-size:12px;font-weight:700;color:#0D1B2A;letter-spacing:.02em}
+.sign-title{font-size:10px;color:#64748B;margin-top:2px;line-height:1.4}
+
+/* QR block */
+.qr-block{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.qr-box{width:72px;height:72px;border:1px solid #E2E8F0;border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;padding:4px}
+.qr-box canvas,.qr-box img{width:64px!important;height:64px!important}
+.qr-label{font-size:8px;color:#94A3B8;margin-top:3px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-align:center}
+.cert-num{font-size:8px;color:#94A3B8;text-align:center;margin-top:1px}
+
+/* VERIFY */
 .verify-card{display:none;background:#fff;border-radius:20px;padding:2rem;width:100%;max-width:440px;box-shadow:0 4px 24px rgba(0,0,0,.08);text-align:center}
-.verify-ok{color:#10B981;font-size:3rem;margin-bottom:1rem}
-.verify-fail{color:#EF4444;font-size:3rem;margin-bottom:1rem}
 
-/* BUTTONS */
+/* ACTION BUTTONS */
 .action-btns{display:flex;gap:10px;margin-top:1.25rem}
-.btn-print{flex:1;padding:12px;background:#0D1B2A;color:#fff;font-family:'Sora',sans-serif;font-size:13px;font-weight:700;border:none;border-radius:10px;cursor:pointer;transition:opacity .2s}
-.btn-print:hover{opacity:.85}
-.btn-new{flex:1;padding:12px;background:#F1F5F9;color:#0D1B2A;font-family:'Sora',sans-serif;font-size:13px;font-weight:700;border:1.5px solid #E2E8F0;border-radius:10px;cursor:pointer}
+.btn-print{flex:1;padding:12px;background:#1B3A6B;color:#fff;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;border:none;border-radius:10px;cursor:pointer}
+.btn-new{flex:1;padding:12px;background:#F1F5F9;color:#0D1B2A;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;border:1.5px solid #E2E8F0;border-radius:10px;cursor:pointer}
 
 @media print{
   body{background:#fff;padding:0}
   .form-wrap,.action-btns,.gate,.verify-card{display:none!important}
   .cert-outer{display:block!important;max-width:100%}
-  .cert-wrap{box-shadow:none;border-radius:0}
+  .cert-wrap{box-shadow:none}
   @page{size:A4 landscape;margin:0}
 }
 </style>
 </head>
 <body>
 
-<!-- ACCESS GATE -->
+<!-- GATE -->
 <div class="gate" id="gate">
   <div class="gate-icon">
-    <svg width="28" height="28" fill="none" stroke="#2563EB" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    <svg width="28" height="28" fill="none" stroke="#1B3A6B" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
   </div>
   <div class="gate-title">Доступ к сертификату</div>
-  <div class="gate-sub">Введите персональный код, который вы получили от организатора после завершения обучения</div>
-  <input class="gate-inp" id="access-code" type="text" placeholder="XXXX-XXXX" maxlength="9" oninput="formatCode(this)" onkeydown="if(event.key==='Enter')checkAccess()">
-  <div class="gate-error" id="gate-error">❌ Неверный код. Проверьте и попробуйте снова.</div>
+  <div class="gate-sub">Введите персональный код, полученный от организатора после завершения обучения</div>
+  <input class="gate-inp" id="access-code" type="text" placeholder="ES26-XXXX" maxlength="9" oninput="formatCode(this)" onkeydown="if(event.key==='Enter')checkAccess()">
+  <div class="gate-error" id="gate-error">Неверный код. Проверьте и попробуйте снова.</div>
   <button class="gate-btn" onclick="checkAccess()">Получить сертификат →</button>
-  <div class="gate-hint">Код выдаётся организатором после прохождения всех 3 дней воркшопа.<br>По вопросам: <strong>epilepsyschool.asia</strong></div>
+  <div class="gate-hint">Код выдаётся после прохождения всех 3 дней воркшопа.<br>По вопросам: epilepsyschool.asia</div>
 </div>
 
-<!-- VERIFY CARD (for QR scan) -->
-<div class="verify-card" id="verify-card">
-  <div id="verify-result"></div>
-</div>
+<!-- VERIFY -->
+<div class="verify-card" id="verify-card"></div>
 
-<!-- FORM (after access granted) -->
+<!-- FORM -->
 <div class="form-wrap" id="form-wrap">
-  <div class="form-title">🎓 Ваш сертификат готов</div>
+  <div class="form-title">🎓 Укажите данные для сертификата</div>
   <div class="form-name-display" id="form-name-display">Участник воркшопа</div>
   <div class="fg"><label>Специальность</label><input id="c-spec" type="text" placeholder="Невролог"></div>
   <div class="fg"><label>Место работы</label><input id="c-work" type="text" placeholder="Городская больница №1, Уральск"></div>
-  <button class="gen-btn" onclick="generateCert()">Создать и скачать сертификат →</button>
+  <button class="gen-btn" onclick="generateCert()">Создать сертификат →</button>
 </div>
 
 <!-- CERTIFICATE -->
 <div class="cert-outer" id="cert-outer">
   <div class="cert-wrap">
-    <div class="cert-bg"></div>
-    <div class="corner tl"><svg viewBox="0 0 44 44"><path d="M3 41 L3 3 L41 3" fill="none" stroke="#1B3A6B" stroke-width="2.5"/><circle cx="3" cy="3" r="3.5" fill="#C8A84B"/><path d="M10 3 L10 10 M3 10 L10 10" fill="none" stroke="#C8A84B" stroke-width="1.2"/></svg></div>
-    <div class="corner tr"><svg viewBox="0 0 44 44"><path d="M3 41 L3 3 L41 3" fill="none" stroke="#1B3A6B" stroke-width="2.5"/><circle cx="3" cy="3" r="3.5" fill="#C8A84B"/><path d="M10 3 L10 10 M3 10 L10 10" fill="none" stroke="#C8A84B" stroke-width="1.2"/></svg></div>
-    <div class="corner bl"><svg viewBox="0 0 44 44"><path d="M3 41 L3 3 L41 3" fill="none" stroke="#1B3A6B" stroke-width="2.5"/><circle cx="3" cy="3" r="3.5" fill="#C8A84B"/><path d="M10 3 L10 10 M3 10 L10 10" fill="none" stroke="#C8A84B" stroke-width="1.2"/></svg></div>
-    <div class="corner br"><svg viewBox="0 0 44 44"><path d="M3 41 L3 3 L41 3" fill="none" stroke="#1B3A6B" stroke-width="2.5"/><circle cx="3" cy="3" r="3.5" fill="#C8A84B"/><path d="M10 3 L10 10 M3 10 L10 10" fill="none" stroke="#C8A84B" stroke-width="1.2"/></svg></div>
-    <div class="cert-content">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid #E2E8F0">
-        <img src="neuro-kz.png" alt="NEURO.KZ" style="height:48px;object-fit:contain">
-        <div style="text-align:center">
-          <div style="font-family:serif;font-size:14px;font-weight:700;color:#1B3A6B">Школа Эпилептологии</div>
-          <div style="font-size:9px;color:#64748B;letter-spacing:.1em;text-transform:uppercase;font-family:Arial,sans-serif">Dr. Leila Dairbayeva</div>
+    <div class="cert-stripe-top"></div>
+    <div class="cert-body">
+
+      <!-- HEADER -->
+      <div class="cert-header">
+        <div class="cert-logo-left">
+          <img src="neuro-kz.png" alt="NEURO.KZ" style="height:56px;object-fit:contain">
         </div>
-        <div style="display:flex;align-items:center;gap:12px">
-          <div style="text-align:center">
-            <div style="font-size:10px;font-weight:700;letter-spacing:.08em;color:#1B3A6B;font-family:Arial,sans-serif;border:1.5px solid #1B3A6B;padding:3px 8px;border-radius:3px">KzLAE</div>
-            <div style="font-size:8px;color:#64748B;font-family:Arial,sans-serif;margin-top:2px;letter-spacing:.04em">Kazakhstan League<br>against Epilepsy</div>
-          </div>
-          <div style="text-align:center">
-            <div style="background:#1B3A6B;color:#fff;padding:3px 8px;border-radius:3px;font-size:10px;font-weight:700;font-family:Arial,sans-serif;letter-spacing:.08em">ILAE</div>
-            <div style="font-size:8px;color:#64748B;font-family:Arial,sans-serif;margin-top:2px">Level 1</div>
+        <div class="cert-center">
+          <div class="cert-main-title">Certificate</div>
+          <div class="cert-sub-title">Of Participation</div>
+        </div>
+        <div class="cert-logo-right">
+          <img src="PHOTO-2026-02-11-14-16-16.jpg" alt="KzLAE" style="height:56px;object-fit:contain;display:none" id="kzlae-logo" onerror="this.style.display='none';document.getElementById('kzlae-text').style.display='block'">
+          <div id="kzlae-text" style="text-align:center">
+            <svg width="56" height="56" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="60,8 112,112 8,112" fill="none" stroke="#1B3A6B" stroke-width="6"/>
+              <polygon points="60,22 100,104 20,104" fill="none" stroke="#8B0000" stroke-width="2"/>
+              <text x="60" y="72" text-anchor="middle" font-size="28" font-weight="900" font-family="Arial" fill="#1B3A6B">A</text>
+              <text x="72" y="80" text-anchor="middle" font-size="20" font-weight="700" font-family="Arial" fill="#8B0000" font-style="italic">e</text>
+              <text x="60" y="108" text-anchor="middle" font-size="9" font-weight="700" font-family="Arial" fill="#1B3A6B" letter-spacing="2">KAZAKHSTAN</text>
+            </svg>
           </div>
         </div>
       </div>
+
       <div class="cert-divider"></div>
-      <div class="cert-label">Настоящий сертификат удостоверяет, что</div>
-      <div class="cert-name" id="cert-name-out"></div>
-      <div class="cert-name-line"></div>
-      <div class="cert-presented">успешно прошёл(а) обучение на воркшопе</div>
-      <div class="cert-title">Школа Эпилептологии</div>
-      <div class="cert-title-en">Epilepsy School · Basic Level (ILAE Level 1)</div>
-      <div class="cert-desc">Программа охватывает <strong>9 доменов компетенций</strong> по стандартам ILAE: классификация приступов (ILAE 2017), диагностика и ЭЭГ-интерпретация, антиэпилептическая терапия по международным клиническим рекомендациям, неотложные состояния и особые группы пациентов.</div>
+
+      <!-- CONTENT -->
+      <div class="cert-presented">This Certificate Presented to:</div>
+      <div class="cert-name" id="cert-name-out">Имя Участника</div>
+
+      <div class="cert-contribution">
+        successfully completed the <span class="cert-highlight">«Epilepsy School»</span> Workshop<br>
+        Basic Level (ILAE Level 1) — 9 domains of competency in epilepsy care
+      </div>
+
       <div class="cert-details">
-        <div><div class="cert-detail-label">Дата</div><div class="cert-detail-val" id="co-date">31 мая 2026</div></div>
-        <div><div class="cert-detail-label">Город</div><div class="cert-detail-val">Уральск, Казахстан</div></div>
-        <div><div class="cert-detail-label">Объём</div><div class="cert-detail-val">24 акад. часа</div></div>
-        <div><div class="cert-detail-label">Специальность</div><div class="cert-detail-val" id="co-spec">—</div></div>
+        <div class="cert-detail"><div class="cert-dl">Date</div><div class="cert-dv" id="co-date">29–31 May 2026</div></div>
+        <div class="cert-detail"><div class="cert-dl">Location</div><div class="cert-dv">Oral (Uralsk), Kazakhstan</div></div>
+        <div class="cert-detail"><div class="cert-dl">Credits</div><div class="cert-dv">24 academic hours</div></div>
+        <div class="cert-detail"><div class="cert-dl">Specialty</div><div class="cert-dv" id="co-spec">—</div></div>
       </div>
+
+      <!-- FOOTER -->
       <div class="cert-footer">
-        <div class="cert-sign">
-          <img src="signature.png" alt="Подпись" style="height:36px;object-fit:contain;margin-bottom:2px;display:block;margin-left:auto;margin-right:auto">
-          <div class="cert-sign-line"></div>
-          <div class="cert-sign-name">Д-р Лейла Даирбаева</div>
-          <div class="cert-sign-title">Президент KzLAE · Член Комиссии по терапии ILAE</div>
+        <div class="sign-block">
+          <img src="signature.png" alt="Подпись" class="sign-img" style="height:40px">
+          <div class="sign-line"></div>
+          <div class="sign-name">Dr. Leila Dairbayeva</div>
+          <div class="sign-title">Neurologist-Epileptologist<br>President of KzLAE · ILAE Commission on Therapeutic Strategies</div>
         </div>
-        <div class="cert-seal">
-          <svg width="28" height="28" viewBox="0 0 48 48" fill="none"><path d="M24 10 C28 8 34 10 36 14 C38 12 42 13 43 16 C45 15 46 18 45 20 C47 21 47 24 46 26 C47 27 46 30 44 31 C44 33 42 35 40 34 C39 36 36 37 34 36 C32 38 29 38 27 37 C25 39 22 38 21 37 C19 38 16 37 15 35 C13 36 11 34 11 32 C9 31 8 28 9 26 C7 24 7 21 9 20 C8 17 10 14 12 14 C13 11 17 9 20 10 C21 8 23 8 24 10Z" stroke="#1B3A6B" stroke-width="1.5" fill="rgba(27,58,107,.08)"/><text x="24" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#1B3A6B">ILAE</text></svg>
-          <div class="cert-seal-text">Школа<br>Эпилепто-<br>логии<br>2026</div>
-        </div>
-        <div class="cert-qr-block">
-          <div class="cert-qr-box" id="qr-container"></div>
-          <div class="cert-qr-label">Проверить</div>
-          <div class="cert-number" id="co-num"></div>
-        </div>
-        <div class="cert-sign">
-          <div class="cert-sign-line"></div>
-          <div class="cert-sign-name" id="co-work">Участник</div>
-          <div class="cert-sign-title">Участник воркшопа</div>
+        <div class="qr-block">
+          <div class="qr-box" id="qr-container"></div>
+          <div class="qr-label">Verify certificate</div>
+          <div class="cert-num" id="co-num">№ —</div>
         </div>
       </div>
+
     </div>
+    <div class="cert-stripe-bottom"></div>
   </div>
+
   <div class="action-btns">
-    <button class="btn-print" onclick="window.print()">🖨️ Печать / Сохранить PDF</button>
-    <button class="btn-new" onclick="location.reload()">← Новый сертификат</button>
+    <button class="btn-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    <button class="btn-new" onclick="location.reload()">← New certificate</button>
   </div>
 </div>
 
 <script>
-// ══ PARTICIPANT DATABASE ══
-// Добавляйте участников: {code, name, date}
-// Код генерируется автоматически: ES26-XXXX
 var PARTICIPANTS = {
-  // Тестовые коды (удалите после добавления реальных участников)
-  'ES26-TEST': {name:'Тестовый Участник', date:'31 мая 2026'},
-  'ES26-0001': {name:'', date:'31 мая 2026'},
-  'ES26-0002': {name:'', date:'31 мая 2026'},
-  'ES26-0003': {name:'', date:'31 мая 2026'},
-  'ES26-0004': {name:'', date:'31 мая 2026'},
-  'ES26-0005': {name:'', date:'31 мая 2026'},
-  'ES26-0006': {name:'', date:'31 мая 2026'},
-  'ES26-0007': {name:'', date:'31 мая 2026'},
-  'ES26-0008': {name:'', date:'31 мая 2026'},
-  'ES26-0009': {name:'', date:'31 мая 2026'},
-  'ES26-0010': {name:'', date:'31 мая 2026'},
-  'ES26-0011': {name:'', date:'31 мая 2026'},
-  'ES26-0012': {name:'', date:'31 мая 2026'},
-  'ES26-0013': {name:'', date:'31 мая 2026'},
-  'ES26-0014': {name:'', date:'31 мая 2026'},
-  'ES26-0015': {name:'', date:'31 мая 2026'},
-  'ES26-0016': {name:'', date:'31 мая 2026'},
-  'ES26-0017': {name:'', date:'31 мая 2026'},
-  'ES26-0018': {name:'', date:'31 мая 2026'},
-  'ES26-0019': {name:'', date:'31 мая 2026'},
-  'ES26-0020': {name:'', date:'31 мая 2026'},
-  'ES26-0021': {name:'', date:'31 мая 2026'},
-  'ES26-0022': {name:'', date:'31 мая 2026'},
-  'ES26-0023': {name:'', date:'31 мая 2026'},
-  'ES26-0024': {name:'', date:'31 мая 2026'},
-  'ES26-0025': {name:'', date:'31 мая 2026'},
-  'ES26-0026': {name:'', date:'31 мая 2026'},
-  'ES26-0027': {name:'', date:'31 мая 2026'},
-  'ES26-0028': {name:'', date:'31 мая 2026'},
-  'ES26-0029': {name:'', date:'31 мая 2026'},
-  'ES26-0030': {name:'', date:'31 мая 2026'},
+  'ES26-TEST': {name:'Test Participant', date:'29–31 May 2026'},
+  'ES26-0001': {name:'', date:'29–31 May 2026'},
+  'ES26-0002': {name:'', date:'29–31 May 2026'},
+  'ES26-0003': {name:'', date:'29–31 May 2026'},
+  'ES26-0004': {name:'', date:'29–31 May 2026'},
+  'ES26-0005': {name:'', date:'29–31 May 2026'},
+  'ES26-0006': {name:'', date:'29–31 May 2026'},
+  'ES26-0007': {name:'', date:'29–31 May 2026'},
+  'ES26-0008': {name:'', date:'29–31 May 2026'},
+  'ES26-0009': {name:'', date:'29–31 May 2026'},
+  'ES26-0010': {name:'', date:'29–31 May 2026'},
+  'ES26-0011': {name:'', date:'29–31 May 2026'},
+  'ES26-0012': {name:'', date:'29–31 May 2026'},
+  'ES26-0013': {name:'', date:'29–31 May 2026'},
+  'ES26-0014': {name:'', date:'29–31 May 2026'},
+  'ES26-0015': {name:'', date:'29–31 May 2026'},
+  'ES26-0016': {name:'', date:'29–31 May 2026'},
+  'ES26-0017': {name:'', date:'29–31 May 2026'},
+  'ES26-0018': {name:'', date:'29–31 May 2026'},
+  'ES26-0019': {name:'', date:'29–31 May 2026'},
+  'ES26-0020': {name:'', date:'29–31 May 2026'},
+  'ES26-0021': {name:'', date:'29–31 May 2026'},
+  'ES26-0022': {name:'', date:'29–31 May 2026'},
+  'ES26-0023': {name:'', date:'29–31 May 2026'},
+  'ES26-0024': {name:'', date:'29–31 May 2026'},
+  'ES26-0025': {name:'', date:'29–31 May 2026'},
+  'ES26-0026': {name:'', date:'29–31 May 2026'},
+  'ES26-0027': {name:'', date:'29–31 May 2026'},
+  'ES26-0028': {name:'', date:'29–31 May 2026'},
+  'ES26-0029': {name:'', date:'29–31 May 2026'},
+  'ES26-0030': {name:'', date:'29–31 May 2026'},
 };
 
 var currentParticipant = null;
 var currentCode = null;
 
-// ══ FORMAT CODE INPUT ══
 function formatCode(inp){
-  var v = inp.value.replace(/[^a-zA-Z0-9]/g,'').toUpperCase();
-  if(v.length > 4) v = v.slice(0,4)+'-'+v.slice(4,8);
-  inp.value = v;
+  var v=inp.value.replace(/[^a-zA-Z0-9]/g,'').toUpperCase();
+  if(v.length>4) v=v.slice(0,4)+'-'+v.slice(4,8);
+  inp.value=v;
 }
 
-// ══ CHECK ACCESS ══
 function checkAccess(){
-  var code = document.getElementById('access-code').value.trim().toUpperCase();
-  var err = document.getElementById('gate-error');
-  if(!code){ err.style.display='block'; err.textContent='❌ Введите код доступа.'; return; }
-  var p = PARTICIPANTS[code];
-  if(!p){ err.style.display='block'; err.textContent='❌ Неверный код. Проверьте и попробуйте снова.'; return; }
+  var code=document.getElementById('access-code').value.trim().toUpperCase();
+  var err=document.getElementById('gate-error');
+  if(!code){err.style.display='block';err.textContent='Введите код доступа.';return;}
+  var p=PARTICIPANTS[code];
+  if(!p){err.style.display='block';err.textContent='Неверный код. Проверьте и попробуйте снова.';return;}
   err.style.display='none';
-  currentParticipant = p;
-  currentCode = code;
-  // Show form
+  currentParticipant=p;
+  currentCode=code;
   document.getElementById('gate').style.display='none';
   document.getElementById('form-wrap').style.display='block';
-  document.getElementById('form-name-display').textContent = p.name || 'Участник №'+code;
-  if(p.name) document.getElementById('c-spec').focus();
+  document.getElementById('form-name-display').textContent=p.name||'Участник №'+code;
 }
 
-// ══ GENERATE CERT ══
 function generateCert(){
-  var name = currentParticipant.name || document.getElementById('form-name-display').textContent;
-  var spec = document.getElementById('c-spec').value || '—';
-  var work = document.getElementById('c-work').value || 'Участник';
-  var date = currentParticipant.date || '31 мая 2026';
-  var num = currentCode;
-
-  document.getElementById('cert-name-out').textContent = name;
-  document.getElementById('co-spec').textContent = spec;
-  document.getElementById('co-work').textContent = work;
-  document.getElementById('co-date').textContent = date;
-  document.getElementById('co-num').textContent = '№ '+num;
-
-  // QR code pointing to verify page
-  var verifyUrl = 'https://epilepsyschool.asia/certificate.html?verify='+num;
+  var name=currentParticipant.name||document.getElementById('form-name-display').textContent;
+  var spec=document.getElementById('c-spec').value||'—';
+  var date=currentParticipant.date||'29–31 May 2026';
+  document.getElementById('cert-name-out').textContent=name;
+  document.getElementById('co-spec').textContent=spec;
+  document.getElementById('co-date').textContent=date;
+  document.getElementById('co-num').textContent='№ '+currentCode;
+  var verifyUrl='https://epilepsyschool.asia/certificate.html?verify='+currentCode;
   document.getElementById('qr-container').innerHTML='';
-  new QRCode(document.getElementById('qr-container'), {
-    text: verifyUrl, width:60, height:60,
-    colorDark:'#1B3A6B', colorLight:'#ffffff',
-    correctLevel: QRCode.CorrectLevel.M
+  new QRCode(document.getElementById('qr-container'),{
+    text:verifyUrl,width:64,height:64,
+    colorDark:'#1B3A6B',colorLight:'#ffffff',
+    correctLevel:QRCode.CorrectLevel.M
   });
-
   document.getElementById('form-wrap').style.display='none';
   document.getElementById('cert-outer').style.display='block';
   window.scrollTo(0,0);
 }
 
-// ══ VERIFY MODE (when opened via QR) ══
 function checkVerify(){
-  var params = new URLSearchParams(window.location.search);
-  var code = params.get('verify');
+  var params=new URLSearchParams(window.location.search);
+  var code=params.get('verify');
   if(!code) return;
-  // Hide gate, show verify card
   document.getElementById('gate').style.display='none';
-  var vc = document.getElementById('verify-card');
+  var vc=document.getElementById('verify-card');
   vc.style.display='block';
-  var p = PARTICIPANTS[code];
-  if(p && (p.name)){
-    vc.innerHTML='<div class="verify-ok">✅</div>'
-      +'<h2 style="font-size:1.2rem;font-weight:800;color:#0D1B2A;margin-bottom:.5rem">Сертификат подлинный</h2>'
-      +'<p style="font-size:14px;color:#64748B;margin-bottom:1rem">Этот сертификат был выдан участнику:</p>'
-      +'<div style="background:#F0FDF4;border-radius:12px;padding:1rem;margin-bottom:1rem">'
+  var p=PARTICIPANTS[code];
+  if(p&&p.name){
+    vc.innerHTML='<div style="font-size:3rem;margin-bottom:1rem">✅</div>'
+      +'<h2 style="font-size:1.2rem;font-weight:700;color:#0D1B2A;margin-bottom:.5rem">Certificate is authentic</h2>'
+      +'<div style="background:#F0FDF4;border-radius:12px;padding:1rem;margin:1rem 0">'
       +'<div style="font-size:16px;font-weight:700;color:#0D1B2A">'+p.name+'</div>'
-      +'<div style="font-size:13px;color:#64748B;margin-top:4px">Дата: '+p.date+' · Уральск, Казахстан</div>'
-      +'<div style="font-size:13px;color:#64748B">Код: '+code+'</div></div>'
-      +'<a href="https://epilepsyschool.asia" style="font-size:13px;color:#2563EB;text-decoration:none;font-weight:600">← epilepsyschool.asia</a>';
+      +'<div style="font-size:13px;color:#64748B;margin-top:4px">'+p.date+' · Oral (Uralsk), Kazakhstan</div>'
+      +'<div style="font-size:13px;color:#64748B">Code: '+code+'</div></div>'
+      +'<a href="https://epilepsyschool.asia" style="font-size:13px;color:#1B3A6B;font-weight:600;text-decoration:none">← epilepsyschool.asia</a>';
   } else {
-    vc.innerHTML='<div class="verify-fail">❌</div>'
-      +'<h2 style="font-size:1.2rem;font-weight:800;color:#0D1B2A;margin-bottom:.5rem">Сертификат не найден</h2>'
-      +'<p style="font-size:14px;color:#64748B;margin-bottom:1rem">Код <strong>'+code+'</strong> не найден в базе данных или сертификат недействителен.</p>'
-      +'<a href="https://epilepsyschool.asia" style="font-size:13px;color:#2563EB;font-weight:600">← epilepsyschool.asia</a>';
+    vc.innerHTML='<div style="font-size:3rem;margin-bottom:1rem">❌</div>'
+      +'<h2 style="font-size:1.2rem;font-weight:700;color:#0D1B2A;margin-bottom:.5rem">Certificate not found</h2>'
+      +'<p style="font-size:14px;color:#64748B">Code <strong>'+code+'</strong> was not found in our database.</p>'
+      +'<a href="https://epilepsyschool.asia" style="font-size:13px;color:#1B3A6B;font-weight:600;text-decoration:none;display:block;margin-top:1rem">← epilepsyschool.asia</a>';
   }
 }
 checkVerify();
