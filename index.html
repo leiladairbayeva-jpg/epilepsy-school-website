@@ -1096,7 +1096,7 @@ async function askAI(userText) {
   showTyping();
   chatHistory.push({ role: 'user', content: userText });
   try {
-    var resp = await fetch('https://api.anthropic.com/v1/messages', {
+    var resp = await fetch('https://little-mud-1ca6.leiladairbayeva.workers.dev/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
