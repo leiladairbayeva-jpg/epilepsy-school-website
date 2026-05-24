@@ -695,7 +695,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
     <div class="stripe"></div>
     <div class="mentor-layout">
       <div class="mentor-card-left">
-        <div class="mentor-av">ЛД</div>
+        <img src="PHOTO-2026-02-11-14-16-16.jpg" alt="Лейла Даирбаева" style="width:100px;height:100px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid rgba(255,255,255,.15);margin:0 auto 1rem;display:block">
         <div class="mentor-nm">Лейла Даирбаева</div>
         <div class="mentor-pos">Невролог-эпилептолог<br>Член Комиссии по терапии ILAE</div>
         <div class="mentor-divider"></div>
@@ -943,7 +943,7 @@ function submitForm(){
 <!-- CHATBOT PANEL -->
 <div id="chat-panel">
   <div class="chat-head">
-    <div class="chat-av">ЛД</div>
+    <img src="PHOTO-2026-02-11-14-16-16.jpg" alt="ЛД" style="width:38px;height:38px;border-radius:50%;object-fit:cover;object-position:center top">
     <div class="chat-head-info">
       <div class="chat-head-name">Помощник — Школа Эпилептологии</div>
       <div class="chat-head-status"><span class="chat-status-dot"></span>Онлайн · отвечу за секунду</div>
@@ -1096,7 +1096,7 @@ async function askAI(userText) {
   showTyping();
   chatHistory.push({ role: 'user', content: userText });
   try {
-    var resp = await fetch('https://little-mud-1ca6.leiladairbayeva.workers.dev/', {
+    var resp = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
