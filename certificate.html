@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Сертификат — Школа Эпилептологии</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Sora',sans-serif;background:#F1F5F9;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;-webkit-font-smoothing:antialiased}
+
+/* FORM */
+.form-wrap{background:#fff;border-radius:20px;padding:2rem;width:100%;max-width:480px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:2rem}
+.form-title{font-size:1.1rem;font-weight:700;color:#0D1B2A;margin-bottom:1.25rem;letter-spacing:-0.02em}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.fg label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748B}
+.fg input,.fg select{font-family:'Sora',sans-serif;font-size:14px;border:1.5px solid #E2E8F0;border-radius:8px;padding:10px 12px;color:#0D1B2A;outline:none;transition:border-color .2s}
+.fg input:focus,.fg select:focus{border-color:#2563EB}
+.gen-btn{width:100%;padding:13px;background:#2563EB;color:#fff;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;border:none;border-radius:8px;cursor:pointer;transition:background .2s;margin-top:4px}
+.gen-btn:hover{background:#1D4ED8}
+.print-btn{width:100%;padding:11px;background:#0D1B2A;color:#fff;font-family:'Sora',sans-serif;font-size:13px;font-weight:600;border:none;border-radius:8px;cursor:pointer;margin-top:10px;transition:opacity .2s}
+.print-btn:hover{opacity:.85}
+
+/* CERTIFICATE */
+.cert-outer{display:none;width:100%;max-width:820px}
+.cert-wrap{
+  background:#fff;
+  border-radius:4px;
+  padding:60px 70px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 8px 40px rgba(0,0,0,.12);
+}
+/* Border decoration */
+.cert-wrap::before{
+  content:'';position:absolute;inset:12px;
+  border:2px solid #1B3A6B;
+  border-radius:2px;pointer-events:none;z-index:1
+}
+.cert-wrap::after{
+  content:'';position:absolute;inset:16px;
+  border:0.5px solid rgba(27,58,107,.2);
+  border-radius:1px;pointer-events:none;z-index:1
+}
+/* Corner ornaments */
+.corner{position:absolute;width:40px;height:40px;z-index:2}
+.corner svg{width:100%;height:100%}
+.corner.tl{top:8px;left:8px}
+.corner.tr{top:8px;right:8px;transform:scaleX(-1)}
+.corner.bl{bottom:8px;left:8px;transform:scaleY(-1)}
+.corner.br{bottom:8px;right:8px;transform:scale(-1)}
+
+/* BG pattern */
+.cert-bg{position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(45deg,#1B3A6B 0,#1B3A6B 1px,transparent 0,transparent 50%);background-size:20px 20px}
+
+.cert-content{position:relative;z-index:3;text-align:center}
+.cert-logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:28px}
+.cert-logo-icon{width:48px;height:48px}
+.cert-logo-text{text-align:left}
+.cert-logo-name{font-size:15px;font-weight:700;color:#1B3A6B;letter-spacing:-0.01em}
+.cert-logo-sub{font-size:10px;color:#64748B;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.cert-divider{width:100%;height:1px;background:linear-gradient(to right,transparent,#1B3A6B,transparent);margin:20px 0}
+.cert-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#64748B;margin-bottom:16px}
+.cert-title{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:#1B3A6B;line-height:1.1;margin-bottom:8px;letter-spacing:-0.02em}
+.cert-title-en{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#64748B;font-weight:400;margin-bottom:28px}
+.cert-presented{font-size:13px;color:#64748B;margin-bottom:8px;font-weight:400}
+.cert-name{font-family:'Playfair Display',serif;font-size:36px;font-weight:600;color:#0D1B2A;margin-bottom:4px;letter-spacing:-0.01em}
+.cert-name-line{width:300px;height:1.5px;background:#C8A84B;margin:8px auto 24px}
+.cert-desc{font-size:13px;color:#475569;line-height:1.7;max-width:500px;margin:0 auto 28px}
+.cert-desc strong{color:#1B3A6B;font-weight:600}
+.cert-details{display:flex;justify-content:center;gap:40px;margin-bottom:32px}
+.cert-detail{text-align:center}
+.cert-detail-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#94A3B8;margin-bottom:4px}
+.cert-detail-val{font-size:13px;font-weight:600;color:#1B3A6B}
+.cert-footer{display:flex;justify-content:space-between;align-items:flex-end;margin-top:16px;padding-top:24px;border-top:1px solid #E2E8F0}
+.cert-sign{text-align:center;flex:1}
+.cert-sign-line{width:160px;height:1px;background:#0D1B2A;margin:0 auto 6px}
+.cert-sign-name{font-size:12px;font-weight:600;color:#0D1B2A}
+.cert-sign-title{font-size:10px;color:#64748B;margin-top:2px}
+.cert-seal{width:80px;height:80px;border-radius:50%;border:2px solid #1B3A6B;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#1B3A6B;text-align:center;padding:8px}
+.cert-seal-text{font-size:7px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1.3}
+.cert-number{position:absolute;bottom:22px;right:80px;font-size:9px;color:#94A3B8;letter-spacing:.05em;z-index:3}
+
+@media print{
+  body{background:#fff;padding:0}
+  .form-wrap,.print-btn-wrap{display:none!important}
+  .cert-outer{display:block!important;max-width:100%}
+  .cert-wrap{box-shadow:none;border-radius:0}
+  @page{size:A4 landscape;margin:0}
+}
+</style>
+</head>
+<body>
+
+<!-- FORM -->
+<div class="form-wrap">
+  <div class="form-title">🎓 Создать сертификат участника</div>
+  <div class="fg"><label>ФИО участника *</label><input id="c-name" type="text" placeholder="Айгуль Сейткали"></div>
+  <div class="fg"><label>Специальность</label><input id="c-spec" type="text" placeholder="Невролог" value="Невролог"></div>
+  <div class="fg"><label>Место работы</label><input id="c-work" type="text" placeholder="Городская больница №1"></div>
+  <div class="fg"><label>Дата выдачи</label><input id="c-date" type="text" placeholder="31 мая 2026" value="31 мая 2026"></div>
+  <button class="gen-btn" onclick="generateCert()">Создать сертификат →</button>
+</div>
+
+<!-- CERTIFICATE -->
+<div class="cert-outer" id="cert-outer">
+  <div class="cert-wrap" id="cert-wrap">
+    <div class="cert-bg"></div>
+    <!-- Corner ornaments -->
+    <div class="corner tl"><svg viewBox="0 0 40 40"><path d="M2 38 L2 2 L38 2" fill="none" stroke="#1B3A6B" stroke-width="2"/><circle cx="2" cy="2" r="3" fill="#C8A84B"/><path d="M8 2 L8 8 M2 8 L8 8" fill="none" stroke="#C8A84B" stroke-width="1"/></svg></div>
+    <div class="corner tr"><svg viewBox="0 0 40 40"><path d="M2 38 L2 2 L38 2" fill="none" stroke="#1B3A6B" stroke-width="2"/><circle cx="2" cy="2" r="3" fill="#C8A84B"/><path d="M8 2 L8 8 M2 8 L8 8" fill="none" stroke="#C8A84B" stroke-width="1"/></svg></div>
+    <div class="corner bl"><svg viewBox="0 0 40 40"><path d="M2 38 L2 2 L38 2" fill="none" stroke="#1B3A6B" stroke-width="2"/><circle cx="2" cy="2" r="3" fill="#C8A84B"/><path d="M8 2 L8 8 M2 8 L8 8" fill="none" stroke="#C8A84B" stroke-width="1"/></svg></div>
+    <div class="corner br"><svg viewBox="0 0 40 40"><path d="M2 38 L2 2 L38 2" fill="none" stroke="#1B3A6B" stroke-width="2"/><circle cx="2" cy="2" r="3" fill="#C8A84B"/><path d="M8 2 L8 8 M2 8 L8 8" fill="none" stroke="#C8A84B" stroke-width="1"/></svg></div>
+
+    <div class="cert-content">
+      <!-- Logo -->
+      <div class="cert-logo">
+        <svg class="cert-logo-icon" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="22" stroke="#1B3A6B" stroke-width="2"/>
+          <path d="M24 10 C28 8 34 10 36 14 C38 12 42 13 43 16 C45 15 46 18 45 20 C47 21 47 24 46 26 C47 27 46 30 44 31 C44 33 42 35 40 34 C39 36 36 37 34 36 C32 38 29 38 27 37 C25 39 22 38 21 37 C19 38 16 37 15 35 C13 36 11 34 11 32 C9 31 8 28 9 26 C7 24 7 21 9 20 C8 17 10 14 12 14 C13 11 17 9 20 10 C21 8 23 8 24 10Z" stroke="#1B3A6B" stroke-width="1.5" fill="rgba(27,58,107,0.06)"/>
+          <circle cx="18" cy="22" r="3" fill="#2563EB" opacity="0.7"/>
+          <circle cx="30" cy="20" r="3" fill="#10B981" opacity="0.7"/>
+          <circle cx="24" cy="30" r="3" fill="#C8A84B" opacity="0.7"/>
+          <line x1="18" y1="22" x2="24" y2="30" stroke="#2563EB" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
+          <line x1="30" y1="20" x2="24" y2="30" stroke="#10B981" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
+        </svg>
+        <div class="cert-logo-text">
+          <div class="cert-logo-name">Школа Эпилептологии</div>
+          <div class="cert-logo-sub">Dr. Leila Dairbayeva · ILAE</div>
+        </div>
+      </div>
+
+      <div class="cert-divider"></div>
+      <div class="cert-label">Настоящий сертификат удостоверяет, что</div>
+      <div class="cert-name" id="cert-name-display">Имя Фамилия</div>
+      <div class="cert-name-line"></div>
+      <div class="cert-presented">успешно прошёл(а) обучение на воркшопе</div>
+      <div class="cert-title">Школа Эпилептологии</div>
+      <div class="cert-title-en">Epilepsy School · Basic Level (ILAE Level 1)</div>
+
+      <div class="cert-desc">
+        Программа охватывает <strong>9 доменов компетенций</strong> по стандартам ILAE: классификация приступов (ILAE 2017), диагностика, ЭЭГ-интерпретация, антиэпилептическая терапия по международным клиническим рекомендациям, неотложные состояния и особые группы пациентов.
+      </div>
+
+      <div class="cert-details">
+        <div class="cert-detail">
+          <div class="cert-detail-label">Дата</div>
+          <div class="cert-detail-val" id="cert-date-display">31 мая 2026</div>
+        </div>
+        <div class="cert-detail">
+          <div class="cert-detail-label">Город</div>
+          <div class="cert-detail-val">Уральск, Казахстан</div>
+        </div>
+        <div class="cert-detail">
+          <div class="cert-detail-label">Продолжительность</div>
+          <div class="cert-detail-val">24 академических часа</div>
+        </div>
+        <div class="cert-detail">
+          <div class="cert-detail-label">Специальность</div>
+          <div class="cert-detail-val" id="cert-spec-display">Невролог</div>
+        </div>
+      </div>
+
+      <div class="cert-footer">
+        <div class="cert-sign">
+          <div class="cert-sign-line"></div>
+          <div class="cert-sign-name">Д-р Лейла Даирбаева</div>
+          <div class="cert-sign-title">Невролог-эпилептолог · Член Комиссии по терапии ILAE</div>
+        </div>
+        <div class="cert-seal">
+          <svg width="32" height="32" viewBox="0 0 48 48" fill="none" style="margin-bottom:2px">
+            <path d="M24 10 C28 8 34 10 36 14 C38 12 42 13 43 16 C45 15 46 18 45 20 C47 21 47 24 46 26 C47 27 46 30 44 31 C44 33 42 35 40 34 C39 36 36 37 34 36 C32 38 29 38 27 37 C25 39 22 38 21 37 C19 38 16 37 15 35 C13 36 11 34 11 32 C9 31 8 28 9 26 C7 24 7 21 9 20 C8 17 10 14 12 14 C13 11 17 9 20 10 C21 8 23 8 24 10Z" stroke="#1B3A6B" stroke-width="1.5" fill="rgba(27,58,107,0.08)"/>
+            <text x="24" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#1B3A6B">ILAE</text>
+          </svg>
+          <div class="cert-seal-text">Школа<br>Эпилепто-<br>логии</div>
+        </div>
+        <div class="cert-sign">
+          <div class="cert-sign-line"></div>
+          <div class="cert-sign-name" id="cert-work-display">Место работы</div>
+          <div class="cert-sign-title">Участник воркшопа</div>
+        </div>
+      </div>
+    </div>
+    <div class="cert-number" id="cert-number"></div>
+  </div>
+
+  <div class="print-btn-wrap" style="margin-top:1rem;display:flex;gap:10px">
+    <button class="print-btn" onclick="window.print()" style="flex:1">🖨️ Печать / Сохранить PDF</button>
+    <button class="print-btn" onclick="location.reload()" style="flex:1;background:#64748B">← Новый сертификат</button>
+  </div>
+</div>
+
+<script>
+function generateCert() {
+  var name = document.getElementById('c-name').value.trim();
+  if (!name) { alert('Введите ФИО участника'); return; }
+  var spec = document.getElementById('c-spec').value || 'Врач';
+  var work = document.getElementById('c-work').value || '';
+  var date = document.getElementById('c-date').value || '31 мая 2026';
+  var num = 'ES-2026-' + String(Math.floor(Math.random()*9000)+1000);
+
+  document.getElementById('cert-name-display').textContent = name;
+  document.getElementById('cert-spec-display').textContent = spec;
+  document.getElementById('cert-date-display').textContent = date;
+  document.getElementById('cert-work-display').textContent = work || 'Участник';
+  document.getElementById('cert-number').textContent = '№ ' + num;
+
+  document.querySelector('.form-wrap').style.display = 'none';
+  document.getElementById('cert-outer').style.display = 'block';
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
