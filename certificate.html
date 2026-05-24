@@ -4,86 +4,87 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Сертификат — Школа Эпилептологии</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Sora',sans-serif;background:#F1F5F9;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;-webkit-font-smoothing:antialiased}
 
+/* ACCESS GATE */
+.gate{background:#fff;border-radius:20px;padding:2.5rem;width:100%;max-width:440px;box-shadow:0 4px 24px rgba(0,0,0,.08);text-align:center}
+.gate-icon{width:64px;height:64px;background:#EFF6FF;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+.gate-title{font-size:1.2rem;font-weight:800;color:#0D1B2A;margin-bottom:.4rem;letter-spacing:-0.02em}
+.gate-sub{font-size:13px;color:#64748B;margin-bottom:1.5rem;line-height:1.55}
+.gate-inp{width:100%;font-family:'Sora',sans-serif;font-size:18px;font-weight:700;letter-spacing:.25em;text-align:center;border:2px solid #E2E8F0;border-radius:10px;padding:14px;color:#0D1B2A;outline:none;transition:border-color .2s;text-transform:uppercase;margin-bottom:10px}
+.gate-inp:focus{border-color:#2563EB}
+.gate-btn{width:100%;padding:13px;background:#2563EB;color:#fff;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;border:none;border-radius:10px;cursor:pointer;transition:background .2s}
+.gate-btn:hover{background:#1D4ED8}
+.gate-error{color:#EF4444;font-size:12px;font-weight:600;margin-top:8px;display:none}
+.gate-hint{font-size:11px;color:#94A3B8;margin-top:12px}
+
 /* FORM */
-.form-wrap{background:#fff;border-radius:20px;padding:2rem;width:100%;max-width:480px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:2rem}
-.form-title{font-size:1.1rem;font-weight:700;color:#0D1B2A;margin-bottom:1.25rem;letter-spacing:-0.02em}
-.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.form-wrap{display:none;background:#fff;border-radius:20px;padding:2rem;width:100%;max-width:480px;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:1.5rem}
+.form-title{font-size:1rem;font-weight:700;color:#0D1B2A;margin-bottom:1.25rem}
+.form-name-display{background:#EFF6FF;border-radius:10px;padding:12px 16px;font-size:15px;font-weight:700;color:#1D4ED8;margin-bottom:1rem;text-align:center}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
 .fg label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748B}
 .fg input,.fg select{font-family:'Sora',sans-serif;font-size:14px;border:1.5px solid #E2E8F0;border-radius:8px;padding:10px 12px;color:#0D1B2A;outline:none;transition:border-color .2s}
-.fg input:focus,.fg select:focus{border-color:#2563EB}
-.gen-btn{width:100%;padding:13px;background:#2563EB;color:#fff;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;border:none;border-radius:8px;cursor:pointer;transition:background .2s;margin-top:4px}
-.gen-btn:hover{background:#1D4ED8}
-.print-btn{width:100%;padding:11px;background:#0D1B2A;color:#fff;font-family:'Sora',sans-serif;font-size:13px;font-weight:600;border:none;border-radius:8px;cursor:pointer;margin-top:10px;transition:opacity .2s}
-.print-btn:hover{opacity:.85}
+.fg input:focus{border-color:#2563EB}
+.gen-btn{width:100%;padding:13px;background:#0D1B2A;color:#fff;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;border:none;border-radius:8px;cursor:pointer;transition:background .2s;margin-top:6px}
+.gen-btn:hover{background:#1B3A6B}
 
 /* CERTIFICATE */
-.cert-outer{display:none;width:100%;max-width:820px}
-.cert-wrap{
-  background:#fff;
-  border-radius:4px;
-  padding:60px 70px;
-  position:relative;
-  overflow:hidden;
-  box-shadow:0 8px 40px rgba(0,0,0,.12);
-}
-/* Border decoration */
-.cert-wrap::before{
-  content:'';position:absolute;inset:12px;
-  border:2px solid #1B3A6B;
-  border-radius:2px;pointer-events:none;z-index:1
-}
-.cert-wrap::after{
-  content:'';position:absolute;inset:16px;
-  border:0.5px solid rgba(27,58,107,.2);
-  border-radius:1px;pointer-events:none;z-index:1
-}
-/* Corner ornaments */
-.corner{position:absolute;width:40px;height:40px;z-index:2}
-.corner svg{width:100%;height:100%}
-.corner.tl{top:8px;left:8px}
-.corner.tr{top:8px;right:8px;transform:scaleX(-1)}
-.corner.bl{bottom:8px;left:8px;transform:scaleY(-1)}
-.corner.br{bottom:8px;right:8px;transform:scale(-1)}
-
-/* BG pattern */
-.cert-bg{position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(45deg,#1B3A6B 0,#1B3A6B 1px,transparent 0,transparent 50%);background-size:20px 20px}
-
+.cert-outer{display:none;width:100%;max-width:840px}
+.cert-wrap{background:#fff;border-radius:4px;padding:56px 64px;position:relative;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.12)}
+.cert-wrap::before{content:'';position:absolute;inset:12px;border:2px solid #1B3A6B;border-radius:2px;pointer-events:none;z-index:1}
+.cert-wrap::after{content:'';position:absolute;inset:17px;border:0.5px solid rgba(27,58,107,.2);border-radius:1px;pointer-events:none;z-index:1}
+.corner{position:absolute;width:44px;height:44px;z-index:2}
+.corner.tl{top:6px;left:6px}.corner.tr{top:6px;right:6px;transform:scaleX(-1)}
+.corner.bl{bottom:6px;left:6px;transform:scaleY(-1)}.corner.br{bottom:6px;right:6px;transform:scale(-1)}
+.cert-bg{position:absolute;inset:0;opacity:.025;background-image:repeating-linear-gradient(45deg,#1B3A6B 0,#1B3A6B 1px,transparent 0,transparent 50%);background-size:18px 18px}
 .cert-content{position:relative;z-index:3;text-align:center}
-.cert-logo{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:28px}
-.cert-logo-icon{width:48px;height:48px}
-.cert-logo-text{text-align:left}
-.cert-logo-name{font-size:15px;font-weight:700;color:#1B3A6B;letter-spacing:-0.01em}
-.cert-logo-sub{font-size:10px;color:#64748B;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
-.cert-divider{width:100%;height:1px;background:linear-gradient(to right,transparent,#1B3A6B,transparent);margin:20px 0}
-.cert-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#64748B;margin-bottom:16px}
-.cert-title{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:#1B3A6B;line-height:1.1;margin-bottom:8px;letter-spacing:-0.02em}
-.cert-title-en{font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#64748B;font-weight:400;margin-bottom:28px}
-.cert-presented{font-size:13px;color:#64748B;margin-bottom:8px;font-weight:400}
-.cert-name{font-family:'Playfair Display',serif;font-size:36px;font-weight:600;color:#0D1B2A;margin-bottom:4px;letter-spacing:-0.01em}
-.cert-name-line{width:300px;height:1.5px;background:#C8A84B;margin:8px auto 24px}
-.cert-desc{font-size:13px;color:#475569;line-height:1.7;max-width:500px;margin:0 auto 28px}
-.cert-desc strong{color:#1B3A6B;font-weight:600}
-.cert-details{display:flex;justify-content:center;gap:40px;margin-bottom:32px}
-.cert-detail{text-align:center}
-.cert-detail-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#94A3B8;margin-bottom:4px}
+.cert-logo{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:24px}
+.cert-logo-name{font-size:16px;font-weight:700;color:#1B3A6B;letter-spacing:-0.01em;text-align:left}
+.cert-logo-sub{font-size:10px;color:#64748B;font-weight:500;letter-spacing:.1em;text-transform:uppercase}
+.cert-divider{width:100%;height:1px;background:linear-gradient(to right,transparent,#1B3A6B 30%,#C8A84B 50%,#1B3A6B 70%,transparent);margin:18px 0}
+.cert-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#64748B;margin-bottom:14px}
+.cert-title{font-family:'Playfair Display',serif;font-size:38px;font-weight:700;color:#1B3A6B;line-height:1.1;margin-bottom:6px}
+.cert-title-en{font-family:'Playfair Display',serif;font-size:16px;font-style:italic;color:#64748B;margin-bottom:22px}
+.cert-presented{font-size:13px;color:#64748B;margin-bottom:8px}
+.cert-name{font-family:'Playfair Display',serif;font-size:34px;font-weight:600;color:#0D1B2A;letter-spacing:-0.01em}
+.cert-name-line{width:280px;height:2px;background:linear-gradient(to right,transparent,#C8A84B,transparent);margin:8px auto 20px}
+.cert-desc{font-size:12.5px;color:#475569;line-height:1.7;max-width:520px;margin:0 auto 22px}
+.cert-details{display:flex;justify-content:center;gap:36px;margin-bottom:24px}
+.cert-detail-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#94A3B8;margin-bottom:3px}
 .cert-detail-val{font-size:13px;font-weight:600;color:#1B3A6B}
-.cert-footer{display:flex;justify-content:space-between;align-items:flex-end;margin-top:16px;padding-top:24px;border-top:1px solid #E2E8F0}
+.cert-footer{display:flex;justify-content:space-between;align-items:flex-end;padding-top:20px;border-top:1px solid #E2E8F0;gap:16px}
 .cert-sign{text-align:center;flex:1}
-.cert-sign-line{width:160px;height:1px;background:#0D1B2A;margin:0 auto 6px}
+.cert-sign-line{width:150px;height:1px;background:#0D1B2A;margin:0 auto 5px}
 .cert-sign-name{font-size:12px;font-weight:600;color:#0D1B2A}
 .cert-sign-title{font-size:10px;color:#64748B;margin-top:2px}
-.cert-seal{width:80px;height:80px;border-radius:50%;border:2px solid #1B3A6B;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#1B3A6B;text-align:center;padding:8px}
-.cert-seal-text{font-size:7px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1.3}
-.cert-number{position:absolute;bottom:22px;right:80px;font-size:9px;color:#94A3B8;letter-spacing:.05em;z-index:3}
+.cert-seal{width:76px;height:76px;border-radius:50%;border:2px solid #1B3A6B;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#1B3A6B;flex-shrink:0}
+.cert-seal-text{font-size:6.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;line-height:1.3;text-align:center;margin-top:2px}
+/* QR */
+.cert-qr-block{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.cert-qr-box{width:64px;height:64px;border:1px solid #E2E8F0;border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff}
+.cert-qr-box canvas,.cert-qr-box img{width:60px!important;height:60px!important}
+.cert-qr-label{font-size:8px;color:#94A3B8;margin-top:4px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.cert-number{font-size:9px;color:#94A3B8;margin-top:3px}
+
+/* VERIFY PAGE */
+.verify-card{display:none;background:#fff;border-radius:20px;padding:2rem;width:100%;max-width:440px;box-shadow:0 4px 24px rgba(0,0,0,.08);text-align:center}
+.verify-ok{color:#10B981;font-size:3rem;margin-bottom:1rem}
+.verify-fail{color:#EF4444;font-size:3rem;margin-bottom:1rem}
+
+/* BUTTONS */
+.action-btns{display:flex;gap:10px;margin-top:1.25rem}
+.btn-print{flex:1;padding:12px;background:#0D1B2A;color:#fff;font-family:'Sora',sans-serif;font-size:13px;font-weight:700;border:none;border-radius:10px;cursor:pointer;transition:opacity .2s}
+.btn-print:hover{opacity:.85}
+.btn-new{flex:1;padding:12px;background:#F1F5F9;color:#0D1B2A;font-family:'Sora',sans-serif;font-size:13px;font-weight:700;border:1.5px solid #E2E8F0;border-radius:10px;cursor:pointer}
 
 @media print{
   body{background:#fff;padding:0}
-  .form-wrap,.print-btn-wrap{display:none!important}
+  .form-wrap,.action-btns,.gate,.verify-card{display:none!important}
   .cert-outer{display:block!important;max-width:100%}
   .cert-wrap{box-shadow:none;border-radius:0}
   @page{size:A4 landscape;margin:0}
@@ -92,75 +93,63 @@ body{font-family:'Sora',sans-serif;background:#F1F5F9;min-height:100vh;display:f
 </head>
 <body>
 
-<!-- FORM -->
-<div class="form-wrap">
-  <div class="form-title">🎓 Создать сертификат участника</div>
-  <div class="fg"><label>ФИО участника *</label><input id="c-name" type="text" placeholder="Айгуль Сейткали"></div>
-  <div class="fg"><label>Специальность</label><input id="c-spec" type="text" placeholder="Невролог" value="Невролог"></div>
-  <div class="fg"><label>Место работы</label><input id="c-work" type="text" placeholder="Городская больница №1"></div>
-  <div class="fg"><label>Дата выдачи</label><input id="c-date" type="text" placeholder="31 мая 2026" value="31 мая 2026"></div>
-  <button class="gen-btn" onclick="generateCert()">Создать сертификат →</button>
+<!-- ACCESS GATE -->
+<div class="gate" id="gate">
+  <div class="gate-icon">
+    <svg width="28" height="28" fill="none" stroke="#2563EB" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+  </div>
+  <div class="gate-title">Доступ к сертификату</div>
+  <div class="gate-sub">Введите персональный код, который вы получили от организатора после завершения обучения</div>
+  <input class="gate-inp" id="access-code" type="text" placeholder="XXXX-XXXX" maxlength="9" oninput="formatCode(this)" onkeydown="if(event.key==='Enter')checkAccess()">
+  <div class="gate-error" id="gate-error">❌ Неверный код. Проверьте и попробуйте снова.</div>
+  <button class="gate-btn" onclick="checkAccess()">Получить сертификат →</button>
+  <div class="gate-hint">Код выдаётся организатором после прохождения всех 3 дней воркшопа.<br>По вопросам: <strong>epilepsyschool.asia</strong></div>
+</div>
+
+<!-- VERIFY CARD (for QR scan) -->
+<div class="verify-card" id="verify-card">
+  <div id="verify-result"></div>
+</div>
+
+<!-- FORM (after access granted) -->
+<div class="form-wrap" id="form-wrap">
+  <div class="form-title">🎓 Ваш сертификат готов</div>
+  <div class="form-name-display" id="form-name-display">Участник воркшопа</div>
+  <div class="fg"><label>Специальность</label><input id="c-spec" type="text" placeholder="Невролог"></div>
+  <div class="fg"><label>Место работы</label><input id="c-work" type="text" placeholder="Городская больница №1, Уральск"></div>
+  <button class="gen-btn" onclick="generateCert()">Создать и скачать сертификат →</button>
 </div>
 
 <!-- CERTIFICATE -->
 <div class="cert-outer" id="cert-outer">
-  <div class="cert-wrap" id="cert-wrap">
+  <div class="cert-wrap">
     <div class="cert-bg"></div>
-    <!-- Corner ornaments -->
-    <div class="corner tl"><svg viewBox="0 0 40 40"><path d="M2 38 L2 2 L38 2" fill="none" stroke="#1B3A6B" stroke-width="2"/><circle cx="2" cy="2" r="3" fill="#C8A84B"/><path d="M8 2 L8 8 M2 8 L8 8" fill="none" stroke="#C8A84B" stroke-width="1"/></svg></div>
-    <div class="corner tr"><svg viewBox="0 0 40 40"><path d="M2 38 L2 2 L38 2" fill="none" stroke="#1B3A6B" stroke-width="2"/><circle cx="2" cy="2" r="3" fill="#C8A84B"/><path d="M8 2 L8 8 M2 8 L8 8" fill="none" stroke="#C8A84B" stroke-width="1"/></svg></div>
-    <div class="corner bl"><svg viewBox="0 0 40 40"><path d="M2 38 L2 2 L38 2" fill="none" stroke="#1B3A6B" stroke-width="2"/><circle cx="2" cy="2" r="3" fill="#C8A84B"/><path d="M8 2 L8 8 M2 8 L8 8" fill="none" stroke="#C8A84B" stroke-width="1"/></svg></div>
-    <div class="corner br"><svg viewBox="0 0 40 40"><path d="M2 38 L2 2 L38 2" fill="none" stroke="#1B3A6B" stroke-width="2"/><circle cx="2" cy="2" r="3" fill="#C8A84B"/><path d="M8 2 L8 8 M2 8 L8 8" fill="none" stroke="#C8A84B" stroke-width="1"/></svg></div>
-
+    <div class="corner tl"><svg viewBox="0 0 44 44"><path d="M3 41 L3 3 L41 3" fill="none" stroke="#1B3A6B" stroke-width="2.5"/><circle cx="3" cy="3" r="3.5" fill="#C8A84B"/><path d="M10 3 L10 10 M3 10 L10 10" fill="none" stroke="#C8A84B" stroke-width="1.2"/></svg></div>
+    <div class="corner tr"><svg viewBox="0 0 44 44"><path d="M3 41 L3 3 L41 3" fill="none" stroke="#1B3A6B" stroke-width="2.5"/><circle cx="3" cy="3" r="3.5" fill="#C8A84B"/><path d="M10 3 L10 10 M3 10 L10 10" fill="none" stroke="#C8A84B" stroke-width="1.2"/></svg></div>
+    <div class="corner bl"><svg viewBox="0 0 44 44"><path d="M3 41 L3 3 L41 3" fill="none" stroke="#1B3A6B" stroke-width="2.5"/><circle cx="3" cy="3" r="3.5" fill="#C8A84B"/><path d="M10 3 L10 10 M3 10 L10 10" fill="none" stroke="#C8A84B" stroke-width="1.2"/></svg></div>
+    <div class="corner br"><svg viewBox="0 0 44 44"><path d="M3 41 L3 3 L41 3" fill="none" stroke="#1B3A6B" stroke-width="2.5"/><circle cx="3" cy="3" r="3.5" fill="#C8A84B"/><path d="M10 3 L10 10 M3 10 L10 10" fill="none" stroke="#C8A84B" stroke-width="1.2"/></svg></div>
     <div class="cert-content">
-      <!-- Logo -->
       <div class="cert-logo">
-        <svg class="cert-logo-icon" viewBox="0 0 48 48" fill="none">
-          <circle cx="24" cy="24" r="22" stroke="#1B3A6B" stroke-width="2"/>
-          <path d="M24 10 C28 8 34 10 36 14 C38 12 42 13 43 16 C45 15 46 18 45 20 C47 21 47 24 46 26 C47 27 46 30 44 31 C44 33 42 35 40 34 C39 36 36 37 34 36 C32 38 29 38 27 37 C25 39 22 38 21 37 C19 38 16 37 15 35 C13 36 11 34 11 32 C9 31 8 28 9 26 C7 24 7 21 9 20 C8 17 10 14 12 14 C13 11 17 9 20 10 C21 8 23 8 24 10Z" stroke="#1B3A6B" stroke-width="1.5" fill="rgba(27,58,107,0.06)"/>
-          <circle cx="18" cy="22" r="3" fill="#2563EB" opacity="0.7"/>
-          <circle cx="30" cy="20" r="3" fill="#10B981" opacity="0.7"/>
-          <circle cx="24" cy="30" r="3" fill="#C8A84B" opacity="0.7"/>
-          <line x1="18" y1="22" x2="24" y2="30" stroke="#2563EB" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
-          <line x1="30" y1="20" x2="24" y2="30" stroke="#10B981" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
-        </svg>
+        <svg width="46" height="46" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="#1B3A6B" stroke-width="1.5"/><path d="M24 10 C28 8 34 10 36 14 C38 12 42 13 43 16 C45 15 46 18 45 20 C47 21 47 24 46 26 C47 27 46 30 44 31 C44 33 42 35 40 34 C39 36 36 37 34 36 C32 38 29 38 27 37 C25 39 22 38 21 37 C19 38 16 37 15 35 C13 36 11 34 11 32 C9 31 8 28 9 26 C7 24 7 21 9 20 C8 17 10 14 12 14 C13 11 17 9 20 10 C21 8 23 8 24 10Z" stroke="#1B3A6B" stroke-width="1.2" fill="rgba(27,58,107,0.06)"/><circle cx="18" cy="22" r="2.5" fill="#2563EB" opacity=".7"/><circle cx="30" cy="20" r="2.5" fill="#10B981" opacity=".7"/><circle cx="24" cy="30" r="2.5" fill="#C8A84B" opacity=".7"/><line x1="18" y1="22" x2="24" y2="30" stroke="#2563EB" stroke-width="1" stroke-dasharray="2 2" opacity=".4"/><line x1="30" y1="20" x2="24" y2="30" stroke="#10B981" stroke-width="1" stroke-dasharray="2 2" opacity=".4"/><line x1="18" y1="22" x2="30" y2="20" stroke="#C8A84B" stroke-width="1" stroke-dasharray="2 2" opacity=".4"/></svg>
         <div class="cert-logo-text">
           <div class="cert-logo-name">Школа Эпилептологии</div>
-          <div class="cert-logo-sub">Dr. Leila Dairbayeva · ILAE</div>
+          <div class="cert-logo-sub">Dr. Leila Dairbayeva · ILAE Level 1</div>
         </div>
       </div>
-
       <div class="cert-divider"></div>
       <div class="cert-label">Настоящий сертификат удостоверяет, что</div>
-      <div class="cert-name" id="cert-name-display">Имя Фамилия</div>
+      <div class="cert-name" id="cert-name-out"></div>
       <div class="cert-name-line"></div>
       <div class="cert-presented">успешно прошёл(а) обучение на воркшопе</div>
       <div class="cert-title">Школа Эпилептологии</div>
       <div class="cert-title-en">Epilepsy School · Basic Level (ILAE Level 1)</div>
-
-      <div class="cert-desc">
-        Программа охватывает <strong>9 доменов компетенций</strong> по стандартам ILAE: классификация приступов (ILAE 2017), диагностика, ЭЭГ-интерпретация, антиэпилептическая терапия по международным клиническим рекомендациям, неотложные состояния и особые группы пациентов.
-      </div>
-
+      <div class="cert-desc">Программа охватывает <strong>9 доменов компетенций</strong> по стандартам ILAE: классификация приступов (ILAE 2017), диагностика и ЭЭГ-интерпретация, антиэпилептическая терапия по международным клиническим рекомендациям, неотложные состояния и особые группы пациентов.</div>
       <div class="cert-details">
-        <div class="cert-detail">
-          <div class="cert-detail-label">Дата</div>
-          <div class="cert-detail-val" id="cert-date-display">31 мая 2026</div>
-        </div>
-        <div class="cert-detail">
-          <div class="cert-detail-label">Город</div>
-          <div class="cert-detail-val">Уральск, Казахстан</div>
-        </div>
-        <div class="cert-detail">
-          <div class="cert-detail-label">Продолжительность</div>
-          <div class="cert-detail-val">24 академических часа</div>
-        </div>
-        <div class="cert-detail">
-          <div class="cert-detail-label">Специальность</div>
-          <div class="cert-detail-val" id="cert-spec-display">Невролог</div>
-        </div>
+        <div><div class="cert-detail-label">Дата</div><div class="cert-detail-val" id="co-date">31 мая 2026</div></div>
+        <div><div class="cert-detail-label">Город</div><div class="cert-detail-val">Уральск, Казахстан</div></div>
+        <div><div class="cert-detail-label">Объём</div><div class="cert-detail-val">24 акад. часа</div></div>
+        <div><div class="cert-detail-label">Специальность</div><div class="cert-detail-val" id="co-spec">—</div></div>
       </div>
-
       <div class="cert-footer">
         <div class="cert-sign">
           <div class="cert-sign-line"></div>
@@ -168,47 +157,149 @@ body{font-family:'Sora',sans-serif;background:#F1F5F9;min-height:100vh;display:f
           <div class="cert-sign-title">Невролог-эпилептолог · Член Комиссии по терапии ILAE</div>
         </div>
         <div class="cert-seal">
-          <svg width="32" height="32" viewBox="0 0 48 48" fill="none" style="margin-bottom:2px">
-            <path d="M24 10 C28 8 34 10 36 14 C38 12 42 13 43 16 C45 15 46 18 45 20 C47 21 47 24 46 26 C47 27 46 30 44 31 C44 33 42 35 40 34 C39 36 36 37 34 36 C32 38 29 38 27 37 C25 39 22 38 21 37 C19 38 16 37 15 35 C13 36 11 34 11 32 C9 31 8 28 9 26 C7 24 7 21 9 20 C8 17 10 14 12 14 C13 11 17 9 20 10 C21 8 23 8 24 10Z" stroke="#1B3A6B" stroke-width="1.5" fill="rgba(27,58,107,0.08)"/>
-            <text x="24" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#1B3A6B">ILAE</text>
-          </svg>
-          <div class="cert-seal-text">Школа<br>Эпилепто-<br>логии</div>
+          <svg width="28" height="28" viewBox="0 0 48 48" fill="none"><path d="M24 10 C28 8 34 10 36 14 C38 12 42 13 43 16 C45 15 46 18 45 20 C47 21 47 24 46 26 C47 27 46 30 44 31 C44 33 42 35 40 34 C39 36 36 37 34 36 C32 38 29 38 27 37 C25 39 22 38 21 37 C19 38 16 37 15 35 C13 36 11 34 11 32 C9 31 8 28 9 26 C7 24 7 21 9 20 C8 17 10 14 12 14 C13 11 17 9 20 10 C21 8 23 8 24 10Z" stroke="#1B3A6B" stroke-width="1.5" fill="rgba(27,58,107,.08)"/><text x="24" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#1B3A6B">ILAE</text></svg>
+          <div class="cert-seal-text">Школа<br>Эпилепто-<br>логии<br>2026</div>
+        </div>
+        <div class="cert-qr-block">
+          <div class="cert-qr-box" id="qr-container"></div>
+          <div class="cert-qr-label">Проверить</div>
+          <div class="cert-number" id="co-num"></div>
         </div>
         <div class="cert-sign">
           <div class="cert-sign-line"></div>
-          <div class="cert-sign-name" id="cert-work-display">Место работы</div>
+          <div class="cert-sign-name" id="co-work">Участник</div>
           <div class="cert-sign-title">Участник воркшопа</div>
         </div>
       </div>
     </div>
-    <div class="cert-number" id="cert-number"></div>
   </div>
-
-  <div class="print-btn-wrap" style="margin-top:1rem;display:flex;gap:10px">
-    <button class="print-btn" onclick="window.print()" style="flex:1">🖨️ Печать / Сохранить PDF</button>
-    <button class="print-btn" onclick="location.reload()" style="flex:1;background:#64748B">← Новый сертификат</button>
+  <div class="action-btns">
+    <button class="btn-print" onclick="window.print()">🖨️ Печать / Сохранить PDF</button>
+    <button class="btn-new" onclick="location.reload()">← Новый сертификат</button>
   </div>
 </div>
 
 <script>
-function generateCert() {
-  var name = document.getElementById('c-name').value.trim();
-  if (!name) { alert('Введите ФИО участника'); return; }
-  var spec = document.getElementById('c-spec').value || 'Врач';
-  var work = document.getElementById('c-work').value || '';
-  var date = document.getElementById('c-date').value || '31 мая 2026';
-  var num = 'ES-2026-' + String(Math.floor(Math.random()*9000)+1000);
+// ══ PARTICIPANT DATABASE ══
+// Добавляйте участников: {code, name, date}
+// Код генерируется автоматически: ES26-XXXX
+var PARTICIPANTS = {
+  // Тестовые коды (удалите после добавления реальных участников)
+  'ES26-TEST': {name:'Тестовый Участник', date:'31 мая 2026'},
+  'ES26-0001': {name:'', date:'31 мая 2026'},
+  'ES26-0002': {name:'', date:'31 мая 2026'},
+  'ES26-0003': {name:'', date:'31 мая 2026'},
+  'ES26-0004': {name:'', date:'31 мая 2026'},
+  'ES26-0005': {name:'', date:'31 мая 2026'},
+  'ES26-0006': {name:'', date:'31 мая 2026'},
+  'ES26-0007': {name:'', date:'31 мая 2026'},
+  'ES26-0008': {name:'', date:'31 мая 2026'},
+  'ES26-0009': {name:'', date:'31 мая 2026'},
+  'ES26-0010': {name:'', date:'31 мая 2026'},
+  'ES26-0011': {name:'', date:'31 мая 2026'},
+  'ES26-0012': {name:'', date:'31 мая 2026'},
+  'ES26-0013': {name:'', date:'31 мая 2026'},
+  'ES26-0014': {name:'', date:'31 мая 2026'},
+  'ES26-0015': {name:'', date:'31 мая 2026'},
+  'ES26-0016': {name:'', date:'31 мая 2026'},
+  'ES26-0017': {name:'', date:'31 мая 2026'},
+  'ES26-0018': {name:'', date:'31 мая 2026'},
+  'ES26-0019': {name:'', date:'31 мая 2026'},
+  'ES26-0020': {name:'', date:'31 мая 2026'},
+  'ES26-0021': {name:'', date:'31 мая 2026'},
+  'ES26-0022': {name:'', date:'31 мая 2026'},
+  'ES26-0023': {name:'', date:'31 мая 2026'},
+  'ES26-0024': {name:'', date:'31 мая 2026'},
+  'ES26-0025': {name:'', date:'31 мая 2026'},
+  'ES26-0026': {name:'', date:'31 мая 2026'},
+  'ES26-0027': {name:'', date:'31 мая 2026'},
+  'ES26-0028': {name:'', date:'31 мая 2026'},
+  'ES26-0029': {name:'', date:'31 мая 2026'},
+  'ES26-0030': {name:'', date:'31 мая 2026'},
+};
 
-  document.getElementById('cert-name-display').textContent = name;
-  document.getElementById('cert-spec-display').textContent = spec;
-  document.getElementById('cert-date-display').textContent = date;
-  document.getElementById('cert-work-display').textContent = work || 'Участник';
-  document.getElementById('cert-number').textContent = '№ ' + num;
+var currentParticipant = null;
+var currentCode = null;
 
-  document.querySelector('.form-wrap').style.display = 'none';
-  document.getElementById('cert-outer').style.display = 'block';
+// ══ FORMAT CODE INPUT ══
+function formatCode(inp){
+  var v = inp.value.replace(/[^a-zA-Z0-9]/g,'').toUpperCase();
+  if(v.length > 4) v = v.slice(0,4)+'-'+v.slice(4,8);
+  inp.value = v;
+}
+
+// ══ CHECK ACCESS ══
+function checkAccess(){
+  var code = document.getElementById('access-code').value.trim().toUpperCase();
+  var err = document.getElementById('gate-error');
+  if(!code){ err.style.display='block'; err.textContent='❌ Введите код доступа.'; return; }
+  var p = PARTICIPANTS[code];
+  if(!p){ err.style.display='block'; err.textContent='❌ Неверный код. Проверьте и попробуйте снова.'; return; }
+  err.style.display='none';
+  currentParticipant = p;
+  currentCode = code;
+  // Show form
+  document.getElementById('gate').style.display='none';
+  document.getElementById('form-wrap').style.display='block';
+  document.getElementById('form-name-display').textContent = p.name || 'Участник №'+code;
+  if(p.name) document.getElementById('c-spec').focus();
+}
+
+// ══ GENERATE CERT ══
+function generateCert(){
+  var name = currentParticipant.name || document.getElementById('form-name-display').textContent;
+  var spec = document.getElementById('c-spec').value || '—';
+  var work = document.getElementById('c-work').value || 'Участник';
+  var date = currentParticipant.date || '31 мая 2026';
+  var num = currentCode;
+
+  document.getElementById('cert-name-out').textContent = name;
+  document.getElementById('co-spec').textContent = spec;
+  document.getElementById('co-work').textContent = work;
+  document.getElementById('co-date').textContent = date;
+  document.getElementById('co-num').textContent = '№ '+num;
+
+  // QR code pointing to verify page
+  var verifyUrl = 'https://epilepsyschool.asia/certificate.html?verify='+num;
+  document.getElementById('qr-container').innerHTML='';
+  new QRCode(document.getElementById('qr-container'), {
+    text: verifyUrl, width:60, height:60,
+    colorDark:'#1B3A6B', colorLight:'#ffffff',
+    correctLevel: QRCode.CorrectLevel.M
+  });
+
+  document.getElementById('form-wrap').style.display='none';
+  document.getElementById('cert-outer').style.display='block';
   window.scrollTo(0,0);
 }
+
+// ══ VERIFY MODE (when opened via QR) ══
+function checkVerify(){
+  var params = new URLSearchParams(window.location.search);
+  var code = params.get('verify');
+  if(!code) return;
+  // Hide gate, show verify card
+  document.getElementById('gate').style.display='none';
+  var vc = document.getElementById('verify-card');
+  vc.style.display='block';
+  var p = PARTICIPANTS[code];
+  if(p && (p.name)){
+    vc.innerHTML='<div class="verify-ok">✅</div>'
+      +'<h2 style="font-size:1.2rem;font-weight:800;color:#0D1B2A;margin-bottom:.5rem">Сертификат подлинный</h2>'
+      +'<p style="font-size:14px;color:#64748B;margin-bottom:1rem">Этот сертификат был выдан участнику:</p>'
+      +'<div style="background:#F0FDF4;border-radius:12px;padding:1rem;margin-bottom:1rem">'
+      +'<div style="font-size:16px;font-weight:700;color:#0D1B2A">'+p.name+'</div>'
+      +'<div style="font-size:13px;color:#64748B;margin-top:4px">Дата: '+p.date+' · Уральск, Казахстан</div>'
+      +'<div style="font-size:13px;color:#64748B">Код: '+code+'</div></div>'
+      +'<a href="https://epilepsyschool.asia" style="font-size:13px;color:#2563EB;text-decoration:none;font-weight:600">← epilepsyschool.asia</a>';
+  } else {
+    vc.innerHTML='<div class="verify-fail">❌</div>'
+      +'<h2 style="font-size:1.2rem;font-weight:800;color:#0D1B2A;margin-bottom:.5rem">Сертификат не найден</h2>'
+      +'<p style="font-size:14px;color:#64748B;margin-bottom:1rem">Код <strong>'+code+'</strong> не найден в базе данных или сертификат недействителен.</p>'
+      +'<a href="https://epilepsyschool.asia" style="font-size:13px;color:#2563EB;font-weight:600">← epilepsyschool.asia</a>';
+  }
+}
+checkVerify();
 </script>
 </body>
 </html>
