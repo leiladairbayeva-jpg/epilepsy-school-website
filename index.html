@@ -326,10 +326,10 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 
 
 /* ── LANGUAGE SWITCHER ── */
-.lang-switcher{display:flex;gap:2px;background:rgba(255,255,255,.12);border-radius:8px;padding:3px;border:1px solid rgba(255,255,255,.15)}
-.lang-btn{font-family:'Sora',sans-serif;font-size:11px;font-weight:700;padding:5px 11px;border-radius:6px;border:none;background:transparent;color:rgba(255,255,255,.7);cursor:pointer;transition:all .15s;letter-spacing:.05em}
-.lang-btn.active{background:#2563EB;color:#fff;box-shadow:0 1px 4px rgba(37,99,235,.4)}
-.lang-btn:hover:not(.active){background:rgba(255,255,255,.1);color:#fff}
+.lang-switcher{display:flex;gap:2px;background:#F1F5F9;border-radius:8px;padding:3px;border:1px solid #E2E8F0}
+.lang-btn{font-family:'Sora',sans-serif;font-size:11px;font-weight:700;padding:5px 11px;border-radius:6px;border:none;background:transparent;color:#64748B;cursor:pointer;transition:all .15s;letter-spacing:.05em}
+.lang-btn.active{background:#2563EB;color:#fff;box-shadow:0 1px 4px rgba(37,99,235,.3)}
+.lang-btn:hover:not(.active){background:#E2E8F0;color:#0D1B2A}
 [data-lang]{transition:opacity .2s}
 
 </style>
@@ -361,8 +361,8 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
   <div class="hero-content">
     <div>
       <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span data-i18n="hero_badge">Воркшоп · Базовый уровень · ILAE</div>
-      <h1>Школа<br><em>Эпилептологии</em></h1>
-      <p class="hero-sub">3-дневный интенсив для неврологов, педиатров и резидентов по современным стандартам ILAE</p>
+      <h1 data-i18n="hero_title">Школа<br><em>Эпилептологии</em></h1>
+      <p class="hero-sub" data-i18n="hero_sub">3-дневный интенсив для неврологов, педиатров и резидентов по современным стандартам ILAE</p>
       <div class="hero-pills">
         <div class="pill">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
@@ -485,11 +485,11 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Прошедших школы</div></div>
-    <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Лет в неврологии</div></div>
-    <div class="stat"><div class="stat-num">25+</div><div class="stat-label">Лет в эпилептологии</div></div>
-    <div class="stat"><div class="stat-num">9</div><div class="stat-label">Доменов компетенций</div></div>
-    <div class="stat"><div class="stat-num">ILAE</div><div class="stat-label">Член Комиссии по терапии</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label" data-i18n="stats1">Прошедших школы</div></div>
+    <div class="stat"><div class="stat-num">30+</div><div class="stat-label" data-i18n="stats2">Лет в неврологии</div></div>
+    <div class="stat"><div class="stat-num">25+</div><div class="stat-label" data-i18n="stats3">Лет в эпилептологии</div></div>
+    <div class="stat"><div class="stat-num">9</div><div class="stat-label" data-i18n="stats4">Доменов компетенций</div></div>
+    <div class="stat"><div class="stat-num">ILAE</div><div class="stat-label" data-i18n="stats5">Член Комиссии по терапии</div></div>
   </div>
 </div>
 
@@ -497,7 +497,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <section id="goals">
   <div class="section">
     <div class="eyebrow" data-i18n="goals_label">Цели обучения</div>
-    <h2 class="sec-title">Что вы получите<br>после 3 дней</h2>
+    <h2 class="sec-title" data-i18n="goals_title">Что вы получите<br>после 3 дней</h2>
     <div class="stripe"></div>
     <div class="goals-grid">
       <div class="goal-card"><div class="goal-num">01 · Классификация</div><div class="goal-title">Приступы по ILAE 2017</div><div class="goal-desc">Чётко различать фокальные, генерализованные и неизвестного начала — по современной классификации</div></div>
@@ -514,9 +514,9 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <section id="competencies" style="background:var(--ink)">
   <div class="section">
     <div class="eyebrow" data-i18n="comp_label">Road Map · Level 1</div>
-    <h2 class="sec-title" style="color:#fff">Компетенции<br>современного эпилептолога</h2>
+    <h2 class="sec-title" style="color:#fff" data-i18n="comp_title">Компетенции<br>современного эпилептолога</h2>
     <div class="stripe" style="background:#3B82F6"></div>
-    <p class="sec-desc">9 доменов международного стандарта — от базовой терминологии до сложных клинических ситуаций</p>
+    <p class="sec-desc" data-i18n="comp_desc">9 доменов международного стандарта — от базовой терминологии до сложных клинических ситуаций</p>
     <div class="comp-source">
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
       Источник: <a href="https://www.ilae.org/guidelines/ilae-curriculum" target="_blank" rel="noopener">ILAE Curriculum — Road Map of Competencies in Epilepsy Care (2023)</a>
@@ -539,7 +539,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <section id="program">
   <div class="section">
     <div class="eyebrow" data-i18n="prog_label">Программа обучения</div>
-    <h2 class="sec-title">3 дня структурированного<br>обучения</h2>
+    <h2 class="sec-title" data-i18n="prog_title">3 дня структурированного<br>обучения</h2>
     <div class="stripe"></div>
     <div class="day-nav">
       <button class="day-btn on" onclick="switchDay(0,this)" data-i18n="day1">День 1</button>
@@ -614,9 +614,9 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <section id="checklist-s">
   <div class="section">
     <div class="eyebrow" data-i18n="check_label">Самооценка</div>
-    <h2 class="sec-title">Чек-лист базовых<br>компетенций</h2>
+    <h2 class="sec-title" data-i18n="check_title">Чек-лист базовых<br>компетенций</h2>
     <div class="stripe"></div>
-    <p class="sec-desc">Отметьте то, что уже знаете — увидите, чему научит воркшоп</p>
+    <p class="sec-desc" data-i18n="check_desc">Отметьте то, что уже знаете — увидите, чему научит воркшоп</p>
     <div class="check-wrap" id="checklist">
       <div class="ci" onclick="tc(this)"><div class="cbox"><svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><span class="ci-text">Знаю классификацию приступов ILAE 2017</span></div>
       <div class="ci" onclick="tc(this)"><div class="cbox"><svg width="12" height="12" fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div><span class="ci-text">Умею применять диагностические критерии эпилепсии</span></div>
@@ -636,7 +636,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <section id="schools">
   <div class="section">
     <div class="eyebrow" data-i18n="schools_label">История школы</div>
-    <h2 class="sec-title">Уже провели<br>в трёх городах</h2>
+    <h2 class="sec-title" data-i18n="schools_title">Уже провели<br>в трёх городах</h2>
     <div class="stripe"></div>
     <div class="cities-row">
       <div class="city-card">
@@ -668,7 +668,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 
     <!-- TESTIMONIALS -->
     <div class="eyebrow" style="margin-top:1rem" data-i18n="reviews_label">Отзывы участников</div>
-    <h3 style="font-size:1.5rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em;margin-bottom:2rem">Что говорят врачи</h3>
+    <h3 style="font-size:1.5rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em;margin-bottom:2rem" data-i18n="reviews_title">Что говорят врачи</h3>
     <div class="testi-grid">
       <div class="testi-card">
         <div class="testi-q">"</div>
@@ -727,7 +727,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
         </div>
       </div>
       <div class="mentor-right">
-        <h2 class="sec-title">Д-р Лейла<br>Даирбаева</h2>
+        <h2 class="sec-title" data-i18n="mentor_title">Д-р Лейла<br>Даирбаева</h2>
         <p class="mentor-bio">Более 25 лет специализируется в эпилептологии и ЭЭГ-диагностике. Ежегодно участвует в международных конгрессах и обучающих курсах ILAE, входит в состав Комиссии по терапии эпилепсии. Обучает врачей актуальным международным стандартам — доступно, структурированно, на основе реальных клинических случаев из многолетней практики.</p>
         <div class="mentor-tags">
           <span class="mentor-tag">Неврология</span>
@@ -746,7 +746,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <section id="registration">
   <div class="section">
     <div class="eyebrow">Регистрация</div>
-    <h2 class="sec-title">Записаться<br>на воркшоп</h2>
+    <h2 class="sec-title" data-i18n="reg_title">Записаться<br>на воркшоп</h2>
     <div class="stripe"></div>
     <div class="reg-grid">
       <div>
@@ -797,8 +797,8 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
         <div class="price-card">
           <div class="price-top">
             <div>
-              <div class="price-amount">30 000</div>
-              <div class="price-currency">тенге · стоимость участия</div>
+              <div class="price-amount" data-i18n="price_amount">30 000</div>
+              <div class="price-currency" data-i18n="price_currency">тенге · стоимость участия</div>
             </div>
             <div class="price-spot"><span class="spot-dot"></span>Мест мало</div>
           </div>
@@ -911,7 +911,7 @@ function submitForm(){
 <!-- SOCIAL STRIP -->
 <div class="social-strip">
   <div class="social-inner">
-    <div class="social-title">Следите за обновлениями</div>
+    <div class="social-title" data-i18n="social_follow">Следите за обновлениями</div>
     <div class="social-sub">Новые школы, клинические разборы, советы по эпилептологии</div>
     <div class="social-cards">
       <a class="soc-card" href="https://instagram.com/dr.leila_dairbayeva" target="_blank" rel="noopener">
@@ -954,8 +954,8 @@ function submitForm(){
 <div style="background:#fff;border-top:1px solid #E2E8F0;padding:3rem 2rem;text-align:center">
   <div style="max-width:1100px;margin:0 auto">
     <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#2563EB;margin-bottom:.5rem">Instagram</div>
-    <h2 style="font-family:'Sora',sans-serif;font-size:1.6rem;font-weight:800;color:#0D1B2A;letter-spacing:-0.03em;margin-bottom:.5rem">@dr.leila_dairbayeva</h2>
-    <p style="font-size:14px;color:#64748B;margin-bottom:1.5rem">Клинические разборы, ЭЭГ-случаи и анонсы новых школ</p>
+    <h2 style="font-family:'Sora',sans-serif;font-size:1.6rem;font-weight:800;color:#0D1B2A;letter-spacing:-0.03em;margin-bottom:.5rem" data-i18n="ig_title">@dr.leila_dairbayeva</h2>
+    <p style="font-size:14px;color:#64748B;margin-bottom:1.5rem" data-i18n="ig_sub">Клинические разборы, ЭЭГ-случаи и анонсы новых школ</p>
     <a href="https://instagram.com/dr.leila_dairbayeva" target="_blank" rel="noopener"
        style="display:inline-flex;align-items:center;gap:10px;padding:12px 28px;background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;border-radius:40px;text-decoration:none;margin-bottom:2rem;transition:opacity .2s"
        onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
@@ -1060,7 +1060,7 @@ var TRANSLATIONS = {
     chat_name:'Помощник — Школа Эпилептологии',
     chat_status:'Онлайн · отвечу за секунду',
     chat_placeholder:'Напишите вопрос...',
-    next_city:'→ Следующий', done_city:'✓ Завершён',
+    next_city:'→ Следующий', done_city:'✓ Завершён', social_follow:'Следите за обновлениями',
   },
   kz: {
     nav_goals:'Мақсаттар', nav_program:'Бағдарлама', nav_reviews:'Пікірлер',
@@ -1104,7 +1104,7 @@ var TRANSLATIONS = {
     chat_name:'Көмекші — Эпилептология Мектебі',
     chat_status:'Онлайн · бір секундта жауап беремін',
     chat_placeholder:'Сұрақ жазыңыз...',
-    next_city:'→ Келесі', done_city:'✓ Аяқталды',
+    next_city:'→ Келесі', done_city:'✓ Аяқталды', social_follow:'Жаңартуларды қадағалаңыз',
   },
   en: {
     nav_goals:'Goals', nav_program:'Program', nav_reviews:'Reviews',
@@ -1148,7 +1148,7 @@ var TRANSLATIONS = {
     chat_name:'Assistant — Epilepsy School',
     chat_status:'Online · reply in seconds',
     chat_placeholder:'Type your question...',
-    next_city:'→ Next', done_city:'✓ Completed',
+    next_city:'→ Next', done_city:'✓ Completed', social_follow:'Follow for updates',
   }
 };
 
@@ -1188,7 +1188,7 @@ function setLang(lang) {
   setHTML('[data-i18n="stats5"]', t.stats5);
 
   // Section labels & titles
-  var pairs = ['goals_label','goals_title','comp_label','comp_title','comp_desc',
+  var pairs = ['goals_label','goals_title','comp_label','comp_title','comp_desc','hero_title','hero_sub','pill_date','pill_city','pill_format','pill_cert','stats1','stats2','stats3','stats4','stats5','social_follow',
     'prog_label','prog_title','day1','day2','day3',
     'check_label','check_title','check_desc',
     'schools_label','schools_title','reviews_label','reviews_title',
