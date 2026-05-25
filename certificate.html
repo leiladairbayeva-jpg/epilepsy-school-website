@@ -227,8 +227,9 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
 <div class="form-wrap" id="form-wrap">
   <div class="form-title">🎓 Укажите данные для сертификата</div>
   <div class="form-name-display" id="form-name-display">Участник воркшопа</div>
-  <div class="fg"><label>Специальность</label><input id="c-spec" type="text" placeholder="Невролог"></div>
-  <div class="fg"><label>Место работы</label><input id="c-work" type="text" placeholder="Городская больница №1, Уральск"></div>
+  <div class="fg"><label>Имя и Фамилия (на языке сертификата)</label><input id="c-fullname" type="text" placeholder="Aigerim Seitkali"></div>
+  <div class="fg"><label>Специальность</label><input id="c-spec" type="text" placeholder="Neurologist"></div>
+  <div class="fg"><label>Место работы</label><input id="c-work" type="text" placeholder="City Hospital No.1, Oral"></div>
   <button class="gen-btn" onclick="generateCert()">Создать сертификат →</button>
 </div>
 
@@ -276,7 +277,7 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
           <img src="signature.png" alt="Подпись" class="sign-img" style="height:40px">
           <div class="sign-line"></div>
           <div class="sign-name">Dr. Leila Dairbayeva</div>
-          <div class="sign-title">Neurologist-Epileptologist<br>President of KzLAE · ILAE Commission on Therapeutic Strategies</div>
+          <div class="sign-title">Neurologist-Epileptologist · President of KzLAE</div>
         </div>
         <div class="qr-block">
           <div class="qr-box" id="qr-container"></div>
@@ -285,6 +286,9 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
         </div>
       </div>
 
+    </div>
+    <div style="text-align:center;padding:6px;font-size:9px;color:#94A3B8;letter-spacing:.06em;font-family:Arial,sans-serif">
+      Supported by <strong style="color:#64748B">LLP "Medical Solution"</strong>
     </div>
     <div class="cert-stripe-bottom"></div>
   </div>
@@ -354,7 +358,8 @@ function checkAccess(){
 }
 
 function generateCert(){
-  var name=currentParticipant.name||document.getElementById('form-name-display').textContent;
+  var nameInput=document.getElementById('c-fullname').value.trim();
+  var name=nameInput||currentParticipant.name||document.getElementById('form-name-display').textContent;
   var spec=document.getElementById('c-spec').value||'—';
   var date=currentParticipant.date||'29–31 May 2026';
   document.getElementById('cert-name-out').textContent=name;
