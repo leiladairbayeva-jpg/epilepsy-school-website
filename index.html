@@ -754,10 +754,10 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
           <div class="form-title" data-i18n="form_title">Заявка на участие</div>
           <div id="form-body">
             <div class="form-row">
-              <div class="fg"><label>Имя *</label><input type="text" placeholder="Айгуль"></div>
-              <div class="fg"><label>Фамилия *</label><input type="text" placeholder="Сейткали"></div>
-              <div class="fg"><label>Email *</label><input type="email" placeholder="doctor@example.com"></div>
-              <div class="fg"><label>Телефон</label><input type="tel" placeholder="+7 (___) ___-__-__"></div>
+              <div class="fg"><label>Имя *</label><input id="f-fname" type="text" placeholder="Айгуль"></div>
+              <div class="fg"><label>Фамилия *</label><input id="f-lname" type="text" placeholder="Сейткали"></div>
+              <div class="fg"><label>Email *</label><input id="f-email" type="email" placeholder="doctor@example.com"></div>
+              <div class="fg"><label>Телефон</label><input id="f-phone" type="tel" placeholder="+7 (___) ___-__-__"></div>
               <div class="fg"><label>Специальность *</label>
                 <select>
                   <option value="">Выберите...</option>
@@ -766,8 +766,8 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
                   <option>Психиатр</option><option>ВОП / Семейный врач</option><option>Другое</option>
                 </select>
               </div>
-              <div class="fg"><label>Город</label><input type="text" placeholder="Уральск"></div>
-              <div class="fg form-full"><label>Место работы</label><input type="text" placeholder="Больница / клиника / университет"></div>
+              <div class="fg"><label>Город</label><input id="f-city" type="text" placeholder="Уральск"></div>
+              <div class="fg form-full"><label>Место работы</label><input id="f-work" type="text" placeholder="Больница / клиника / университет"></div>
             </div>
             <button class="submit-btn" onclick="submitForm()" data-i18n="submit_btn">Подать заявку →</button>
             <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.<br>Ссылка для оплаты придёт на email в течение нескольких минут.</p>
@@ -1562,19 +1562,6 @@ async function completeRegistration() {
   saveToSheets(lead);
 }
 
-// ── GOOGLE SHEETS ──
-function saveToSheets(lead) {
-  try {
-    fetch('https://little-mud-1ca6.leiladairbayeva.workers.dev/sheets', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(lead)
-    }).then(function(r){ return r.json(); })
-      .then(function(d){ console.log('Sheets saved:', d); })
-      .catch(function(e){ console.warn('Sheets error:', e); });
-  } catch(e) { console.warn('Sheets exception:', e); }
-}
-
 // ── TELEGRAM NOTIFICATION ──
 function sendToTelegram(lead) {
   if (!TG_BOT_TOKEN || TG_BOT_TOKEN === 'YOUR_BOT_TOKEN') return;
@@ -1597,15 +1584,19 @@ function sendToTelegram(lead) {
 
 // ── FORM TELEGRAM ──
 function submitForm() {
-  var name  = (document.querySelector('#form-body input[placeholder="Айгуль"]')    || {}).value || '';
-  var lname = (document.querySelector('#form-body input[placeholder="Сейткали"]')   || {}).value || '';
-  var email = (document.querySelector('#form-body input[type="email"]')              || {}).value || '';
-  var phone = (document.querySelector('#form-body input[type="tel"]')                || {}).value || '';
-  var spec  = (document.querySelector('#form-body select')                           || {}).value || '';
-  var work  = (document.querySelector('#form-body input[placeholder*="клиника"]')   || {}).value || '';
+  var fname = (document.getElementById('f-fname') || {}).value || '';
+  var lname = (document.getElementById('f-lname') || {}).value || '';
+  var email = (document.getElementById('f-email') || {}).value || '';
+  var phone = (document.getElementById('f-phone') || {}).value || '';
+  var spec  = (document.getElementById('f-spec')  || {}).value || '';
+  var city  = (document.getElementById('f-city')  || {}).value || '';
+  var work  = (document.getElementById('f-work')  || {}).value || '';
   var lead = {
-    id: Date.now(), name: (name + ' ' + lname).trim(),
-    spec: spec, email: email, phone: phone, work: work,
+    id: Date.now(),
+    name: fname,
+    surname: lname,
+    email: email, phone: phone,
+    spec: spec, city: city, work: work,
     date: new Date().toISOString(), status: 'new', source: 'form'
   };
   var leads = JSON.parse(localStorage.getItem('epilepsy_leads') || '[]');
