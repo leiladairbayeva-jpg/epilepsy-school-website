@@ -1306,7 +1306,8 @@ function updateChatLang(lang) {
 // ══════════════════════════════════════════════
 
 // ── НАСТРОЙКИ (заменить перед деплоем) ──
-var TG_BOT_TOKEN = '8718322604:AAG0c-vZ-XflQsMyao6TPQNIdTDgSjNYwzM';   // от @BotFather
+var TG_BOT_TOKEN = '8718322604:AAG0c-vZ-XflQsMyao6TPQNIdTDgSjNYwzM';
+var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbzNw_FL_91NPgRwEXqh8lmWCfc419F7bI8GuBhfmU1YgwP2MeFePFvuQFNTXZ0xT4g14Q/exec';   // от @BotFather
 var TG_CHAT_ID   = '149741540';    // ваш chat_id
 
 var chatOpen  = false;
@@ -1558,6 +1559,7 @@ async function completeRegistration() {
   localStorage.setItem('epilepsy_leads', JSON.stringify(leads));
   // Send to Telegram
   sendToTelegram(lead);
+  saveToSheets(lead);
 }
 
 // ── TELEGRAM NOTIFICATION ──
@@ -1597,6 +1599,7 @@ function submitForm() {
   leads.push(lead);
   localStorage.setItem('epilepsy_leads', JSON.stringify(leads));
   sendToTelegram(lead);
+  saveToSheets(lead);
   document.getElementById('form-body').style.display = 'none';
   document.getElementById('success-card').style.display = 'block';
 }
