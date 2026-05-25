@@ -1562,6 +1562,23 @@ async function completeRegistration() {
   saveToSheets(lead);
 }
 
+// ── GOOGLE SHEETS ──
+function saveToSheets(lead) {
+  try {
+    var params = 'name='    + encodeURIComponent((lead.name||'')+' '+(lead.surname||'')) +
+                 '&email='  + encodeURIComponent(lead.email||'') +
+                 '&phone='  + encodeURIComponent(lead.phone||'') +
+                 '&spec='   + encodeURIComponent(lead.spec||'') +
+                 '&city='   + encodeURIComponent(lead.city||'') +
+                 '&work='   + encodeURIComponent(lead.work||'') +
+                 '&source=' + encodeURIComponent(lead.source||'сайт') +
+                 '&date='   + encodeURIComponent(new Date().toLocaleString('ru'));
+    var url = 'https://script.google.com/macros/s/AKfycbzNw_FL_91NPgRwEXqh8lmWCfc419F7bI8GuBhfmU1YgwP2MeFePFvuQFNTXZ0xT4g14Q/exec?' + params;
+    fetch(url, {mode:'no-cors'}).catch(function(){});
+    new Image().src = url;
+  } catch(e) {}
+}
+
 // ── TELEGRAM NOTIFICATION ──
 function sendToTelegram(lead) {
   if (!TG_BOT_TOKEN || TG_BOT_TOKEN === 'YOUR_BOT_TOKEN') return;
