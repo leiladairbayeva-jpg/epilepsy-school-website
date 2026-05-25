@@ -324,6 +324,14 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 }
 @media(max-width:440px){.social-cards{grid-template-columns:1fr}}
 
+
+/* ── LANGUAGE SWITCHER ── */
+.lang-switcher{display:flex;gap:2px;background:rgba(255,255,255,.1);border-radius:8px;padding:3px}
+.lang-btn{font-family:'Sora',sans-serif;font-size:12px;font-weight:700;padding:5px 10px;border-radius:6px;border:none;background:transparent;color:rgba(255,255,255,.6);cursor:pointer;transition:all .15s;letter-spacing:.04em}
+.lang-btn.active{background:rgba(255,255,255,.2);color:#fff}
+.lang-btn:hover{color:#fff}
+[data-lang]{transition:opacity .2s}
+
 </style>
 </head>
 <body>
@@ -332,13 +340,14 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <nav>
   <div class="nav-logo">Школа<span>Эпилептологии</span></div>
   <ul class="nav-links">
-    <li><a href="#goals">Цели</a></li>
-    <li><a href="#program">Программа</a></li>
-    <li><a href="#schools">Отзывы</a></li>
-    <li><a href="#mentor">Наставник</a></li>
-    <li><a href="#registration">Регистрация</a></li>
+    <li><a href="#goals" data-i18n="nav_goals">Цели</a></li>
+    <li><a href="#program" data-i18n="nav_program">Программа</a></li>
+    <li><a href="#schools" data-i18n="nav_reviews">Отзывы</a></li>
+    <li><a href="#mentor" data-i18n="nav_mentor">Наставник</a></li>
+    <li><a href="#registration" data-i18n="nav_reg" data-i18n="reg_label">Регистрация</a></li>
   </ul>
-  <div style="display:flex;gap:8px;align-items:center"><a href="certificate.html" style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:var(--gray);text-decoration:none;padding:8px 14px;border:1.5px solid var(--border);border-radius:var(--r);transition:all .2s" onmouseover="this.style.borderColor='#2563EB';this.style.color='#2563EB'" onmouseout="this.style.borderColor='#E2E8F0';this.style.color='#64748B'">🎓 Сертификат</a><a href="#registration" class="nav-btn">Записаться →</a></div>
+  <div style="display:flex;gap:8px;align-items:center">
+    <div class="lang-switcher"><button class="lang-btn active" onclick="setLang('ru')">RU</button><button class="lang-btn" onclick="setLang('kz')">ҚАЗ</button><button class="lang-btn" onclick="setLang('en')">EN</button></div><a href="certificate.html" style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:var(--gray);text-decoration:none;padding:8px 14px;border:1.5px solid var(--border);border-radius:var(--r);transition:all .2s" onmouseover="this.style.borderColor='#2563EB';this.style.color='#2563EB'" onmouseout="this.style.borderColor='#E2E8F0';this.style.color='#64748B'">🎓 Сертификат</a><a href="#registration" class="nav-btn">Записаться →</a></div>
 </nav>
 
 <!-- HERO -->
@@ -351,7 +360,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
   </svg>
   <div class="hero-content">
     <div>
-      <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span>Воркшоп · Базовый уровень · ILAE</div>
+      <div class="hero-eyebrow"><span class="hero-eyebrow-dot"></span data-i18n="hero_badge">Воркшоп · Базовый уровень · ILAE</div>
       <h1>Школа<br><em>Эпилептологии</em></h1>
       <p class="hero-sub">3-дневный интенсив для неврологов, педиатров и резидентов по современным стандартам ILAE</p>
       <div class="hero-pills">
@@ -373,8 +382,8 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
         </div>
       </div>
       <div class="hero-actions">
-        <a href="#registration" class="btn-hero">Записаться на курс</a>
-        <a href="#program" class="btn-ghost">Смотреть программу</a>
+        <a href="#registration" class="btn-hero" data-i18n="btn_signup">Записаться на курс</a>
+        <a href="#program" class="btn-ghost" data-i18n="btn_program">Смотреть программу</a>
         <span class="hero-price">Стоимость: <strong>30 000 ₸</strong></span>
       </div>
     </div>
@@ -487,7 +496,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <!-- GOALS -->
 <section id="goals">
   <div class="section">
-    <div class="eyebrow">Цели обучения</div>
+    <div class="eyebrow" data-i18n="goals_label">Цели обучения</div>
     <h2 class="sec-title">Что вы получите<br>после 3 дней</h2>
     <div class="stripe"></div>
     <div class="goals-grid">
@@ -504,7 +513,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <!-- COMPETENCIES -->
 <section id="competencies" style="background:var(--ink)">
   <div class="section">
-    <div class="eyebrow">Road Map · Level 1</div>
+    <div class="eyebrow" data-i18n="comp_label">Road Map · Level 1</div>
     <h2 class="sec-title" style="color:#fff">Компетенции<br>современного эпилептолога</h2>
     <div class="stripe" style="background:#3B82F6"></div>
     <p class="sec-desc">9 доменов международного стандарта — от базовой терминологии до сложных клинических ситуаций</p>
@@ -529,13 +538,13 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <!-- PROGRAM -->
 <section id="program">
   <div class="section">
-    <div class="eyebrow">Программа обучения</div>
+    <div class="eyebrow" data-i18n="prog_label">Программа обучения</div>
     <h2 class="sec-title">3 дня структурированного<br>обучения</h2>
     <div class="stripe"></div>
     <div class="day-nav">
-      <button class="day-btn on" onclick="switchDay(0,this)">День 1</button>
-      <button class="day-btn" onclick="switchDay(1,this)">День 2</button>
-      <button class="day-btn" onclick="switchDay(2,this)">День 3</button>
+      <button class="day-btn on" onclick="switchDay(0,this)" data-i18n="day1">День 1</button>
+      <button class="day-btn" onclick="switchDay(1,this)" data-i18n="day2">День 2</button>
+      <button class="day-btn" onclick="switchDay(2,this)" data-i18n="day3">День 3</button>
     </div>
     <div class="day-panel on" id="dp0">
       <div class="day-main">
@@ -604,7 +613,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <!-- CHECKLIST -->
 <section id="checklist-s">
   <div class="section">
-    <div class="eyebrow">Самооценка</div>
+    <div class="eyebrow" data-i18n="check_label">Самооценка</div>
     <h2 class="sec-title">Чек-лист базовых<br>компетенций</h2>
     <div class="stripe"></div>
     <p class="sec-desc">Отметьте то, что уже знаете — увидите, чему научит воркшоп</p>
@@ -626,7 +635,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <!-- PAST SCHOOLS -->
 <section id="schools">
   <div class="section">
-    <div class="eyebrow">История школы</div>
+    <div class="eyebrow" data-i18n="schools_label">История школы</div>
     <h2 class="sec-title">Уже провели<br>в трёх городах</h2>
     <div class="stripe"></div>
     <div class="cities-row">
@@ -634,31 +643,31 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
         <div class="city-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-8-5.7-8-12a8 8 0 0 1 16 0c0 6.3-8 12-8 12z"/><circle cx="12" cy="9" r="2"/></svg></div>
         <div class="city-name">Астана</div>
         <div class="city-date">Июнь 2024</div>
-        <div class="city-status">✓ Завершён</div>
+        <div class="city-status" data-i18n="done_city">✓ Завершён</div>
       </div>
       <div class="city-card">
         <div class="city-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-8-5.7-8-12a8 8 0 0 1 16 0c0 6.3-8 12-8 12z"/><circle cx="12" cy="9" r="2"/></svg></div>
         <div class="city-name">Шымкент</div>
         <div class="city-date">Ноябрь 2024</div>
-        <div class="city-status">✓ Завершён</div>
+        <div class="city-status" data-i18n="done_city">✓ Завершён</div>
       </div>
       <div class="city-card">
         <div class="city-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-8-5.7-8-12a8 8 0 0 1 16 0c0 6.3-8 12-8 12z"/><circle cx="12" cy="9" r="2"/></svg></div>
         <div class="city-name">Алматы</div>
         <div class="city-date">Январь 2025</div>
-        <div class="city-status">✓ Завершён</div>
+        <div class="city-status" data-i18n="done_city">✓ Завершён</div>
       </div>
       <div class="city-card next-one">
         <div class="city-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-8-5.7-8-12a8 8 0 0 1 16 0c0 6.3-8 12-8 12z"/><circle cx="12" cy="9" r="2"/></svg></div>
         <div class="city-name">Уральск</div>
         <div class="city-date">29–31 мая 2026</div>
-        <div class="city-status">→ Следующий</div>
+        <div class="city-status" data-i18n="next_city">→ Следующий</div>
         <div style="margin-top:8px;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.04em;border-top:1px solid rgba(255,255,255,.15);padding-top:7px;line-height:1.4">При поддержке<br><strong style="color:rgba(255,255,255,.75);font-size:10px">ТОО «Медикал Солюшн»</strong></div>
       </div>
     </div>
 
     <!-- TESTIMONIALS -->
-    <div class="eyebrow" style="margin-top:1rem">Отзывы участников</div>
+    <div class="eyebrow" style="margin-top:1rem" data-i18n="reviews_label">Отзывы участников</div>
     <h3 style="font-size:1.5rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em;margin-bottom:2rem">Что говорят врачи</h3>
     <div class="testi-grid">
       <div class="testi-card">
@@ -692,7 +701,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <!-- MENTOR -->
 <section id="mentor">
   <div class="section">
-    <div class="eyebrow">Ваш наставник</div>
+    <div class="eyebrow" data-i18n="mentor_label">Ваш наставник</div>
     <div class="stripe"></div>
     <div class="mentor-layout">
       <div class="mentor-card-left">
@@ -742,7 +751,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
     <div class="reg-grid">
       <div>
         <div class="form-card" id="form-card">
-          <div class="form-title">Заявка на участие</div>
+          <div class="form-title" data-i18n="form_title">Заявка на участие</div>
           <div id="form-body">
             <div class="form-row">
               <div class="fg"><label>Имя *</label><input type="text" placeholder="Айгуль"></div>
@@ -760,7 +769,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
               <div class="fg"><label>Город</label><input type="text" placeholder="Уральск"></div>
               <div class="fg form-full"><label>Место работы</label><input type="text" placeholder="Больница / клиника / университет"></div>
             </div>
-            <button class="submit-btn" onclick="submitForm()">Подать заявку →</button>
+            <button class="submit-btn" onclick="submitForm()" data-i18n="submit_btn">Подать заявку →</button>
             <p class="form-note">Нажимая кнопку, вы соглашаетесь с политикой конфиденциальности.<br>Ссылка для оплаты придёт на email в течение нескольких минут.</p>
           </div>
           <div class="success-card" id="success-card">
@@ -1006,6 +1015,224 @@ function submitForm(){
 
 
 <script>
+
+// ══ MULTILINGUAL ══
+var TRANSLATIONS = {
+  ru: {
+    nav_goals:'Цели', nav_program:'Программа', nav_reviews:'Отзывы',
+    nav_mentor:'Наставник', nav_reg:'Регистрация', nav_cert:'🎓 Сертификат',
+    nav_signup:'Записаться →',
+    hero_badge:'Воркшоп · Базовый уровень · ILAE',
+    hero_title:'Школа<br><em>Эпилептологии</em>',
+    hero_sub:'3-дневный интенсив для неврологов, педиатров и резидентов по современным стандартам ILAE',
+    pill_date:'29–31 мая 2026', pill_city:'Уральск, Казахстан',
+    pill_format:'Офлайн · Очный формат', pill_cert:'Сертификат участника',
+    btn_signup:'Записаться на курс', btn_program:'Смотреть программу',
+    price_note:'Стоимость:',
+    stats1:'Прошедших школы', stats2:'Лет в неврологии',
+    stats3:'Лет в эпилептологии', stats4:'Доменов компетенций', stats5:'Член Комиссии по терапии',
+    goals_label:'Цели обучения', goals_title:'Что вы получите<br>после 3 дней',
+    comp_label:'Road Map · Level 1', comp_title:'Компетенции<br>современного эпилептолога',
+    comp_desc:'9 доменов международного стандарта — от базовой терминологии до сложных клинических ситуаций',
+    prog_label:'Программа обучения', prog_title:'3 дня структурированного<br>обучения',
+    day1:'День 1', day2:'День 2', day3:'День 3',
+    check_label:'Самооценка', check_title:'Чек-лист базовых<br>компетенций',
+    check_desc:'Отметьте то, что уже знаете — увидите, чему научит воркшоп',
+    schools_label:'История школы', schools_title:'Уже провели<br>в трёх городах',
+    reviews_label:'Отзывы участников', reviews_title:'Что говорят врачи',
+    mentor_label:'Ваш наставник', mentor_title:'Д-р Лейла<br>Даирбаева',
+    reg_label:'Регистрация', reg_title:'Записаться<br>на воркшоп',
+    price_amount:'30 000', price_currency:'тенге · стоимость участия',
+    spots:'Мест мало', form_title:'Заявка на участие',
+    f_name:'Имя *', f_lname:'Фамилия *', f_email:'Email *', f_phone:'Телефон',
+    f_spec:'Специальность *', f_city:'Город', f_work:'Место работы',
+    f_spec_opt0:'Выберите...', f_spec_opt1:'Невролог', f_spec_opt2:'Педиатр',
+    f_spec_opt3:'Врач-резидент неврологии', f_spec_opt4:'Психиатр',
+    f_spec_opt5:'ВОП / Семейный врач', f_spec_opt6:'Другое',
+    submit_btn:'Подать заявку →',
+    success_title:'Заявка принята!',
+    success_text:'Ссылка для оплаты через Kaspi Pay или Halyk Pay придёт на ваш email в течение нескольких минут.',
+    pay_kaspi:'Kaspi Pay', pay_halyk:'Halyk Pay',
+    footer_brand:'Школа<span>Эпилептологии</span> · Д-р Лейла Даирбаева',
+    ig_label:'Instagram', ig_title:'@dr.leila_dairbayeva',
+    ig_sub:'Клинические разборы, ЭЭГ-случаи и анонсы новых школ',
+    ig_btn:'Подписаться в Instagram',
+    chat_name:'Помощник — Школа Эпилептологии',
+    chat_status:'Онлайн · отвечу за секунду',
+    chat_placeholder:'Напишите вопрос...',
+    next_city:'→ Следующий', done_city:'✓ Завершён',
+  },
+  kz: {
+    nav_goals:'Мақсаттар', nav_program:'Бағдарлама', nav_reviews:'Пікірлер',
+    nav_mentor:'Тәлімгер', nav_reg:'Тіркелу', nav_cert:'🎓 Сертификат',
+    nav_signup:'Жазылу →',
+    hero_badge:'Воркшоп · Базалық деңгей · ILAE',
+    hero_title:'Эпилептология<br><em>Мектебі</em>',
+    hero_sub:'Неврологтарға, педиатрларға және резиденттерге арналған ILAE халықаралық стандарттары бойынша 3 күндік интенсив',
+    pill_date:'29–31 мамыр 2026', pill_city:'Орал, Қазақстан',
+    pill_format:'Офлайн · Қатысу форматы', pill_cert:'Қатысушы сертификаты',
+    btn_signup:'Курсқа жазылу', btn_program:'Бағдарламаны қарау',
+    price_note:'Құны:',
+    stats1:'Өткен мектептер', stats2:'Нейрологиядағы жыл',
+    stats3:'Эпилептологиядағы жыл', stats4:'Құзыреттілік домені', stats5:'ILAE Терапия комиссиясының мүшесі',
+    goals_label:'Оқу мақсаттары', goals_title:'3 күннен кейін<br>не аласыз',
+    comp_label:'Road Map · Level 1', comp_title:'Заманауи эпилептологтың<br>құзыреттіліктері',
+    comp_desc:'ILAE халықаралық стандартының 9 домені — базалық терминологиядан күрделі клиникалық жағдайларға дейін',
+    prog_label:'Оқу бағдарламасы', prog_title:'Құрылымды оқудың<br>3 күні',
+    day1:'1-күн', day2:'2-күн', day3:'3-күн',
+    check_label:'Өзін-өзі бағалау', check_title:'Базалық<br>құзыреттілік тізімі',
+    check_desc:'Білетінді белгілеңіз — воркшоп не үйрететінін көресіз',
+    schools_label:'Мектеп тарихы', schools_title:'Үш қалада<br>өткіздік',
+    reviews_label:'Қатысушылардың пікірлері', reviews_title:'Дәрігерлер не айтады',
+    mentor_label:'Тәлімгеріңіз', mentor_title:'Д-р Лейла<br>Дайырбаева',
+    reg_label:'Тіркелу', reg_title:'Воркшопқа<br>жазылу',
+    price_amount:'30 000', price_currency:'теңге · қатысу құны',
+    spots:'Орын аз', form_title:'Қатысуға өтінім',
+    f_name:'Аты *', f_lname:'Тегі *', f_email:'Email *', f_phone:'Телефон',
+    f_spec:'Мамандығы *', f_city:'Қала', f_work:'Жұмыс орны',
+    f_spec_opt0:'Таңдаңыз...', f_spec_opt1:'Невролог', f_spec_opt2:'Педиатр',
+    f_spec_opt3:'Неврология резиденті', f_spec_opt4:'Психиатр',
+    f_spec_opt5:'ЖДД / Отбасылық дәрігер', f_spec_opt6:'Басқа',
+    submit_btn:'Өтінім беру →',
+    success_title:'Өтінім қабылданды!',
+    success_text:'Kaspi Pay немесе Halyk Pay арқылы төлем сілтемесі бірнеше минут ішінде email-ге келеді.',
+    pay_kaspi:'Kaspi Pay', pay_halyk:'Halyk Pay',
+    footer_brand:'Эпилептология<span>Мектебі</span> · Д-р Лейла Дайырбаева',
+    ig_label:'Instagram', ig_title:'@dr.leila_dairbayeva',
+    ig_sub:'Клиникалық талдаулар, ЭЭГ жағдайлары және жаңа мектеп анонстары',
+    ig_btn:'Instagram-да жазылу',
+    chat_name:'Көмекші — Эпилептология Мектебі',
+    chat_status:'Онлайн · бір секундта жауап беремін',
+    chat_placeholder:'Сұрақ жазыңыз...',
+    next_city:'→ Келесі', done_city:'✓ Аяқталды',
+  },
+  en: {
+    nav_goals:'Goals', nav_program:'Program', nav_reviews:'Reviews',
+    nav_mentor:'Mentor', nav_reg:'Registration', nav_cert:'🎓 Certificate',
+    nav_signup:'Register →',
+    hero_badge:'Workshop · Basic Level · ILAE',
+    hero_title:'Epilepsy<br><em>School</em>',
+    hero_sub:'A 3-day intensive for neurologists, pediatricians and residents — modern epileptology by ILAE standards',
+    pill_date:'May 29–31, 2026', pill_city:'Oral (Uralsk), Kazakhstan',
+    pill_format:'In-person · Offline format', pill_cert:'Certificate of participation',
+    btn_signup:'Register for the course', btn_program:'View program',
+    price_note:'Price:',
+    stats1:'Schools completed', stats2:'Years in neurology',
+    stats3:'Years in epileptology', stats4:'Competency domains', stats5:'ILAE Therapeutic Commission',
+    goals_label:'Learning goals', goals_title:'What you will get<br>after 3 days',
+    comp_label:'Road Map · Level 1', comp_title:'Competencies of a<br>modern epileptologist',
+    comp_desc:'9 domains of international standard — from basic terminology to complex clinical cases',
+    prog_label:'Training program', prog_title:'3 days of structured<br>learning',
+    day1:'Day 1', day2:'Day 2', day3:'Day 3',
+    check_label:'Self-assessment', check_title:'Basic competency<br>checklist',
+    check_desc:'Check what you already know — see what the workshop will teach you',
+    schools_label:'School history', schools_title:'Already held<br>in three cities',
+    reviews_label:'Participant reviews', reviews_title:'What doctors say',
+    mentor_label:'Your mentor', mentor_title:'Dr. Leila<br>Dairbayeva',
+    reg_label:'Registration', reg_title:'Register<br>for the workshop',
+    price_amount:'30 000', price_currency:'KZT · participation fee',
+    spots:'Limited seats', form_title:'Application form',
+    f_name:'First name *', f_lname:'Last name *', f_email:'Email *', f_phone:'Phone',
+    f_spec:'Specialty *', f_city:'City', f_work:'Institution',
+    f_spec_opt0:'Select...', f_spec_opt1:'Neurologist', f_spec_opt2:'Pediatrician',
+    f_spec_opt3:'Neurology resident', f_spec_opt4:'Psychiatrist',
+    f_spec_opt5:'GP / Family doctor', f_spec_opt6:'Other',
+    submit_btn:'Submit application →',
+    success_title:'Application received!',
+    success_text:'A payment link via Kaspi Pay or Halyk Pay will be sent to your email within a few minutes.',
+    pay_kaspi:'Kaspi Pay', pay_halyk:'Halyk Pay',
+    footer_brand:'Epilepsy<span>School</span> · Dr. Leila Dairbayeva',
+    ig_label:'Instagram', ig_title:'@dr.leila_dairbayeva',
+    ig_sub:'Clinical cases, EEG reviews and new school announcements',
+    ig_btn:'Follow on Instagram',
+    chat_name:'Assistant — Epilepsy School',
+    chat_status:'Online · reply in seconds',
+    chat_placeholder:'Type your question...',
+    next_city:'→ Next', done_city:'✓ Completed',
+  }
+};
+
+var currentLang = 'ru';
+
+function setLang(lang) {
+  currentLang = lang;
+  var t = TRANSLATIONS[lang];
+  if(!t) return;
+
+  // Nav links
+  setHTML('[data-i18n="nav_goals"]', t.nav_goals);
+  setHTML('[data-i18n="nav_program"]', t.nav_program);
+  setHTML('[data-i18n="nav_reviews"]', t.nav_reviews);
+  setHTML('[data-i18n="nav_mentor"]', t.nav_mentor);
+  setHTML('[data-i18n="nav_reg"]', t.nav_reg);
+  setHTML('[data-i18n="nav_cert"]', t.nav_cert);
+  setHTML('[data-i18n="nav_signup"]', t.nav_signup);
+
+  // Hero
+  setHTML('[data-i18n="hero_badge"]', t.hero_badge);
+  setHTML('[data-i18n="hero_title"]', t.hero_title);
+  setHTML('[data-i18n="hero_sub"]', t.hero_sub);
+  setHTML('[data-i18n="pill_date"]', t.pill_date);
+  setHTML('[data-i18n="pill_city"]', t.pill_city);
+  setHTML('[data-i18n="pill_format"]', t.pill_format);
+  setHTML('[data-i18n="pill_cert"]', t.pill_cert);
+  setHTML('[data-i18n="btn_signup"]', t.btn_signup);
+  setHTML('[data-i18n="btn_program"]', t.btn_program);
+  setHTML('[data-i18n="price_note"]', t.price_note);
+
+  // Stats
+  setHTML('[data-i18n="stats1"]', t.stats1);
+  setHTML('[data-i18n="stats2"]', t.stats2);
+  setHTML('[data-i18n="stats3"]', t.stats3);
+  setHTML('[data-i18n="stats4"]', t.stats4);
+  setHTML('[data-i18n="stats5"]', t.stats5);
+
+  // Section labels & titles
+  var pairs = ['goals_label','goals_title','comp_label','comp_title','comp_desc',
+    'prog_label','prog_title','day1','day2','day3',
+    'check_label','check_title','check_desc',
+    'schools_label','schools_title','reviews_label','reviews_title',
+    'mentor_label','mentor_title','reg_label','reg_title',
+    'price_amount','price_currency','spots','form_title',
+    'f_name','f_lname','f_email','f_phone','f_spec','f_city','f_work',
+    'submit_btn','success_title','success_text','pay_kaspi','pay_halyk',
+    'footer_brand','ig_label','ig_title','ig_sub','ig_btn',
+    'chat_name','chat_status','chat_placeholder',
+    'next_city','done_city',
+    'f_spec_opt0','f_spec_opt1','f_spec_opt2','f_spec_opt3','f_spec_opt4','f_spec_opt5','f_spec_opt6'
+  ];
+  pairs.forEach(function(k){ setHTML('[data-i18n="'+k+'"]', t[k]||''); });
+
+  // Placeholder for input
+  var inp = document.getElementById('chat-input');
+  if(inp) inp.placeholder = t.chat_placeholder;
+
+  // Update lang buttons
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.textContent.toLowerCase().replace('қаз','kz') === lang || 
+      (b.textContent === 'ҚАЗ' && lang === 'kz'));
+  });
+
+  // Update html lang attribute
+  document.documentElement.lang = lang === 'kz' ? 'kk' : lang;
+
+  // Re-init chatbot language
+  if(typeof SYSTEM_PROMPT !== 'undefined') updateChatLang(lang);
+}
+
+function setHTML(selector, html) {
+  document.querySelectorAll(selector).forEach(function(el){ el.innerHTML = html; });
+}
+
+function updateChatLang(lang) {
+  // Update chatbot greeting language
+  var greetings = {
+    ru: 'Здравствуйте! 👋 Я AI-помощник <strong>Школы Эпилептологии</strong>.<br>Отвечаю на вопросы о курсе и могу записать вас. Чем помочь?',
+    kz: 'Сәлеметсіз бе! 👋 Мен <strong>Эпилептология Мектебінің</strong> AI-көмекшісімін.<br>Курс туралы сұрақтарға жауап беремін. Қалай көмектесе аламын?',
+    en: 'Hello! 👋 I am the AI assistant of the <strong>Epilepsy School</strong>.<br>I answer questions about the course and can register you. How can I help?'
+  };
+}
+
 // ══════════════════════════════════════════════
 // AI CHATBOT — Школа Эпилептологии
 // Использует Anthropic API для умных ответов
