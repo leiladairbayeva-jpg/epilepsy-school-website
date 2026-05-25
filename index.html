@@ -1562,6 +1562,19 @@ async function completeRegistration() {
   saveToSheets(lead);
 }
 
+// ── GOOGLE SHEETS ──
+function saveToSheets(lead) {
+  try {
+    fetch('https://little-mud-1ca6.leiladairbayeva.workers.dev/sheets', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(lead)
+    }).then(function(r){ return r.json(); })
+      .then(function(d){ console.log('Sheets saved:', d); })
+      .catch(function(e){ console.warn('Sheets error:', e); });
+  } catch(e) { console.warn('Sheets exception:', e); }
+}
+
 // ── TELEGRAM NOTIFICATION ──
 function sendToTelegram(lead) {
   if (!TG_BOT_TOKEN || TG_BOT_TOKEN === 'YOUR_BOT_TOKEN') return;
