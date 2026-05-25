@@ -397,16 +397,9 @@ tr:hover td{background:#FAFBFF}
 <script>
 // ── DATA ──
 function getLeads(){
-  var demo=[
-    {id:1,name:'Анна Сейткали',spec:'Невролог',email:'a.seitkali@hospital.kz',source:'form',date:'2026-05-10T09:14:00Z',status:'paid',note:''},
-    {id:2,name:'Марат Джаксыбеков',spec:'Педиатр',email:'m.djaks@clinic.kz',source:'chatbot',date:'2026-05-11T11:32:00Z',status:'contacted',note:''},
-    {id:3,name:'Динара Усенова',spec:'Резидент',email:'d.usenova@med.kz',source:'instagram',date:'2026-05-12T14:05:00Z',status:'new',note:''},
-    {id:4,name:'Алия Нурланова',spec:'Невролог',email:'a.nurlanova@uni.kz',source:'telegram',date:'2026-05-13T08:50:00Z',status:'new',note:''},
-    {id:5,name:'Болат Ахметов',spec:'Другое',email:'b.akhmetov@gmail.com',source:'form',date:'2026-05-14T16:20:00Z',status:'lost',note:''},
-    {id:6,name:'Жанар Кенесова',spec:'Педиатр',email:'zh.kenesova@hospital.kz',source:'chatbot',date:'2026-05-15T10:10:00Z',status:'paid',note:''},
-  ];
+  // Only real leads from chatbot and registration form
   var stored = JSON.parse(localStorage.getItem('epilepsy_leads')||'[]');
-  return demo.concat(stored);
+  return stored;
 }
 var allLeads = getLeads();
 var currentFilter = 'all';
