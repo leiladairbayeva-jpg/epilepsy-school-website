@@ -513,89 +513,6 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
   </div>
 </section>
 
-<!-- COMPETENCIES -->
-<section id="competencies" style="background:var(--ink)">
-  <div class="section">
-    <div class="eyebrow" data-i18n="comp_label">Road Map · Competency Levels</div>
-    <h2 class="sec-title" style="color:#fff" data-i18n="comp_title">Компетенции<br>современного эпилептолога</h2>
-    <div class="stripe" style="background:#3B82F6"></div>
-    <p class="sec-desc" data-i18n="comp_desc">9 доменов международного стандарта — от базовой терминологии до сложных клинических ситуаций</p>
-
-    <!-- Level tabs -->
-    <div class="day-nav" style="margin-bottom:2rem">
-      <button class="day-btn on" onclick="switchLevel(0,this)">Level 1 — Базовый</button>
-      <button class="day-btn" onclick="switchLevel(1,this)">Level 2 — Продвинутый</button>
-      <button class="day-btn" onclick="switchLevel(2,this)">Level 3 — Экспертный</button>
-    </div>
-
-    <!-- Level 1 -->
-    <div class="level-panel on" id="lv0">
-      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem">Для неврологов, педиатров и резидентов — базовые компетенции ILAE</p>
-      <div class="comp-grid">
-        <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t" data-i18n="comp_d1t">Основы и терминология</div><div class="comp-d" data-i18n="comp_d1d">Определения ILAE 2014, 2017; эпидемиология; патофизиология</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 02</div><div class="comp-t" data-i18n="comp_d2t">Классификация приступов</div><div class="comp-d" data-i18n="comp_d2d">Фокальные, генерализованные, неизвестного начала</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 03</div><div class="comp-t" data-i18n="comp_d3t">Классификация эпилепсий</div><div class="comp-d" data-i18n="comp_d3d">Этиологические группы, синдромы, фенотипы</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 04</div><div class="comp-t" data-i18n="comp_d4t">Диагностика</div><div class="comp-d" data-i18n="comp_d4d">ЭЭГ, нейровизуализация, лабораторные тесты</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 05</div><div class="comp-t" data-i18n="comp_d5t">Дифференциальный диагноз</div><div class="comp-d" data-i18n="comp_d5d">Синкопе, ТИА, неэпилептические приступы</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 06</div><div class="comp-t" data-i18n="comp_d6t">Антиэпилептическая терапия</div><div class="comp-d" data-i18n="comp_d6d">Принципы выбора АЭП, мониторинг, политерапия</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 07</div><div class="comp-t" data-i18n="comp_d7t">Особые популяции</div><div class="comp-d" data-i18n="comp_d7d">Дети, женщины репродуктивного возраста, пожилые</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 08</div><div class="comp-t" data-i18n="comp_d8t">Неотложные состояния</div><div class="comp-d" data-i18n="comp_d8d">Эпилептический статус, алгоритм ведения</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 09</div><div class="comp-t" data-i18n="comp_d9t">Обучение пациентов</div><div class="comp-d" data-i18n="comp_d9d">Безопасность, стигма, качество жизни</div></div>
-      </div>
-      <div class="comp-source">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        Источник: <a href="https://www.ilae.org/guidelines/ilae-curriculum" target="_blank" rel="noopener">ILAE Curriculum — Road Map of Competencies in Epilepsy Care (2023)</a>
-      </div>
-    </div>
-
-    <!-- Level 2 -->
-    <div class="level-panel" id="lv1">
-      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem">Для практикующих неврологов — углублённые компетенции. <span style="color:#FCD34D">Скоро — Level 2 воркшоп</span></p>
-      <div class="comp-grid">
-        <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t">Продвинутая ЭЭГ-диагностика</div><div class="comp-d">Длительный ЭЭГ-мониторинг, видео-ЭЭГ, иктальные паттерны</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 02</div><div class="comp-t">Генетика эпилепсий</div><div class="comp-d">Моногенные эпилепсии, генетическое тестирование, каналопатии</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 03</div><div class="comp-t">Структурные эпилепсии</div><div class="comp-d">МРТ-протоколы, фокальные кортикальные дисплазии, опухоли</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 04</div><div class="comp-t">Рефрактерная эпилепсия</div><div class="comp-d">Определение, стратегии лечения, оценка хирургии</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 05</div><div class="comp-t">Комбинированная терапия АЭП</div><div class="comp-d">Рациональная политерапия, фармакокинетика, взаимодействия</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 06</div><div class="comp-t">Эпилепсия у женщин</div><div class="comp-d">Беременность, контрацепция, лактация, гормональные факторы</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 07</div><div class="comp-t">Нейропсихология</div><div class="comp-d">Когнитивные нарушения, депрессия, тревога при эпилепсии</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 08</div><div class="comp-t">Нейростимуляция</div><div class="comp-d">VNS, DBS, RNS — показания и ведение пациентов</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 09</div><div class="comp-t">Паллиативная помощь</div><div class="comp-d">Синдром внезапной смерти (SUDEP), паллиативные стратегии</div></div>
-      </div>
-      <div style="margin-top:1.5rem;background:rgba(252,211,77,.1);border:1px solid rgba(252,211,77,.3);border-radius:12px;padding:1rem 1.25rem;display:flex;align-items:center;gap:12px">
-        <span style="font-size:1.5rem">🔜</span>
-        <div>
-          <div style="font-size:14px;font-weight:700;color:#FCD34D">Level 2 воркшоп — скоро</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px">Следите за анонсами на epilepsyschool.asia</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Level 3 -->
-    <div class="level-panel" id="lv2">
-      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem">Для эпилептологов — экспертный уровень. <span style="color:#FCD34D">Скоро — Level 3 воркшоп</span></p>
-      <div class="comp-grid">
-        <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t">Предхирургическая оценка</div><div class="comp-d">Инвазивный ЭЭГ-мониторинг, SEEG, нейронавигация</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 02</div><div class="comp-t">Хирургия эпилепсии</div><div class="comp-d">Виды операций, показания, исходы, постхирургическое ведение</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 03</div><div class="comp-t">Педиатрическая эпилептология</div><div class="comp-d">Синдром Драве, ЛГС, инфантильные спазмы, кетодиета</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 04</div><div class="comp-t">Аутоиммунные энцефалиты</div><div class="comp-d">Anti-NMDA, LGI1, CASPR2 — диагностика и иммунотерапия</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 05</div><div class="comp-t">Клинические исследования</div><div class="comp-d">Дизайн исследований, GCP, биомаркеры эпилепсии</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 06</div><div class="comp-t">Телемедицина и AI</div><div class="comp-d">Цифровые биомаркеры, автоматический анализ ЭЭГ, wearables</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 07</div><div class="comp-t">Редкие синдромы</div><div class="comp-d">Генетические эпилептические энцефалопатии, орфанные болезни</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 08</div><div class="comp-t">Международные стандарты</div><div class="comp-d">ILAE Guidelines, Epilepsia, обновления классификаций</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 09</div><div class="comp-t">Обучение и менторство</div><div class="comp-d">Методология преподавания эпилептологии, программы резидентуры</div></div>
-      </div>
-      <div style="margin-top:1.5rem;background:rgba(252,211,77,.1);border:1px solid rgba(252,211,77,.3);border-radius:12px;padding:1rem 1.25rem;display:flex;align-items:center;gap:12px">
-        <span style="font-size:1.5rem">🔬</span>
-        <div>
-          <div style="font-size:14px;font-weight:700;color:#FCD34D">Level 3 — Экспертный воркшоп</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px">Для практикующих эпилептологов. Анонс скоро.</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
 <!-- MENTOR -->
 <section id="mentor">
   <div class="section">
@@ -803,6 +720,89 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
   </div>
 </section>
 
+<!-- COMPETENCIES -->
+<section id="competencies" style="background:var(--ink)">
+  <div class="section">
+    <div class="eyebrow" data-i18n="comp_label">Road Map · Competency Levels</div>
+    <h2 class="sec-title" style="color:#fff" data-i18n="comp_title">Компетенции<br>современного эпилептолога</h2>
+    <div class="stripe" style="background:#3B82F6"></div>
+    <p class="sec-desc" data-i18n="comp_desc">9 доменов международного стандарта — от базовой терминологии до сложных клинических ситуаций</p>
+
+    <!-- Level tabs -->
+    <div class="day-nav" style="margin-bottom:2rem">
+      <button class="day-btn on" onclick="switchLevel(0,this)">Level 1 — Базовый</button>
+      <button class="day-btn" onclick="switchLevel(1,this)">Level 2 — Продвинутый</button>
+      <button class="day-btn" onclick="switchLevel(2,this)">Level 3 — Экспертный</button>
+    </div>
+
+    <!-- Level 1 -->
+    <div class="level-panel on" id="lv0">
+      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem">Для неврологов, педиатров и резидентов — базовые компетенции ILAE</p>
+      <div class="comp-grid">
+        <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t" data-i18n="comp_d1t">Основы и терминология</div><div class="comp-d" data-i18n="comp_d1d">Определения ILAE 2014, 2017; эпидемиология; патофизиология</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 02</div><div class="comp-t" data-i18n="comp_d2t">Классификация приступов</div><div class="comp-d" data-i18n="comp_d2d">Фокальные, генерализованные, неизвестного начала</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 03</div><div class="comp-t" data-i18n="comp_d3t">Классификация эпилепсий</div><div class="comp-d" data-i18n="comp_d3d">Этиологические группы, синдромы, фенотипы</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 04</div><div class="comp-t" data-i18n="comp_d4t">Диагностика</div><div class="comp-d" data-i18n="comp_d4d">ЭЭГ, нейровизуализация, лабораторные тесты</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 05</div><div class="comp-t" data-i18n="comp_d5t">Дифференциальный диагноз</div><div class="comp-d" data-i18n="comp_d5d">Синкопе, ТИА, неэпилептические приступы</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 06</div><div class="comp-t" data-i18n="comp_d6t">Антиэпилептическая терапия</div><div class="comp-d" data-i18n="comp_d6d">Принципы выбора АЭП, мониторинг, политерапия</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 07</div><div class="comp-t" data-i18n="comp_d7t">Особые популяции</div><div class="comp-d" data-i18n="comp_d7d">Дети, женщины репродуктивного возраста, пожилые</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 08</div><div class="comp-t" data-i18n="comp_d8t">Неотложные состояния</div><div class="comp-d" data-i18n="comp_d8d">Эпилептический статус, алгоритм ведения</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 09</div><div class="comp-t" data-i18n="comp_d9t">Обучение пациентов</div><div class="comp-d" data-i18n="comp_d9d">Безопасность, стигма, качество жизни</div></div>
+      </div>
+      <div class="comp-source">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        Источник: <a href="https://www.ilae.org/guidelines/ilae-curriculum" target="_blank" rel="noopener">ILAE Curriculum — Road Map of Competencies in Epilepsy Care (2023)</a>
+      </div>
+    </div>
+
+    <!-- Level 2 -->
+    <div class="level-panel" id="lv1">
+      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem">Для практикующих неврологов — углублённые компетенции. <span style="color:#FCD34D">Скоро — Level 2 воркшоп</span></p>
+      <div class="comp-grid">
+        <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t">Продвинутая ЭЭГ-диагностика</div><div class="comp-d">Длительный ЭЭГ-мониторинг, видео-ЭЭГ, иктальные паттерны</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 02</div><div class="comp-t">Генетика эпилепсий</div><div class="comp-d">Моногенные эпилепсии, генетическое тестирование, каналопатии</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 03</div><div class="comp-t">Структурные эпилепсии</div><div class="comp-d">МРТ-протоколы, фокальные кортикальные дисплазии, опухоли</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 04</div><div class="comp-t">Рефрактерная эпилепсия</div><div class="comp-d">Определение, стратегии лечения, оценка хирургии</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 05</div><div class="comp-t">Комбинированная терапия АЭП</div><div class="comp-d">Рациональная политерапия, фармакокинетика, взаимодействия</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 06</div><div class="comp-t">Эпилепсия у женщин</div><div class="comp-d">Беременность, контрацепция, лактация, гормональные факторы</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 07</div><div class="comp-t">Нейропсихология</div><div class="comp-d">Когнитивные нарушения, депрессия, тревога при эпилепсии</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 08</div><div class="comp-t">Нейростимуляция</div><div class="comp-d">VNS, DBS, RNS — показания и ведение пациентов</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 09</div><div class="comp-t">Паллиативная помощь</div><div class="comp-d">Синдром внезапной смерти (SUDEP), паллиативные стратегии</div></div>
+      </div>
+      <div style="margin-top:1.5rem;background:rgba(252,211,77,.1);border:1px solid rgba(252,211,77,.3);border-radius:12px;padding:1rem 1.25rem;display:flex;align-items:center;gap:12px">
+        <span style="font-size:1.5rem">🔜</span>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:#FCD34D">Level 2 воркшоп — скоро</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px">Следите за анонсами на epilepsyschool.asia</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Level 3 -->
+    <div class="level-panel" id="lv2">
+      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem">Для эпилептологов — экспертный уровень. <span style="color:#FCD34D">Скоро — Level 3 воркшоп</span></p>
+      <div class="comp-grid">
+        <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t">Предхирургическая оценка</div><div class="comp-d">Инвазивный ЭЭГ-мониторинг, SEEG, нейронавигация</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 02</div><div class="comp-t">Хирургия эпилепсии</div><div class="comp-d">Виды операций, показания, исходы, постхирургическое ведение</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 03</div><div class="comp-t">Педиатрическая эпилептология</div><div class="comp-d">Синдром Драве, ЛГС, инфантильные спазмы, кетодиета</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 04</div><div class="comp-t">Аутоиммунные энцефалиты</div><div class="comp-d">Anti-NMDA, LGI1, CASPR2 — диагностика и иммунотерапия</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 05</div><div class="comp-t">Клинические исследования</div><div class="comp-d">Дизайн исследований, GCP, биомаркеры эпилепсии</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 06</div><div class="comp-t">Телемедицина и AI</div><div class="comp-d">Цифровые биомаркеры, автоматический анализ ЭЭГ, wearables</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 07</div><div class="comp-t">Редкие синдромы</div><div class="comp-d">Генетические эпилептические энцефалопатии, орфанные болезни</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 08</div><div class="comp-t">Международные стандарты</div><div class="comp-d">ILAE Guidelines, Epilepsia, обновления классификаций</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 09</div><div class="comp-t">Обучение и менторство</div><div class="comp-d">Методология преподавания эпилептологии, программы резидентуры</div></div>
+      </div>
+      <div style="margin-top:1.5rem;background:rgba(252,211,77,.1);border:1px solid rgba(252,211,77,.3);border-radius:12px;padding:1rem 1.25rem;display:flex;align-items:center;gap:12px">
+        <span style="font-size:1.5rem">🔬</span>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:#FCD34D">Level 3 — Экспертный воркшоп</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px">Для практикующих эпилептологов. Анонс скоро.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 <!-- REGISTRATION -->
 <section id="registration">
   <div class="section">
