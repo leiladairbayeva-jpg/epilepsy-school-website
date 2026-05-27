@@ -270,9 +270,19 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
   .price-sidebar{position:static}
   .day-panel.on{grid-template-columns:1fr}
 }
+@media(max-width:860px){
+  .nav-links{display:none}
+}
 @media(max-width:600px){
   .nav-links{display:none}
   .goals-grid,.comp-grid,.testi-grid,.cities-row,.check-wrap,.form-row{grid-template-columns:1fr}
+  /* Mobile nav: logo left, signup button right - always visible */
+  nav{padding:0 1rem;height:56px}
+  .lang-switcher .lang-btn{font-size:10px;padding:4px 7px}
+  .lang-switcher{gap:1px;padding:2px}
+  /* Hide cert button on mobile to save space */
+  .nav-cert-btn{display:none}
+  .nav-btn{font-size:12px;padding:8px 14px;white-space:nowrap}
 }
 
 /* ── CHATBOT ── */
@@ -351,7 +361,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
     <li><a href="#registration" data-i18n="nav_reg">Регистрация</a></li>
   </ul>
   <div style="display:flex;gap:8px;align-items:center">
-    <div class="lang-switcher"><button class="lang-btn active" onclick="setLang('ru')">RU</button><button class="lang-btn" onclick="setLang('kz')">ҚАЗ</button><button class="lang-btn" onclick="setLang('en')">EN</button></div><a href="certificate.html" style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:var(--gray);text-decoration:none;padding:8px 14px;border:1.5px solid var(--border);border-radius:var(--r);transition:all .2s" onmouseover="this.style.borderColor='#2563EB';this.style.color='#2563EB'" onmouseout="this.style.borderColor='#E2E8F0';this.style.color='#64748B'">🎓 Сертификат</a><a href="#registration" class="nav-btn">Записаться →</a></div>
+    <div class="lang-switcher"><button class="lang-btn active" onclick="setLang('ru')">RU</button><button class="lang-btn" onclick="setLang('kz')">ҚАЗ</button><button class="lang-btn" onclick="setLang('en')">EN</button></div><a href="certificate.html" class="nav-cert-btn" style="font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:var(--gray);text-decoration:none;padding:8px 14px;border:1.5px solid var(--border);border-radius:var(--r);transition:all .2s" onmouseover="this.style.borderColor='#2563EB';this.style.color='#2563EB'" onmouseout="this.style.borderColor='#E2E8F0';this.style.color='#64748B'">🎓 Сертификат</a><a href="#registration" class="nav-btn">Записаться →</a></div>
 </nav>
 
 <!-- HERO -->
