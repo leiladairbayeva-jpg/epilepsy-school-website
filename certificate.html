@@ -197,14 +197,64 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
 .btn-new{flex:1;padding:12px;background:#F1F5F9;color:#0D1B2A;font-family:'Raleway',sans-serif;font-size:13px;font-weight:700;border:1.5px solid #E2E8F0;border-radius:10px;cursor:pointer}
 
 @media print{
-  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-  html,body{margin:0!important;padding:0!important}
+  *{
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+    box-sizing:border-box!important;
+  }
+  html,body{
+    margin:0!important;padding:0!important;
+    width:297mm!important;height:210mm!important;
+    overflow:hidden!important;
+  }
   .gate,.form-wrap,.action-btns,.verify-card,.no-print{display:none!important}
-  .cert-outer{display:block!important;width:100%!important;margin:0!important;padding:0!important}
-  .cert-wrap{box-shadow:none!important;border-radius:0!important;margin:0!important;padding:36px 56px 28px!important}
-  .cert-stripe-top,.cert-stripe-bottom{height:20px!important}
-  .cert-stripe-top::after,.cert-stripe-bottom::before{height:8px!important}
-  @page{size:landscape;margin:0}
+  .cert-outer{
+    display:block!important;
+    width:297mm!important;
+    height:210mm!important;
+    max-width:297mm!important;
+    overflow:hidden!important;
+    margin:0!important;padding:0!important;
+  }
+  .cert-wrap{
+    width:297mm!important;
+    height:210mm!important;
+    max-height:210mm!important;
+    overflow:hidden!important;
+    box-shadow:none!important;
+    border-radius:0!important;
+    margin:0!important;
+    padding:0!important;
+    page-break-inside:avoid!important;
+    break-inside:avoid!important;
+  }
+  .cert-stripe-top{height:16px!important}
+  .cert-stripe-top::after{height:6px!important}
+  .cert-stripe-bottom{height:16px!important}
+  .cert-stripe-bottom::before{height:6px!important}
+  .cert-body{padding:14px 48px 10px!important}
+  .cert-header{margin-bottom:10px!important}
+  .cert-logo-left img{height:40px!important}
+  .cert-logo-right img{height:44px!important}
+  .cert-main-title{font-size:42px!important;margin-bottom:2px!important}
+  .cert-sub-title{font-size:20px!important;margin-bottom:0!important}
+  .cert-divider{margin:8px 0!important}
+  .cert-presented{font-size:12px!important;margin-bottom:6px!important}
+  .cert-name{font-size:38px!important;margin-bottom:10px!important}
+  .cert-contribution{font-size:13px!important;margin-bottom:6px!important}
+  .cert-details{margin-bottom:10px!important;padding:8px!important}
+  .cert-dl{font-size:9px!important}
+  .cert-dv{font-size:13px!important}
+  .cert-footer{padding-top:8px!important}
+  .sign-img{height:32px!important}
+  .sign-line{margin-bottom:4px!important}
+  .sign-name{font-size:12px!important}
+  .sign-title{font-size:10px!important}
+  .qr-box{width:56px!important;height:56px!important}
+  .qr-label{font-size:8px!important}
+  .cert-num{font-size:8px!important}
+  img[alt="Печать KzLAE"]{width:110px!important;height:110px!important}
+  @page{size:297mm 210mm;margin:0}
 }
 </style>
 </head>
