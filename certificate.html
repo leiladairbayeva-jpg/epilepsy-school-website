@@ -6,6 +6,7 @@
 <title>Сертификат — Школа Эпилептологии</title>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;-webkit-font-smoothing:antialiased}
@@ -449,6 +450,20 @@ function checkVerify(){
   }
 }
 checkVerify();
+
+function downloadPNG() {
+  var btns = document.querySelector('.action-btns');
+  if(btns) btns.style.display='none';
+  var el = document.querySelector('.cert-wrap');
+  var name = document.getElementById('cert-name-out').textContent || 'certificate';
+  html2canvas(el, {scale:2, useCORS:true, backgroundColor:'#fff'}).then(function(canvas){
+    var a = document.createElement('a');
+    a.download = 'Сертификат_' + name.replace(/\s+/g,'_') + '.png';
+    a.href = canvas.toDataURL('image/png',1.0);
+    a.click();
+    if(btns) btns.style.display='flex';
+  }).catch(function(){ if(btns) btns.style.display='flex'; });
+}
 
 function printLandscape() {
   // Force landscape orientation
