@@ -6,6 +6,7 @@
 <title>Сертификат — Школа Эпилептологии</title>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;-webkit-font-smoothing:antialiased}
@@ -350,7 +351,8 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
   </div>
 
   <div class="action-btns">
-    <button class="btn-print" onclick="printLandscape()">🖨️ Print / Save as PDF</button>
+    <button class="btn-print" onclick="downloadPNG()" style="background:#10B981">📥 Скачать PNG</button>
+    <button class="btn-print" onclick="printLandscape()" style="background:#1B3A6B">🖨️ Print / PDF</button>
     <button class="btn-new" onclick="location.reload()">← New certificate</button>
   </div>
 </div>
@@ -449,6 +451,33 @@ function checkVerify(){
   }
 }
 checkVerify();
+
+function downloadPNG() {
+  var btn = document.querySelector('.action-btns');
+  if(btn) btn.style.display = 'none';
+  
+  var certEl = document.querySelector('.cert-wrap');
+  var name = document.getElementById('cert-name-out').textContent || 'certificate';
+  
+  html2canvas(certEl, {
+    scale: 2,
+    useCORS: true,
+    allowTaint: true,
+    backgroundColor: '#ffffff',
+    width: certEl.offsetWidth,
+    height: certEl.offsetHeight,
+    logging: false
+  }).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'Сертификат_' + name.replace(/\s+/g,'_') + '.png';
+    link.href = canvas.toDataURL('image/png', 1.0);
+    link.click();
+    if(btn) btn.style.display = 'flex';
+  }).catch(function(e) {
+    if(btn) btn.style.display = 'flex';
+    alert('Ошибка: ' + e.message);
+  });
+}
 
 function printLandscape() {
   // Force landscape orientation
