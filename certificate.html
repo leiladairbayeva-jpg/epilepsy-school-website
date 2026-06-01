@@ -86,7 +86,7 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
 
 /* Center title */
 .cert-center{text-align:center;flex:1;padding:0 20px}
-.cert-main-title{letter-spacing:.06em!important;
+.cert-main-title{font-size:52px!important;letter-spacing:.06em!important;
   font-family:'EB Garamond',serif;
   font-size:46px;
   font-weight:600;
@@ -96,7 +96,7 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
   line-height:1;
   margin-bottom:4px;
 }
-.cert-sub-title{
+.cert-sub-title{font-size:24px!important;
   font-family:'EB Garamond',serif;
   font-size:22px;
   font-weight:600;
@@ -113,7 +113,7 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
 }
 
 /* Content */
-.cert-presented{
+.cert-presented{font-size:15px!important;
   text-align:center;
   font-size:13px;
   font-weight:600;
@@ -122,7 +122,7 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
   text-transform:uppercase;
   margin-bottom:12px;
 }
-.cert-name{
+.cert-name{font-size:48px!important;
   text-align:center;
   font-family:'EB Garamond',serif;
   font-size:44px;
@@ -165,8 +165,8 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
   border-bottom:1px solid #E2E8F0;
 }
 .cert-detail{text-align:center}
-.cert-dl{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#94A3B8;margin-bottom:3px}
-.cert-dv{font-size:14px;font-weight:700;color:#1B3A6B}
+.cert-dl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#94A3B8;margin-bottom:3px}
+.cert-dv{font-size:15px;font-weight:700;color:#1B3A6B}
 
 /* Footer signatures */
 .cert-footer{
@@ -178,15 +178,15 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
 .sign-block{text-align:center;flex:1}
 .sign-img{height:44px;object-fit:contain;display:block;margin:0 auto 4px}
 .sign-line{width:180px;height:1px;background:#0D1B2A;margin:0 auto 5px}
-.sign-name{font-size:13px;font-weight:700;color:#0D1B2A;letter-spacing:.02em}
-.sign-title{font-size:11px;color:#64748B;margin-top:2px;line-height:1.4}
+.sign-name{font-size:14px;font-weight:700;color:#0D1B2A;letter-spacing:.02em}
+.sign-title{font-size:12px;color:#64748B;margin-top:2px;line-height:1.4}
 
 /* QR block */
 .qr-block{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
 .qr-box{width:72px;height:72px;border:1px solid #E2E8F0;border-radius:4px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#fff;padding:4px}
 .qr-box canvas,.qr-box img{width:64px!important;height:64px!important}
-.qr-label{font-size:8px;color:#94A3B8;margin-top:3px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-align:center}
-.cert-num{font-size:8px;color:#94A3B8;text-align:center;margin-top:1px}
+.qr-label{font-size:10px;color:#94A3B8;margin-top:3px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-align:center}
+.cert-num{font-size:10px;color:#94A3B8;text-align:center;margin-top:1px}
 
 /* VERIFY */
 .verify-card{display:none;background:#fff;border-radius:20px;padding:2rem;width:100%;max-width:440px;box-shadow:0 4px 24px rgba(0,0,0,.08);text-align:center}
@@ -199,7 +199,7 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
 @media print{
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   html,body{margin:0!important;padding:0!important}
-  .gate,.form-wrap,.action-btns,.verify-card{display:none!important}
+  .gate,.form-wrap,.action-btns,.verify-card,.no-print{display:none!important}
   .cert-outer{display:block!important;width:100%!important;margin:0!important;padding:0!important}
   .cert-wrap{box-shadow:none!important;border-radius:0!important;margin:0!important;padding:36px 56px 28px!important}
   .cert-stripe-top,.cert-stripe-bottom{height:20px!important}
@@ -293,7 +293,7 @@ body{font-family:'Raleway',sans-serif;background:#F1F5F9;min-height:100vh;displa
       </div>
 
     </div>
-    <div style="text-align:center;padding:4px 8px;font-size:10px;color:#64748B;letter-spacing:.04em;font-family:Arial,sans-serif;white-space:nowrap">
+    <div class="no-print" style="text-align:center;padding:4px 8px;font-size:10px;color:#64748B;letter-spacing:.04em;font-family:Arial,sans-serif;white-space:nowrap">
       Supported by <strong style="color:#64748B">LLP "Medical Solution"</strong>
     </div>
     <div class="cert-stripe-bottom"></div>
