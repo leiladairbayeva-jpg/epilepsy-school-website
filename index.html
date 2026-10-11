@@ -191,33 +191,40 @@ nav.scrolled{box-shadow:0 1px 20px rgba(0,0,0,.08)}
 
 /* TESTIMONIALS */
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.testi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:2rem;position:relative;transition:all .3s cubic-bezier(.2,.8,.2,1);box-shadow:var(--shadow)}
-.testi-card:hover{box-shadow:0 12px 40px rgba(37,99,235,.1);transform:translateY(-3px);border-color:var(--sky2)}
-.testi-q{font-family:'Crimson Pro',serif;font-size:4rem;color:var(--sky2);line-height:.8;margin-bottom:1rem}
-.testi-text{font-family:'Crimson Pro',serif;font-size:1.15rem;color:var(--mid);line-height:1.75;margin-bottom:1.25rem;font-style:italic}
-.testi-footer{display:flex;align-items:center;gap:10px}
-.testi-av{width:36px;height:36px;border-radius:50%;background:var(--sky2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--accent);flex-shrink:0}
-.testi-role{font-size:13px;font-weight:600;color:var(--ink)}
-.testi-city{font-size:11px;color:var(--gray)}
+.testi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:2rem;position:relative;transition:all .3s cubic-bezier(.2,.8,.2,1);box-shadow:var(--shadow);display:flex;flex-direction:column}
+.testi-card:hover{box-shadow:0 12px 40px rgba(37,99,235,.1);transform:translateY(-3px)}
+.testi-card:nth-child(1){border-top:3px solid var(--accent)}
+.testi-card:nth-child(2){border-top:3px solid var(--teal)}
+.testi-card:nth-child(3){border-top:3px solid #8B5CF6}
+.testi-stars{color:#F59E0B;font-size:14px;letter-spacing:2px;margin-bottom:.75rem}
+.testi-text{font-family:'Crimson Pro',serif;font-size:1.1rem;color:var(--mid);line-height:1.8;margin-bottom:1.25rem;font-style:italic;flex:1}
+.testi-footer{display:flex;align-items:center;gap:12px;padding-top:1rem;border-top:1px solid var(--border)}
+.testi-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--sky2),#BFDBFE);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--accent);flex-shrink:0}
+.testi-role{font-size:13px;font-weight:700;color:var(--ink)}
+.testi-city{font-size:11px;color:var(--gray);margin-top:2px}
 
 /* MENTOR */
-#mentor{background:var(--white)}
-.mentor-layout{display:grid;grid-template-columns:280px 1fr;gap:3rem;align-items:start}
-.mentor-card-left{background:var(--ink);border-radius:var(--r2);padding:2rem;text-align:center;color:#fff}
-.mentor-av{width:100px;height:100px;border-radius:50%;background:linear-gradient(135deg,var(--mid),var(--teal));display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:700;margin:0 auto 1rem;border:3px solid rgba(255,255,255,.15)}
-.mentor-nm{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:4px}
-.mentor-pos{font-size:12px;color:rgba(255,255,255,.5);line-height:1.5}
-.mentor-divider{height:1px;background:rgba(255,255,255,.08);margin:1.25rem 0}
-.mentor-stat-row{text-align:left;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-start;gap:10px}
-.mentor-stat-row:last-child{border-bottom:none}
-.mentor-stat-row svg{color:#60A5FA;margin-top:2px;flex-shrink:0}
-.mentor-stat-text{font-size:13px;color:rgba(255,255,255,.75);line-height:1.4}
-.mentor-stat-strong{font-weight:700;color:#fff}
+#mentor{background:linear-gradient(180deg,var(--white) 0%,var(--gray2) 100%)}
+.mentor-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.mentor-left{position:relative}
+.mentor-avatar-wrap{position:relative;display:inline-block}
+.mentor-av{width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,#1D4ED8,#0D9488);display:flex;align-items:center;justify-content:center;font-size:4rem;font-weight:700;color:#fff;border:4px solid #fff;box-shadow:0 16px 48px rgba(37,99,235,.25)}
+.mentor-badge{position:absolute;bottom:8px;right:-8px;background:#fff;border:2px solid var(--sky2);border-radius:var(--r);padding:8px 14px;box-shadow:var(--shadow)}
+.mentor-badge-label{font-size:10px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.08em}
+.mentor-badge-val{font-size:14px;font-weight:800;color:var(--accent)}
+.mentor-facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:2rem}
+.mentor-fact{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1rem 1.25rem;box-shadow:var(--shadow)}
+.mentor-fact-num{font-size:1.6rem;font-weight:800;color:var(--ink);letter-spacing:-0.03em;line-height:1}
+.mentor-fact-label{font-size:11px;color:var(--gray);margin-top:4px;font-weight:500}
 .mentor-right{padding-top:.5rem}
-.mentor-right .sec-title{margin-bottom:.75rem}
-.mentor-bio{font-family:'Crimson Pro',serif;font-size:1.2rem;color:var(--mid);line-height:1.8;margin-bottom:1.5rem;font-weight:300}
-.mentor-tags{display:flex;flex-wrap:wrap;gap:8px}
+.mentor-right .sec-title{margin-bottom:1rem}
+.mentor-bio{font-family:'Crimson Pro',serif;font-size:1.15rem;color:var(--mid);line-height:1.85;margin-bottom:1.5rem;font-weight:300}
+.mentor-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.5rem}
 .mentor-tag{font-size:12px;font-weight:600;background:var(--sky);color:var(--accent);padding:5px 14px;border-radius:40px;border:1px solid var(--sky2)}
+.mentor-ilae{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0A1628,#162035);border-radius:var(--r);padding:14px 20px;color:#fff}
+.mentor-ilae-icon{font-size:1.5rem}
+.mentor-ilae-text{font-size:13px;color:rgba(255,255,255,.7);line-height:1.4}
+.mentor-ilae-text strong{color:#FCD34D;font-size:14px;display:block}
 
 /* REGISTRATION */
 #registration{background:linear-gradient(180deg,var(--gray2) 0%,#F0F4FA 100%)}
@@ -267,7 +274,8 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
   .hero-visual{display:none}
   .goals-grid,.comp-grid,.testi-grid{grid-template-columns:1fr 1fr}
   .cities-row{grid-template-columns:1fr 1fr}
-  .mentor-layout{grid-template-columns:1fr}
+  .mentor-layout{grid-template-columns:1fr;gap:2rem}
+  .mentor-av{width:140px;height:140px;font-size:3rem}
   .reg-grid{grid-template-columns:1fr}
   .price-sidebar{position:static}
   .day-panel.on{grid-template-columns:1fr}
@@ -521,10 +529,10 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat"><div class="stat-num">3</div><div class="stat-label" data-i18n="stats1">Прошедших школы</div></div>
-    <div class="stat"><div class="stat-num">30+</div><div class="stat-label" data-i18n="stats2">Лет в неврологии</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-label" data-i18n="stats1">Города Казахстана</div></div>
+    <div class="stat"><div class="stat-num">140+</div><div class="stat-label" data-i18n="stats2">Врачей прошли обучение</div></div>
     <div class="stat"><div class="stat-num">25+</div><div class="stat-label" data-i18n="stats3">Лет в эпилептологии</div></div>
-    <div class="stat"><div class="stat-num">9</div><div class="stat-label" data-i18n="stats4">Доменов компетенций</div></div>
+    <div class="stat"><div class="stat-num">9</div><div class="stat-label" data-i18n="stats4">Доменов компетенций ILAE</div></div>
     <div class="stat"><div class="stat-num">ILAE</div><div class="stat-label" data-i18n="stats5">Член Комиссии по терапии</div></div>
   </div>
 </div>
@@ -552,26 +560,31 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
     <div class="eyebrow" data-i18n="mentor_label">Ваш наставник</div>
     <div class="stripe"></div>
     <div class="mentor-layout">
-      <div class="mentor-card-left">
-        <img src="PHOTO-2026-02-11-14-16-16.jpg" alt="Лейла Даирбаева" style="width:160px;height:160px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid rgba(255,255,255,.15);margin:0 auto 1rem;display:block">
-        <div class="mentor-nm">Лейла Даирбаева</div>
-        <div class="mentor-pos">Невролог-эпилептолог<br>Член Комиссии по терапии ILAE</div>
-        <div class="mentor-divider"></div>
-        <div class="mentor-stat-row">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          <div class="mentor-stat-text"><span class="mentor-stat-strong">30+ лет</span> в неврологии</div>
+      <div class="mentor-left">
+        <div class="mentor-avatar-wrap">
+          <img src="PHOTO-2026-02-11-14-16-16.jpg" alt="Лейла Даирбаева" class="mentor-av" style="object-fit:cover;object-position:center top">
+          <div class="mentor-badge">
+            <div class="mentor-badge-label">Член Комиссии</div>
+            <div class="mentor-badge-val">ILAE</div>
+          </div>
         </div>
-        <div class="mentor-stat-row">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          <div class="mentor-stat-text"><span class="mentor-stat-strong">25+ лет</span> в эпилептологии и ЭЭГ</div>
-        </div>
-        <div class="mentor-stat-row">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10A15.3 15.3 0 0 1 8 12z"/></svg>
-          <div class="mentor-stat-text">Ежегодные курсы и конгрессы <span class="mentor-stat-strong">ILAE</span></div>
-        </div>
-        <div class="mentor-stat-row">
-          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          <div class="mentor-stat-text">Член <span class="mentor-stat-strong">Комиссии по терапии ILAE</span></div>
+        <div class="mentor-facts">
+          <div class="mentor-fact">
+            <div class="mentor-fact-num">30+</div>
+            <div class="mentor-fact-label">лет в неврологии</div>
+          </div>
+          <div class="mentor-fact">
+            <div class="mentor-fact-num">25+</div>
+            <div class="mentor-fact-label">лет в эпилептологии и ЭЭГ</div>
+          </div>
+          <div class="mentor-fact">
+            <div class="mentor-fact-num">4</div>
+            <div class="mentor-fact-label">проведённых школы</div>
+          </div>
+          <div class="mentor-fact">
+            <div class="mentor-fact-num">140+</div>
+            <div class="mentor-fact-label">врачей обучено</div>
+          </div>
         </div>
       </div>
       <div class="mentor-right">
@@ -584,6 +597,13 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
           <span class="mentor-tag">ILAE</span>
           <span class="mentor-tag">Педиатрическая эпилептология</span>
           <span class="mentor-tag">Клиническое обучение</span>
+        </div>
+        <div class="mentor-ilae">
+          <div class="mentor-ilae-icon">🌐</div>
+          <div class="mentor-ilae-text">
+            <strong>Международная лига против эпилепсии</strong>
+            Член Комиссии по терапии эпилепсии · Ежегодные конгрессы ILAE
+          </div>
         </div>
       </div>
     </div>
@@ -603,7 +623,7 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
     </div>
     <div class="day-panel on" id="dp0">
       <div class="day-main">
-        <div class="day-tag" data-i18n="dtag1">День 1 · 29 мая</div>
+        <div class="day-tag" data-i18n="dtag1">День 1</div>
         <div class="day-title" data-i18n="dp1t">Понять эпилепсию</div>
         <ul class="day-list">
           <li><div class="day-dot"></div data-i18n="dp1l1">Современные определения и классификация приступов по ILAE 2017</li>
@@ -623,7 +643,7 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
     </div>
     <div class="day-panel" id="dp1">
       <div class="day-main">
-        <div class="day-tag" data-i18n="dtag2">День 2 · 30 мая</div>
+        <div class="day-tag" data-i18n="dtag2">День 2</div>
         <div class="day-title" data-i18n="dp2t">Диагностировать правильно</div>
         <ul class="day-list">
           <li><div class="day-dot"></div data-i18n="dp2l1">ЭЭГ для не-эпилептолога: что важно увидеть и как не ошибиться</li>
@@ -643,7 +663,7 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
     </div>
     <div class="day-panel" id="dp2">
       <div class="day-main">
-        <div class="day-tag" data-i18n="dtag3">День 3 · 31 мая</div>
+        <div class="day-tag" data-i18n="dtag3">День 3</div>
         <div class="day-title" data-i18n="dp3t">Лечить по международным клиническим рекомендациям</div>
         <ul class="day-list">
           <li><div class="day-dot"></div data-i18n="dp3l1">Антиэпилептические препараты: современный арсенал и выбор</li>
@@ -731,27 +751,27 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
     <h3 style="font-size:1.5rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em;margin-bottom:2rem" data-i18n="reviews_title">Что говорят врачи</h3>
     <div class="testi-grid">
       <div class="testi-card">
-        <div class="testi-q">"</div>
-        <p class="testi-text">Впервые за годы практики я чётко понял разницу между фокальными и генерализованными приступами. Классификация ILAE 2017 объяснена так, что всё встало на свои места.</p>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«Впервые за годы практики я чётко понял разницу между фокальными и генерализованными приступами. Классификация ILAE 2017 объяснена так, что всё встало на свои места.»</p>
         <div class="testi-footer">
           <div class="testi-av">АС</div>
-          <div><div class="testi-role" data-i18n="tr1">Невролог</div><div class="testi-city" data-i18n="tc1">Астана · Июнь 2024</div></div>
+          <div><div class="testi-role" data-i18n="tr1">Невролог</div><div class="testi-city" data-i18n="tc1">Астана · 2024</div></div>
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-q">"</div>
-        <p class="testi-text">Как педиатр я всегда боялась ставить диагноз эпилепсии. После воркшопа появилась уверенность: знаю критерии, знаю когда направить к эпилептологу. Практические разборы — лучшее.</p>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«Как педиатр я всегда боялась ставить диагноз эпилепсии. После воркшопа появилась уверенность: знаю критерии, знаю когда направить к эпилептологу. Практические разборы — лучшее.»</p>
         <div class="testi-footer">
           <div class="testi-av">МК</div>
-          <div><div class="testi-role" data-i18n="tr2">Педиатр</div><div class="testi-city" data-i18n="tc2">Шымкент · Ноябрь 2024</div></div>
+          <div><div class="testi-role" data-i18n="tr2">Педиатр</div><div class="testi-city" data-i18n="tc2">Шымкент · 2024</div></div>
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-q">"</div>
-        <p class="testi-text">Лейла Даирбаева — редкий эксперт, который умеет объяснять сложное просто. За три дня я получил больше актуальных знаний, чем за несколько лет самостоятельного чтения.</p>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">«Лейла Даирбаева — редкий эксперт, который умеет объяснять сложное просто. За три дня я получил больше актуальных знаний, чем за несколько лет самостоятельного чтения.»</p>
         <div class="testi-footer">
           <div class="testi-av">ДТ</div>
-          <div><div class="testi-role" data-i18n="tr3">Невролог-резидент</div><div class="testi-city" data-i18n="tc3">Алматы · Январь 2025</div></div>
+          <div><div class="testi-role" data-i18n="tr3">Невролог-резидент</div><div class="testi-city" data-i18n="tc3">Алматы · 2025</div></div>
         </div>
       </div>
     </div>
@@ -1178,8 +1198,8 @@ var TRANSLATIONS = {
     pill_format:'Офлайн · Очный формат', pill_cert:'Сертификат участника',
     btn_signup:'Записаться на курс', btn_program:'Смотреть программу',
     price_note:'Стоимость:',
-    stats1:'Прошедших школы', stats2:'Лет в неврологии',
-    stats3:'Лет в эпилептологии', stats4:'Доменов компетенций', stats5:'Член Комиссии по терапии',
+    stats1:'Города Казахстана', stats2:'Врачей прошли обучение',
+    stats3:'Лет в эпилептологии', stats4:'Доменов компетенций ILAE', stats5:'Член Комиссии по терапии',
     goals_label:'Цели обучения', goals_title:'Что вы получите<br>после 3 дней',
     comp_label:'Road Map · Level 1', comp_title:'Компетенции<br>современного эпилептолога',
     comp_desc:'9 доменов международного стандарта — от базовой терминологии до сложных клинических ситуаций',
@@ -1258,7 +1278,7 @@ var TRANSLATIONS = {
     pill_format:'Офлайн · Қатысу форматы', pill_cert:'Қатысушы сертификаты',
     btn_signup:'Курсқа жазылу', btn_program:'Бағдарламаны қарау',
     price_note:'Құны:',
-    stats1:'Өткен мектептер', stats2:'Нейрологиядағы жыл',
+    stats1:'Қазақстан қалалары', stats2:'Дәрігер оқыды',
     stats3:'Эпилептологиядағы жыл', stats4:'Құзыреттілік домені', stats5:'ILAE Терапия комиссиясының мүшесі',
     goals_label:'Оқу мақсаттары', goals_title:'3 күннен кейін<br>не аласыз',
     comp_label:'Road Map · Level 1', comp_title:'Заманауи эпилептологтың<br>құзыреттіліктері',
@@ -1335,7 +1355,7 @@ var TRANSLATIONS = {
     pill_format:'In-person · Offline format', pill_cert:'Certificate of participation',
     btn_signup:'Register for the course', btn_program:'View program',
     price_note:'Price:',
-    stats1:'Schools completed', stats2:'Years in neurology',
+    stats1:'Cities in Kazakhstan', stats2:'Doctors trained',
     stats3:'Years in epileptology', stats4:'Competency domains', stats5:'ILAE Therapeutic Commission',
     goals_label:'Learning goals', goals_title:'What you will get<br>after 3 days',
     comp_label:'Road Map · Level 1', comp_title:'Competencies of a<br>modern epileptologist',
