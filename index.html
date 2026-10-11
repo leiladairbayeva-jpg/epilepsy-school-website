@@ -378,13 +378,13 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
       <h1 data-i18n="hero_title">Школа<br><em>Эпилептологии</em></h1>
       <p class="hero-sub" data-i18n="hero_sub">3-дневный интенсив для неврологов, педиатров и резидентов по современным стандартам ILAE</p>
       <div class="hero-pills">
-        <div class="pill">
-          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-          29–31 мая 2026
+        <div class="pill" style="background:rgba(251,191,36,.15);border-color:rgba(251,191,36,.4);color:#92400e">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          Анонс нового города — скоро!
         </div>
         <div class="pill">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-8-5.7-8-12a8 8 0 0 1 16 0c0 6.3-8 12-8 12z"/><circle cx="12" cy="9" r="2"/></svg>
-          Уральск, Казахстан
+          Казахстан
         </div>
         <div class="pill">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -689,7 +689,7 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 <section id="schools">
   <div class="section">
     <div class="eyebrow" data-i18n="schools_label">История школы</div>
-    <h2 class="sec-title" data-i18n="schools_title">Уже провели<br>в трёх городах</h2>
+    <h2 class="sec-title" data-i18n="schools_title">Уже провели<br>в четырёх городах</h2>
     <div class="stripe"></div>
     <div class="cities-row">
       <div class="city-card">
@@ -710,12 +710,17 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
         <div class="city-date">Январь 2025</div>
         <div class="city-status" data-i18n="done_city">✓ Завершён</div>
       </div>
-      <div class="city-card next-one">
+      <div class="city-card">
         <div class="city-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-8-5.7-8-12a8 8 0 0 1 16 0c0 6.3-8 12-8 12z"/><circle cx="12" cy="9" r="2"/></svg></div>
         <div class="city-name">Уральск</div>
         <div class="city-date">29–31 мая 2026</div>
-        <div class="city-status" data-i18n="next_city">→ Следующий</div>
-        <div style="margin-top:8px;font-size:9px;color:rgba(255,255,255,.5);letter-spacing:.04em;border-top:1px solid rgba(255,255,255,.15);padding-top:7px;line-height:1.4"><span data-i18n="sponsor_by">При поддержке</span><br><strong style="color:rgba(255,255,255,.75);font-size:10px">ТОО «Медикал Солюшн»</strong></div>
+        <div class="city-status" data-i18n="done_city">✓ Завершён</div>
+      </div>
+      <div class="city-card next-one">
+        <div class="city-icon">🔔</div>
+        <div class="city-name" style="font-size:1rem">Следующий город</div>
+        <div class="city-date" style="color:rgba(255,255,255,.7)">Анонс скоро</div>
+        <div class="city-status" style="color:#FCD34D;font-size:11px;margin-top:4px">⏳ Ждите объявления</div>
       </div>
     </div>
 
@@ -1177,7 +1182,7 @@ var TRANSLATIONS = {
     day1:'День 1', day2:'День 2', day3:'День 3',
     check_label:'Самооценка', check_title:'Чек-лист базовых<br>компетенций',
     check_desc:'Отметьте то, что уже знаете — увидите, чему научит воркшоп',
-    schools_label:'История школы', schools_title:'Уже провели<br>в трёх городах',
+    schools_label:'История школы', schools_title:'Уже провели<br>в четырёх городах',
     reviews_label:'Отзывы участников', reviews_title:'Что говорят врачи',
     mentor_label:'Ваш наставник', mentor_title:'Д-р Лейла<br>Даирбаева',
     reg_label:'Регистрация', reg_title:'Записаться<br>на воркшоп',
