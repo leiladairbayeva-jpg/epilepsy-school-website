@@ -6,7 +6,7 @@
 <title>Школа Эпилептологии · Д-р Лейла Даирбаева</title>
 <!-- SEO -->
 <meta name="description" content="3-дневный воркшоп по эпилептологии для неврологов, педиатров и резидентов. Д-р Лейла Даирбаева, член Комиссии по терапии ILAE. Казахстан. Следите за анонсами!">
-<meta name="keywords" content="школа эпилептологии, эпилептология обучение, ILAE, ЭЭГ курс, неврология курсы Казахстан, эпилепсия врачи, Лейла Даирбаева, Уральск">
+<meta name="keywords" content="школа эпилептологии, эпилептология обучение, ILAE, ЭЭГ курс, неврология курсы Казахстан, эпилепсия врачи, Лейла Даирбаева">
 <meta name="author" content="Лейла Даирбаева">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://epilepsyschool.kz/">
@@ -29,9 +29,7 @@
   "@type": "EducationEvent",
   "name": "Школа Эпилептологии — Базовый уровень",
   "description": "3-дневный воркшоп по современной эпилептологии для врачей по стандартам ILAE",
-  "startDate": "2026-05-29",
-  "endDate": "2026-05-31",
-  "location": {"@type": "Place", "name": "Уральск", "address": {"@type": "PostalAddress", "addressLocality": "Казахстан", "addressCountry": "KZ"}},
+  "location": {"@type": "Place", "name": "Казахстан", "address": {"@type": "PostalAddress", "addressCountry": "KZ"}},
   "organizer": {"@type": "Person", "name": "Лейла Даирбаева", "jobTitle": "Невролог-эпилептолог, член Комиссии по терапии ILAE"},
   "offers": {"@type": "Offer", "availability": "https://schema.org/ComingSoon"},
   "url": "https://epilepsyschool.kz/"
@@ -41,27 +39,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink:     #0D1B2A;
-  --ink2:    #1A2E45;
-  --mid:     #3D5A80;
+  --ink:     #0A1628;
+  --ink2:    #162035;
+  --mid:     #2E4A72;
   --accent:  #2563EB;
+  --accent2: #1D4ED8;
   --sky:     #EFF6FF;
   --sky2:    #DBEAFE;
   --teal:    #0D9488;
   --amber:   #D97706;
   --white:   #FFFFFF;
   --gray:    #64748B;
-  --gray2:   #F1F5F9;
-  --border:  #E2E8F0;
-  --r:       10px;
-  --r2:      18px;
+  --gray2:   #F8FAFC;
+  --border:  #E8EDF3;
+  --r:       12px;
+  --r2:      20px;
+  --shadow:  0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.05);
+  --shadow2: 0 4px 24px rgba(37,99,235,.12);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Sora',sans-serif;color:var(--ink);background:var(--white);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px}
+nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(226,232,240,0.8);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 1px 20px rgba(0,0,0,.08)}
 .nav-logo{font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-0.02em}
 .nav-logo span{color:var(--accent)}
 .nav-links{display:flex;gap:2rem;list-style:none}
@@ -71,7 +73,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);backdrop
 .nav-btn:hover{opacity:.85}
 
 /* HERO */
-.hero{background:var(--ink);min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:5rem 2rem}
+.hero{background:linear-gradient(135deg,#060f1e 0%,#0a1628 40%,#0f2040 70%,#081830 100%);min-height:92vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:5rem 2rem}
 .hero-bg{position:absolute;inset:0;opacity:.35}
 .hero-content{position:relative;z-index:2;max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(37,99,235,.2);border:1px solid rgba(37,99,235,.4);color:#93C5FD;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:40px;margin-bottom:1.5rem}
@@ -97,11 +99,11 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);backdrop
 .eeg-lines{position:absolute;bottom:-20px;left:0;right:0}
 
 /* STATS BAR */
-.stats-bar{background:var(--sky);border-bottom:1px solid var(--sky2);padding:1.5rem 2rem}
+.stats-bar{background:linear-gradient(90deg,#EFF6FF 0%,#F0F9FF 50%,#EFF6FF 100%);border-bottom:1px solid var(--sky2);padding:1.75rem 2rem}
 .stats-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-around;gap:1rem;flex-wrap:wrap}
-.stat{text-align:center}
-.stat-num{font-size:2rem;font-weight:800;color:var(--accent);letter-spacing:-0.03em;line-height:1}
-.stat-label{font-size:12px;font-weight:500;color:var(--gray);margin-top:4px}
+.stat{text-align:center;padding:0 1rem}
+.stat-num{font-size:2.2rem;font-weight:800;color:var(--accent);letter-spacing:-0.04em;line-height:1}
+.stat-label{font-size:11.5px;font-weight:500;color:var(--gray);margin-top:6px;text-transform:uppercase;letter-spacing:.04em}
 
 /* SECTION BASE */
 .section{max-width:1100px;margin:0 auto;padding:5rem 2rem}
@@ -113,14 +115,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);backdrop
 /* GOALS */
 #goals{background:var(--white)}
 .goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.goal-card{border:1px solid var(--border);border-radius:var(--r2);padding:1.5rem;transition:all .25s;background:var(--white)}
-.goal-card:hover{border-color:var(--accent);box-shadow:0 0 0 4px rgba(37,99,235,.06);transform:translateY(-2px)}
+.goal-card{border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem;transition:all .3s cubic-bezier(.2,.8,.2,1);background:var(--white);box-shadow:var(--shadow)}
+.goal-card:hover{border-color:var(--accent);box-shadow:0 0 0 3px rgba(37,99,235,.08),var(--shadow2);transform:translateY(-3px)}
 .goal-num{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--accent);margin-bottom:.75rem;text-transform:uppercase}
 .goal-title{font-size:17px;font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:.4rem}
 .goal-desc{font-size:14.5px;color:var(--gray);line-height:1.6}
 
 /* COMPETENCIES */
-#competencies{background:var(--ink)}
+#competencies{background:linear-gradient(160deg,#0A1628 0%,#0D1F3C 50%,#0A1628 100%)}
 #competencies .eyebrow{color:#60A5FA}
 #competencies .sec-title{color:#fff}
 #competencies .sec-desc{color:rgba(255,255,255,.5)}
@@ -130,8 +132,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);backdrop
 .comp-source a{color:#60A5FA;text-decoration:none;border-bottom:1px solid rgba(96,165,250,.35);transition:border-color .2s}
 .comp-source a:hover{border-color:#60A5FA}
 .comp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.comp-card{border:1px solid rgba(255,255,255,.08);border-radius:var(--r2);padding:1.4rem;background:rgba(255,255,255,.04);transition:all .2s;cursor:default}
-.comp-card:hover{background:rgba(37,99,235,.15);border-color:rgba(37,99,235,.4)}
+.comp-card{border:1px solid rgba(255,255,255,.08);border-radius:var(--r2);padding:1.5rem;background:rgba(255,255,255,.04);transition:all .3s cubic-bezier(.2,.8,.2,1);cursor:default;backdrop-filter:blur(4px)}
+.comp-card:hover{background:rgba(37,99,235,.18);border-color:rgba(59,130,246,.5);transform:translateY(-2px);box-shadow:0 8px 32px rgba(37,99,235,.2)}
 .comp-n{font-size:12px;font-weight:700;letter-spacing:.1em;color:#3B82F6;margin-bottom:.5rem}
 .comp-t{font-size:16px;font-weight:600;color:#fff;margin-bottom:.4rem}
 .comp-d{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.6}
@@ -174,10 +176,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);backdrop
 
 /* PAST SCHOOLS */
 #schools{background:var(--gray2)}
-.cities-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:3rem}
-.city-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.5rem;transition:all .2s;text-align:center}
-.city-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.city-card.next-one{background:var(--accent);border-color:var(--accent)}
+.cities-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:3rem}
+.city-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem;transition:all .3s cubic-bezier(.2,.8,.2,1);text-align:center;box-shadow:var(--shadow)}
+.city-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:var(--shadow2)}
+.city-card.next-one{background:linear-gradient(135deg,#1D4ED8 0%,#2563EB 60%,#3B82F6 100%);border-color:transparent;box-shadow:0 8px 32px rgba(37,99,235,.3)}
 .city-icon{width:48px;height:48px;border-radius:50%;background:var(--sky);display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;color:var(--accent)}
 .city-card.next-one .city-icon{background:rgba(255,255,255,.2);color:#fff}
 .city-name{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:3px}
@@ -188,9 +190,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);backdrop
 .city-card.next-one .city-status{color:#FCD34D}
 
 /* TESTIMONIALS */
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.testi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem;position:relative;transition:box-shadow .2s}
-.testi-card:hover{box-shadow:0 8px 32px rgba(37,99,235,.08)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r2);padding:2rem;position:relative;transition:all .3s cubic-bezier(.2,.8,.2,1);box-shadow:var(--shadow)}
+.testi-card:hover{box-shadow:0 12px 40px rgba(37,99,235,.1);transform:translateY(-3px);border-color:var(--sky2)}
 .testi-q{font-family:'Crimson Pro',serif;font-size:4rem;color:var(--sky2);line-height:.8;margin-bottom:1rem}
 .testi-text{font-family:'Crimson Pro',serif;font-size:1.15rem;color:var(--mid);line-height:1.75;margin-bottom:1.25rem;font-style:italic}
 .testi-footer{display:flex;align-items:center;gap:10px}
@@ -218,9 +220,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);backdrop
 .mentor-tag{font-size:12px;font-weight:600;background:var(--sky);color:var(--accent);padding:5px 14px;border-radius:40px;border:1px solid var(--sky2)}
 
 /* REGISTRATION */
-#registration{background:var(--gray2)}
+#registration{background:linear-gradient(180deg,var(--gray2) 0%,#F0F4FA 100%)}
 .reg-grid{display:grid;grid-template-columns:1fr 360px;gap:2rem;align-items:start}
-.form-card{background:var(--white);border-radius:var(--r2);padding:2rem;border:1px solid var(--border)}
+.form-card{background:var(--white);border-radius:var(--r2);padding:2.25rem;border:1px solid var(--border);box-shadow:var(--shadow)}
 .form-title{font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-0.02em}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
 .form-full{grid-column:1/-1}
@@ -232,7 +234,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);backdrop
 .submit-btn:hover{background:#1D4ED8}
 .form-note{font-size:11px;color:var(--gray);text-align:center;margin-top:10px;line-height:1.5}
 .price-sidebar{position:sticky;top:80px}
-.price-card{background:var(--ink);border-radius:var(--r2);padding:2rem;color:#fff;margin-bottom:12px}
+.price-card{background:linear-gradient(145deg,#0A1628 0%,#162035 100%);border-radius:var(--r2);padding:2rem;color:#fff;margin-bottom:12px;box-shadow:0 8px 32px rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.06)}
 .price-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem}
 .price-amount{font-size:2.8rem;font-weight:800;color:#FCD34D;letter-spacing:-0.04em;line-height:1}
 .price-currency{font-size:14px;color:rgba(255,255,255,.4);margin-top:.5rem;font-weight:400}
@@ -247,7 +249,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,0.95);backdrop
 .success-icon-wrap{width:72px;height:72px;border-radius:50%;background:#ECFDF5;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem}
 
 /* FOOTER */
-footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:2.5rem 2rem;text-align:center}
+footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px solid rgba(255,255,255,.06);padding:3rem 2rem;text-align:center}
 .footer-brand{font-size:16px;font-weight:700;color:#fff;letter-spacing:-0.02em;margin-bottom:6px}
 .footer-brand span{color:#60A5FA}
 .footer-sub{font-size:12px;color:rgba(255,255,255,.3)}
@@ -924,6 +926,11 @@ footer{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:
 </footer>
 
 <script>
+// Nav scroll shadow
+window.addEventListener('scroll',function(){
+  document.querySelector('nav').classList.toggle('scrolled',window.scrollY>10);
+},{ passive: true });
+
 function switchLevel(i,btn){
   document.querySelectorAll('.day-btn[onclick*="switchLevel"]').forEach(function(b){b.classList.remove('on');});
   document.querySelectorAll('.level-panel').forEach(function(p){p.classList.remove('on');});
