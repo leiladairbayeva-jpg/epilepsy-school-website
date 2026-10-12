@@ -287,6 +287,7 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
 @media(max-width:860px){
   .nav-links{display:none}
 }
+@media(max-width:860px){.paths-grid{grid-template-columns:1fr!important}}
 @media(max-width:600px){
   .nav-links{display:none}
   .goals-grid,.comp-grid,.testi-grid,.cities-row,.check-wrap,.form-row{grid-template-columns:1fr}
@@ -427,8 +428,9 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
         </div>
       </div>
       <div class="hero-actions">
-        <a href="#registration" class="btn-hero" data-i18n="btn_signup">Записаться на курс</a>
-        <a href="#program" class="btn-ghost" data-i18n="btn_program">Смотреть программу</a>
+        <a href="#registration" class="btn-hero" data-i18n="btn_signup">Ближайшая школа</a>
+        <a href="#library-soon" class="btn-ghost" data-i18n="btn_library">Медиатека</a>
+        <a href="#checklist-s" class="btn-ghost" style="border-color:rgba(255,255,255,.15)" data-i18n="btn_selftest">Самооценка</a>
       </div>
     </div>
 
@@ -547,6 +549,47 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
   </div>
 </section>
 
+<!-- THREE PATHS -->
+<section id="three-paths" style="background:var(--white);border-bottom:1px solid var(--border)">
+  <div class="section" style="padding:3rem 2rem">
+    <div class="eyebrow" data-i18n="paths_label">Три пути обучения</div>
+    <h2 class="sec-title" data-i18n="paths_title">Выберите свой формат</h2>
+    <div class="stripe"></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px" class="paths-grid">
+      <div style="border:2px solid var(--accent);border-radius:var(--r2);padding:2rem;background:var(--sky);position:relative">
+        <div style="position:absolute;top:-14px;left:1.5rem;background:var(--accent);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.06em">ОЧНО</div>
+        <div style="font-size:2rem;margin-bottom:.75rem">🏥</div>
+        <div style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:.5rem" data-i18n="path1t">Живая школа</div>
+        <div style="font-size:14px;color:var(--gray);line-height:1.6;margin-bottom:1.25rem" data-i18n="path1d">3 дня офлайн: лекции, разборы ЭЭГ, клинические случаи с экспертом. Сертификат участника.</div>
+        <a href="#registration" style="display:inline-block;background:var(--accent);color:#fff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:var(--r);text-decoration:none" data-i18n="path1btn">Записаться →</a>
+      </div>
+      <div id="library-soon" style="border:1.5px solid var(--border);border-radius:var(--r2);padding:2rem;background:var(--gray2);position:relative">
+        <div style="position:absolute;top:-14px;left:1.5rem;background:#6366F1;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.06em">ВИДЕО</div>
+        <div style="font-size:2rem;margin-bottom:.75rem">🎬</div>
+        <div style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:.5rem" data-i18n="path2t">Медиатека</div>
+        <div style="font-size:14px;color:var(--gray);line-height:1.6;margin-bottom:1.25rem" data-i18n="path2d">Записи лекций, разборы ЭЭГ, клинические случаи — смотрите в своём темпе. <span style="color:#6366F1;font-weight:600">Скоро</span></div>
+        <button onclick="showWaitlistForm('library')" style="display:inline-block;background:#6366F1;color:#fff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:var(--r);border:none;cursor:pointer" data-i18n="path2btn">Сообщить о запуске →</button>
+      </div>
+      <div style="border:1.5px solid var(--border);border-radius:var(--r2);padding:2rem;background:var(--gray2);position:relative">
+        <div style="position:absolute;top:-14px;left:1.5rem;background:var(--teal);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.06em">КЛУБ</div>
+        <div style="font-size:2rem;margin-bottom:.75rem">🤝</div>
+        <div style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:.5rem" data-i18n="path3t">Клуб эпилептологов</div>
+        <div style="font-size:14px;color:var(--gray);line-height:1.6;margin-bottom:1.25rem" data-i18n="path3d">Ежемесячные разборы, чат с коллегами, обновления ILAE. Подписка. <span style="color:var(--teal);font-weight:600">Скоро</span></div>
+        <button onclick="showWaitlistForm('club')" style="display:inline-block;background:var(--teal);color:#fff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:var(--r);border:none;cursor:pointer" data-i18n="path3btn">Войти в список ожидания →</button>
+      </div>
+    </div>
+    <!-- Waitlist mini-form (hidden) -->
+    <div id="waitlist-form" style="display:none;margin-top:2rem;background:var(--white);border:1.5px solid var(--accent);border-radius:var(--r2);padding:1.75rem;max-width:480px">
+      <div style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:1rem" id="wl-title">Уведомить меня о запуске</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <input id="wl-email" type="email" placeholder="ваш@email.com" style="flex:1;min-width:200px;font-family:'Sora',sans-serif;font-size:14px;border:1.5px solid var(--border);border-radius:var(--r);padding:11px 14px;outline:none" onfocus="this.style.borderColor='#2563EB'" onblur="this.style.borderColor='#E8EDF3'">
+        <button onclick="submitWaitlist()" style="background:var(--accent);color:#fff;font-family:'Sora',sans-serif;font-size:14px;font-weight:600;padding:11px 20px;border-radius:var(--r);border:none;cursor:pointer;white-space:nowrap">Подписаться</button>
+      </div>
+      <div id="wl-thanks" style="display:none;margin-top:12px;font-size:14px;color:#059669;font-weight:500">✓ Вы в списке! Сообщим при запуске.</div>
+    </div>
+  </div>
+</section>
+
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stats-inner">
@@ -565,7 +608,7 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
     <h2 class="sec-title" data-i18n="goals_title">Что вы получите<br>после 3 дней</h2>
     <div class="stripe"></div>
     <div class="goals-grid">
-      <div class="goal-card"><div class="goal-num">01 · Классификация</div><div class="goal-title" data-i18n="g1t">Приступы по ILAE 2017</div><div class="goal-desc" data-i18n="g1d">Чётко различать фокальные, генерализованные и неизвестного начала — по современной классификации</div></div>
+      <div class="goal-card"><div class="goal-num">01 · Классификация</div><div class="goal-title" data-i18n="g1t">Приступы по ILAE 2017/2025</div><div class="goal-desc" data-i18n="g1d">Чётко различать фокальные, генерализованные и неизвестного начала — по актуальной классификации ILAE</div></div>
       <div class="goal-card"><div class="goal-num">02 · Диагностика</div><div class="goal-title" data-i18n="g2t">Критерии эпилепсии</div><div class="goal-desc" data-i18n="g2d">Уверенно ставить диагноз «эпилепсия» по актуальным критериям ILAE, не смешивать с неэпилептическими состояниями</div></div>
       <div class="goal-card"><div class="goal-num">03 · ЭЭГ</div><div class="goal-title" data-i18n="g3t">Интерпретация данных</div><div class="goal-desc" data-i18n="g3d">Читать рутинную ЭЭГ в клиническом контексте и знать, когда нужен видео-ЭЭГ мониторинг</div></div>
       <div class="goal-card"><div class="goal-num">04 · Терапия</div><div class="goal-title" data-i18n="g4t">АЭП первой линии</div><div class="goal-desc" data-i18n="g4d">Выбирать антиэпилептический препарат по пошаговому алгоритму, учитывая форму эпилепсии и профиль пациента</div></div>
@@ -647,15 +690,15 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
         <div class="day-tag" data-i18n="dtag1">День 1</div>
         <div class="day-title" data-i18n="dp1t">Понять эпилепсию</div>
         <ul class="day-list">
-          <li data-i18n="dp1l1"><div class="day-dot"></div>Современные определения и классификация приступов по ILAE 2017</li>
+          <li data-i18n="dp1l1"><div class="day-dot"></div>Современные определения и классификация приступов по ILAE 2017/2025</li>
           <li data-i18n="dp1l2"><div class="day-dot"></div>Классификация эпилепсий: от синдрома к этиологии</li>
           <li data-i18n="dp1l3"><div class="day-dot"></div>Принципы диагностики: протокол осмотра эпилептолога</li>
           <li data-i18n="dp1l4"><div class="day-dot"></div>Разбор реальных клинических видеозаписей приступов</li>
         </ul>
       </div>
       <div class="day-side">
-        <div class="day-info-card"><div class="day-info-label" data-i18n="fmt_lbl" data-i18n="fmt_lbl" data-i18n="fmt_lbl">Формат</div><div class="day-info-val" data-i18n="dv1f">Лекции + клинические случаи</div></div>
-        <div class="day-info-card"><div class="day-info-label" data-i18n="foc_lbl" data-i18n="foc_lbl" data-i18n="foc_lbl">Фокус дня</div><div class="day-info-val" data-i18n="dv1d">Классификация ILAE 2017</div></div>
+        <div class="day-info-card"><div class="day-info-label" data-i18n="fmt_lbl">Формат</div><div class="day-info-val" data-i18n="dv1f">Лекции + клинические случаи</div></div>
+        <div class="day-info-card"><div class="day-info-label" data-i18n="foc_lbl">Фокус дня</div><div class="day-info-val" data-i18n="dv1d">Классификация ILAE 2025</div></div>
         <div class="day-practice">
           <div class="day-practice-icon"><svg width="18" height="18" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
           <div class="day-practice-text" data-i18n="prac1">Практика: видеозаписи приступов с разбором и классификацией</div>
@@ -818,7 +861,7 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
     <div class="level-panel on" id="lv0">
       <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem" data-i18n="l1_teaser">Для неврологов, педиатров и резидентов — базовые компетенции ILAE</p>
       <div class="comp-grid">
-        <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t" data-i18n="comp_d1t">Основы и терминология</div><div class="comp-d" data-i18n="comp_d1d">Определения ILAE 2014, 2017; эпидемиология; патофизиология</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t" data-i18n="comp_d1t">Основы и терминология</div><div class="comp-d" data-i18n="comp_d1d">Определения ILAE 2014, 2017, 2025; эпидемиология; патофизиология</div></div>
         <div class="comp-card"><div class="comp-n">Домен 02</div><div class="comp-t" data-i18n="comp_d2t">Классификация приступов</div><div class="comp-d" data-i18n="comp_d2d">Фокальные, генерализованные, неизвестного начала</div></div>
         <div class="comp-card"><div class="comp-n">Домен 03</div><div class="comp-t" data-i18n="comp_d3t">Классификация эпилепсий</div><div class="comp-d" data-i18n="comp_d3d">Этиологические группы, синдромы, фенотипы</div></div>
         <div class="comp-card"><div class="comp-n">Домен 04</div><div class="comp-t" data-i18n="comp_d4t">Диагностика</div><div class="comp-d" data-i18n="comp_d4d">ЭЭГ, нейровизуализация, лабораторные тесты</div></div>
@@ -2020,6 +2063,34 @@ function submitForm() {
   saveToSheets(lead);
   document.getElementById('form-body').style.display = 'none';
   document.getElementById('success-card').style.display = 'block';
+}
+
+// ── WAITLIST ──
+var _waitlistType = '';
+function showWaitlistForm(type) {
+  _waitlistType = type;
+  var el = document.getElementById('waitlist-form');
+  var title = document.getElementById('wl-title');
+  if(type === 'library') title.textContent = 'Уведомить меня о запуске Медиатеки';
+  else title.textContent = 'Войти в список ожидания — Клуб эпилептологов';
+  el.style.display = 'block';
+  el.scrollIntoView({behavior:'smooth', block:'nearest'});
+  document.getElementById('wl-thanks').style.display = 'none';
+}
+function submitWaitlist() {
+  var email = (document.getElementById('wl-email').value || '').trim();
+  if(!email || !email.includes('@')) { document.getElementById('wl-email').style.borderColor='#EF4444'; return; }
+  document.getElementById('wl-thanks').style.display = 'block';
+  document.getElementById('wl-email').disabled = true;
+  // Save locally
+  var wl = JSON.parse(localStorage.getItem('epilepsy_waitlist') || '[]');
+  wl.push({email:email, type:_waitlistType, date:new Date().toISOString()});
+  localStorage.setItem('epilepsy_waitlist', JSON.stringify(wl));
+  // Notify via Telegram
+  if(TG_BOT_TOKEN && TG_BOT_TOKEN !== 'YOUR_BOT_TOKEN') {
+    var text = '📬 <b>Waitlist — ' + (_waitlistType==='library'?'Медиатека':'Клуб') + '</b>\n📧 ' + email;
+    fetch('https://api.telegram.org/bot'+TG_BOT_TOKEN+'/sendMessage',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:TG_CHAT_ID,text:text,parse_mode:'HTML'})}).catch(function(){});
+  }
 }
 
 // ── SPEC QUICK REPLY ──
