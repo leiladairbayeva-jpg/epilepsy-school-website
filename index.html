@@ -276,6 +276,10 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
   .cities-row{grid-template-columns:1fr 1fr}
   .mentor-layout{grid-template-columns:1fr;gap:2rem}
   .mentor-av{width:140px;height:140px;font-size:3rem}
+  .mentor-left{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .mentor-avatar-wrap{display:inline-block}
+  .mentor-badge{right:0;bottom:-12px}
+  .mentor-facts{width:100%;margin-top:3rem}
   .reg-grid{grid-template-columns:1fr}
   .price-sidebar{position:static}
   .day-panel.on{grid-template-columns:1fr}
@@ -293,6 +297,23 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
   /* Hide cert button on mobile to save space */
   .nav-cert-btn{display:none}
   .nav-btn{font-size:12px;padding:8px 14px;white-space:nowrap}
+  /* Chatbot full-width on mobile */
+  #chat-panel{width:calc(100vw - 24px);right:12px;left:12px;bottom:80px}
+  /* Social cards 2-column on mobile */
+  .social-cards{grid-template-columns:1fr 1fr}
+  /* Hero adjustments */
+  .hero{padding:3rem 1.25rem 4rem}
+  .hero h1{font-size:2.2rem}
+  .hero-sub{font-size:1.1rem}
+  /* Section padding */
+  .section{padding:3rem 1.25rem}
+  /* Stats wrap on mobile */
+  .stats-bar{gap:1rem;padding:1.25rem}
+  .stat-num{font-size:1.8rem}
+  /* Day panel content */
+  .day-panel.on{padding:1.25rem}
+  /* Mentor facts 2-col on mobile */
+  .mentor-facts{grid-template-columns:1fr 1fr}
 }
 
 /* ── CHATBOT ── */
@@ -562,7 +583,7 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
     <div class="mentor-layout">
       <div class="mentor-left">
         <div class="mentor-avatar-wrap">
-          <img src="PHOTO-2026-02-11-14-16-16.jpg" alt="Лейла Даирбаева" class="mentor-av" style="object-fit:cover;object-position:center top">
+          <img src="PHOTO-2026-02-11-14-16-16.jpg" alt="Лейла Даирбаева" class="mentor-av" style="object-fit:cover;object-position:center 15%">
           <div class="mentor-badge">
             <div class="mentor-badge-label">Член Комиссии</div>
             <div class="mentor-badge-val">ILAE</div>
@@ -1230,7 +1251,7 @@ var TRANSLATIONS = {
     chat_status:'Онлайн · отвечу за секунду',
     chat_placeholder:'Напишите вопрос...',
     next_city:'→ Следующий', done_city:'✓ Завершён', social_follow:'Следите за обновлениями',
-    dtag1:'День 1 · 29 мая', dtag2:'День 2 · 30 мая', dtag3:'День 3 · 31 мая',
+    dtag1:'День 1', dtag2:'День 2', dtag3:'День 3',
     fmt_lbl:'Формат', foc_lbl:'Фокус дня',
     dv1f:'Лекции + клинические случаи', dv1d:'Классификация ILAE 2017',
     dv2f:'Лекции + разбор ЭЭГ/МРТ', dv2d:'Диагностика и ДД',
@@ -1310,7 +1331,7 @@ var TRANSLATIONS = {
     chat_status:'Онлайн · бір секундта жауап беремін',
     chat_placeholder:'Сұрақ жазыңыз...',
     next_city:'→ Келесі', done_city:'✓ Аяқталды', social_follow:'Жаңартуларды қадағалаңыз',
-    dtag1:'1-күн · 29 мамыр', dtag2:'2-күн · 30 мамыр', dtag3:'3-күн · 31 мамыр',
+    dtag1:'1-күн', dtag2:'2-күн', dtag3:'3-күн',
     fmt_lbl:'Формат', foc_lbl:'Күн фокусы',
     dv1f:'Дәрістер + клиникалық жағдайлар', dv1d:'ILAE 2017 жіктелуі',
     dv2f:'Дәрістер + ЭЭГ/МРТ талдауы', dv2d:'Диагностика және ДД',
@@ -1387,7 +1408,7 @@ var TRANSLATIONS = {
     chat_status:'Online · reply in seconds',
     chat_placeholder:'Type your question...',
     next_city:'→ Next', done_city:'✓ Completed', social_follow:'Follow for updates',
-    dtag1:'Day 1 · May 29', dtag2:'Day 2 · May 30', dtag3:'Day 3 · May 31',
+    dtag1:'Day 1', dtag2:'Day 2', dtag3:'Day 3',
     fmt_lbl:'Format', foc_lbl:'Day focus',
     dv1f:'Lectures + clinical cases', dv1d:'ILAE 2017 Classification',
     dv2f:'Lectures + EEG/MRI review', dv2d:'Diagnostics & DD',
