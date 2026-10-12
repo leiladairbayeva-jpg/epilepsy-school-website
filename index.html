@@ -411,7 +411,7 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
       <div class="hero-pills">
         <div class="pill" style="background:rgba(251,191,36,.15);border-color:rgba(251,191,36,.4);color:#92400e">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-          Анонс нового города — скоро!
+          <span data-i18n="announce_pill">Анонс нового города — скоро!</span>
         </div>
         <div class="pill">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-8-5.7-8-12a8 8 0 0 1 16 0c0 6.3-8 12-8 12z"/><circle cx="12" cy="9" r="2"/></svg>
@@ -419,7 +419,7 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
         </div>
         <div class="pill">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          Офлайн · Очный формат
+          <span data-i18n="pill_format">Офлайн · Очный формат</span>
         </div>
         <div class="pill">
           <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -761,9 +761,9 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
       </div>
       <div class="city-card next-one">
         <div class="city-icon">🔔</div>
-        <div class="city-name" style="font-size:1rem">Следующий город</div>
-        <div class="city-date" style="color:rgba(255,255,255,.7)">Анонс скоро</div>
-        <div class="city-status" style="color:#FCD34D;font-size:11px;margin-top:4px">⏳ Ждите объявления</div>
+        <div class="city-name" style="font-size:1rem" data-i18n="next_city_lbl">Следующий город</div>
+        <div class="city-date" style="color:rgba(255,255,255,.7)" data-i18n="next_city_date">Анонс скоро</div>
+        <div class="city-status" style="color:#FCD34D;font-size:11px;margin-top:4px" data-i18n="next_city_wait">⏳ Ждите объявления</div>
       </div>
     </div>
 
@@ -809,14 +809,14 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
 
     <!-- Level tabs -->
     <div class="day-nav" style="margin-bottom:2rem">
-      <button class="day-btn on" onclick="switchLevel(0,this)">Level 1 — Базовый</button>
-      <button class="day-btn" onclick="switchLevel(1,this)">Level 2 — Продвинутый</button>
-      <button class="day-btn" onclick="switchLevel(2,this)">Level 3 — Экспертный</button>
+      <button class="day-btn on" onclick="switchLevel(0,this)" data-i18n="lvbtn1">Level 1 — Базовый</button>
+      <button class="day-btn" onclick="switchLevel(1,this)" data-i18n="lvbtn2">Level 2 — Продвинутый</button>
+      <button class="day-btn" onclick="switchLevel(2,this)" data-i18n="lvbtn3">Level 3 — Экспертный</button>
     </div>
 
     <!-- Level 1 -->
     <div class="level-panel on" id="lv0">
-      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem">Для неврологов, педиатров и резидентов — базовые компетенции ILAE</p>
+      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem" data-i18n="l1_teaser">Для неврологов, педиатров и резидентов — базовые компетенции ILAE</p>
       <div class="comp-grid">
         <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t" data-i18n="comp_d1t">Основы и терминология</div><div class="comp-d" data-i18n="comp_d1d">Определения ILAE 2014, 2017; эпидемиология; патофизиология</div></div>
         <div class="comp-card"><div class="comp-n">Домен 02</div><div class="comp-t" data-i18n="comp_d2t">Классификация приступов</div><div class="comp-d" data-i18n="comp_d2d">Фокальные, генерализованные, неизвестного начала</div></div>
@@ -836,46 +836,46 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
 
     <!-- Level 2 -->
     <div class="level-panel" id="lv1">
-      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem">Для практикующих неврологов — углублённые компетенции. <span style="color:#FCD34D">Скоро — Level 2 воркшоп</span></p>
+      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem" data-i18n="l2_teaser">Для практикующих неврологов — углублённые компетенции. <span style="color:#FCD34D">Скоро — Level 2 воркшоп</span></p>
       <div class="comp-grid">
-        <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t">Продвинутая ЭЭГ-диагностика</div><div class="comp-d">Длительный ЭЭГ-мониторинг, видео-ЭЭГ, иктальные паттерны</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 02</div><div class="comp-t">Генетика эпилепсий</div><div class="comp-d">Моногенные эпилепсии, генетическое тестирование, каналопатии</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 03</div><div class="comp-t">Структурные эпилепсии</div><div class="comp-d">МРТ-протоколы, фокальные кортикальные дисплазии, опухоли</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 04</div><div class="comp-t">Рефрактерная эпилепсия</div><div class="comp-d">Определение, стратегии лечения, оценка хирургии</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 05</div><div class="comp-t">Комбинированная терапия АЭП</div><div class="comp-d">Рациональная политерапия, фармакокинетика, взаимодействия</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 06</div><div class="comp-t">Эпилепсия у женщин</div><div class="comp-d">Беременность, контрацепция, лактация, гормональные факторы</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 07</div><div class="comp-t">Нейропсихология</div><div class="comp-d">Когнитивные нарушения, депрессия, тревога при эпилепсии</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 08</div><div class="comp-t">Нейростимуляция</div><div class="comp-d">VNS, DBS, RNS — показания и ведение пациентов</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 09</div><div class="comp-t">Паллиативная помощь</div><div class="comp-d">Синдром внезапной смерти (SUDEP), паллиативные стратегии</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t" data-i18n="l2_d1t">Продвинутая ЭЭГ-диагностика</div><div class="comp-d" data-i18n="l2_d1d">Длительный ЭЭГ-мониторинг, видео-ЭЭГ, иктальные паттерны</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 02</div><div class="comp-t" data-i18n="l2_d2t">Генетика эпилепсий</div><div class="comp-d" data-i18n="l2_d2d">Моногенные эпилепсии, генетическое тестирование, каналопатии</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 03</div><div class="comp-t" data-i18n="l2_d3t">Структурные эпилепсии</div><div class="comp-d" data-i18n="l2_d3d">МРТ-протоколы, фокальные кортикальные дисплазии, опухоли</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 04</div><div class="comp-t" data-i18n="l2_d4t">Рефрактерная эпилепсия</div><div class="comp-d" data-i18n="l2_d4d">Определение, стратегии лечения, оценка хирургии</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 05</div><div class="comp-t" data-i18n="l2_d5t">Комбинированная терапия АЭП</div><div class="comp-d" data-i18n="l2_d5d">Рациональная политерапия, фармакокинетика, взаимодействия</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 06</div><div class="comp-t" data-i18n="l2_d6t">Эпилепсия у женщин</div><div class="comp-d" data-i18n="l2_d6d">Беременность, контрацепция, лактация, гормональные факторы</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 07</div><div class="comp-t" data-i18n="l2_d7t">Нейропсихология</div><div class="comp-d" data-i18n="l2_d7d">Когнитивные нарушения, депрессия, тревога при эпилепсии</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 08</div><div class="comp-t" data-i18n="l2_d8t">Нейростимуляция</div><div class="comp-d" data-i18n="l2_d8d">VNS, DBS, RNS — показания и ведение пациентов</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 09</div><div class="comp-t" data-i18n="l2_d9t">Паллиативная помощь</div><div class="comp-d" data-i18n="l2_d9d">Синдром внезапной смерти (SUDEP), паллиативные стратегии</div></div>
       </div>
       <div style="margin-top:1.5rem;background:rgba(252,211,77,.1);border:1px solid rgba(252,211,77,.3);border-radius:12px;padding:1rem 1.25rem;display:flex;align-items:center;gap:12px">
         <span style="font-size:1.5rem">🔜</span>
         <div>
-          <div style="font-size:14px;font-weight:700;color:#FCD34D">Level 2 воркшоп — скоро</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px">Следите за анонсами на epilepsyschool.asia</div>
+          <div style="font-size:14px;font-weight:700;color:#FCD34D" data-i18n="l2_soon">Level 2 воркшоп — скоро</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px" data-i18n="l2_follow">Следите за анонсами на epilepsyschool.asia</div>
         </div>
       </div>
     </div>
 
     <!-- Level 3 -->
     <div class="level-panel" id="lv2">
-      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem">Для эпилептологов — экспертный уровень. <span style="color:#FCD34D">Скоро — Level 3 воркшоп</span></p>
+      <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:1.25rem" data-i18n="l3_teaser">Для эпилептологов — экспертный уровень. <span style="color:#FCD34D">Скоро — Level 3 воркшоп</span></p>
       <div class="comp-grid">
-        <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t">Предхирургическая оценка</div><div class="comp-d">Инвазивный ЭЭГ-мониторинг, SEEG, нейронавигация</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 02</div><div class="comp-t">Хирургия эпилепсии</div><div class="comp-d">Виды операций, показания, исходы, постхирургическое ведение</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 03</div><div class="comp-t">Педиатрическая эпилептология</div><div class="comp-d">Синдром Драве, ЛГС, инфантильные спазмы, кетодиета</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 04</div><div class="comp-t">Аутоиммунные энцефалиты</div><div class="comp-d">Anti-NMDA, LGI1, CASPR2 — диагностика и иммунотерапия</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 05</div><div class="comp-t">Клинические исследования</div><div class="comp-d">Дизайн исследований, GCP, биомаркеры эпилепсии</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 06</div><div class="comp-t">Телемедицина и AI</div><div class="comp-d">Цифровые биомаркеры, автоматический анализ ЭЭГ, wearables</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 07</div><div class="comp-t">Редкие синдромы</div><div class="comp-d">Генетические эпилептические энцефалопатии, орфанные болезни</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 08</div><div class="comp-t">Международные стандарты</div><div class="comp-d">ILAE Guidelines, Epilepsia, обновления классификаций</div></div>
-        <div class="comp-card"><div class="comp-n">Домен 09</div><div class="comp-t">Обучение и менторство</div><div class="comp-d">Методология преподавания эпилептологии, программы резидентуры</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 01</div><div class="comp-t" data-i18n="l3_d1t">Предхирургическая оценка</div><div class="comp-d" data-i18n="l3_d1d">Инвазивный ЭЭГ-мониторинг, SEEG, нейронавигация</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 02</div><div class="comp-t" data-i18n="l3_d2t">Хирургия эпилепсии</div><div class="comp-d" data-i18n="l3_d2d">Виды операций, показания, исходы, постхирургическое ведение</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 03</div><div class="comp-t" data-i18n="l3_d3t">Педиатрическая эпилептология</div><div class="comp-d" data-i18n="l3_d3d">Синдром Драве, ЛГС, инфантильные спазмы, кетодиета</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 04</div><div class="comp-t" data-i18n="l3_d4t">Аутоиммунные энцефалиты</div><div class="comp-d" data-i18n="l3_d4d">Anti-NMDA, LGI1, CASPR2 — диагностика и иммунотерапия</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 05</div><div class="comp-t" data-i18n="l3_d5t">Клинические исследования</div><div class="comp-d" data-i18n="l3_d5d">Дизайн исследований, GCP, биомаркеры эпилепсии</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 06</div><div class="comp-t" data-i18n="l3_d6t">Телемедицина и AI</div><div class="comp-d" data-i18n="l3_d6d">Цифровые биомаркеры, автоматический анализ ЭЭГ, wearables</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 07</div><div class="comp-t" data-i18n="l3_d7t">Редкие синдромы</div><div class="comp-d" data-i18n="l3_d7d">Генетические эпилептические энцефалопатии, орфанные болезни</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 08</div><div class="comp-t" data-i18n="l3_d8t">Международные стандарты</div><div class="comp-d" data-i18n="l3_d8d">ILAE Guidelines, Epilepsia, обновления классификаций</div></div>
+        <div class="comp-card"><div class="comp-n">Домен 09</div><div class="comp-t" data-i18n="l3_d9t">Обучение и менторство</div><div class="comp-d" data-i18n="l3_d9d">Методология преподавания эпилептологии, программы резидентуры</div></div>
       </div>
       <div style="margin-top:1.5rem;background:rgba(252,211,77,.1);border:1px solid rgba(252,211,77,.3);border-radius:12px;padding:1rem 1.25rem;display:flex;align-items:center;gap:12px">
         <span style="font-size:1.5rem">🔬</span>
         <div>
-          <div style="font-size:14px;font-weight:700;color:#FCD34D">Level 3 — Экспертный воркшоп</div>
-          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px">Для практикующих эпилептологов. Анонс скоро.</div>
+          <div style="font-size:14px;font-weight:700;color:#FCD34D" data-i18n="l3_soon">Level 3 — Экспертный воркшоп</div>
+          <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px" data-i18n="l3_follow">Для практикующих эпилептологов. Анонс скоро.</div>
         </div>
       </div>
     </div>
@@ -989,8 +989,9 @@ function tc(el){
   var total=document.querySelectorAll('.ci').length;
   var done=document.querySelectorAll('.ci.done').length;
   var bar=document.getElementById('crb');
-  if(done===0) bar.textContent='Отметьте что знаете — и увидите, что даст воркшоп';
-  else if(done===total) bar.textContent='Отлично! Вы освоили базовый уровень. Следите за анонсом Level 2 🎓';
+  var t2 = TRANSLATIONS[currentLang] || TRANSLATIONS['ru'];
+  if(done===0) bar.textContent=t2.crb_hint||'Отметьте что знаете — и увидите, что даст воркшоп';
+  else if(done===total) bar.textContent=t2.crb_done||'Отлично! Вы освоили базовый уровень. Следите за анонсом Level 2 🎓';
   else bar.textContent='Ещё '+(total-done)+' тем — именно это вы получите на воркшопе';
 }
 function submitForm(){
@@ -1303,6 +1304,39 @@ var TRANSLATIONS = {
     mtag4:'Педиатрическая эпилептология', mtag5:'Клиническое обучение',
     ilae_block:'<strong>Международная лига против эпилепсии</strong> Член Комиссии по терапии эпилепсии · Ежегодные конгрессы ILAE',
     crb_hint:'Отметьте что знаете — и увидите, что даст воркшоп',
+    crb_done:'Отлично! Вы освоили базовый уровень. Следите за анонсом Level 2 🎓',
+    // Level tab buttons
+    lvbtn1:'Level 1 — Базовый', lvbtn2:'Level 2 — Продвинутый', lvbtn3:'Level 3 — Экспертный',
+    // Level 1 teaser
+    l1_teaser:'Для неврологов, педиатров и резидентов — базовые компетенции ILAE',
+    // Hero pills
+    announce_pill:'Анонс нового города — скоро!',
+    // Next city card
+    next_city_lbl:'Следующий город', next_city_date:'Анонс скоро', next_city_wait:'⏳ Ждите объявления',
+    // Level 2 domains
+    l2_teaser:'Для практикующих неврологов — углублённые компетенции.',
+    l2_d1t:'Продвинутая ЭЭГ-диагностика', l2_d1d:'Длительный ЭЭГ-мониторинг, видео-ЭЭГ, иктальные паттерны',
+    l2_d2t:'Генетика эпилепсий', l2_d2d:'Моногенные эпилепсии, генетическое тестирование, каналопатии',
+    l2_d3t:'Структурные эпилепсии', l2_d3d:'МРТ-протоколы, фокальные кортикальные дисплазии, опухоли',
+    l2_d4t:'Рефрактерная эпилепсия', l2_d4d:'Определение, стратегии лечения, оценка хирургии',
+    l2_d5t:'Комбинированная терапия АЭП', l2_d5d:'Рациональная политерапия, фармакокинетика, взаимодействия',
+    l2_d6t:'Эпилепсия у женщин', l2_d6d:'Беременность, контрацепция, лактация, гормональные факторы',
+    l2_d7t:'Нейропсихология', l2_d7d:'Когнитивные нарушения, депрессия, тревога при эпилепсии',
+    l2_d8t:'Нейростимуляция', l2_d8d:'VNS, DBS, RNS — показания и ведение пациентов',
+    l2_d9t:'Паллиативная помощь', l2_d9d:'Синдром внезапной смерти (SUDEP), паллиативные стратегии',
+    l2_soon:'Level 2 воркшоп — скоро', l2_follow:'Следите за анонсами на epilepsyschool.asia',
+    // Level 3 domains
+    l3_teaser:'Для эпилептологов — экспертный уровень.',
+    l3_d1t:'Предхирургическая оценка', l3_d1d:'Инвазивный ЭЭГ-мониторинг, SEEG, нейронавигация',
+    l3_d2t:'Хирургия эпилепсии', l3_d2d:'Виды операций, показания, исходы, постхирургическое ведение',
+    l3_d3t:'Педиатрическая эпилептология', l3_d3d:'Синдром Драве, ЛГС, инфантильные спазмы, кетодиета',
+    l3_d4t:'Аутоиммунные энцефалиты', l3_d4d:'Anti-NMDA, LGI1, CASPR2 — диагностика и иммунотерапия',
+    l3_d5t:'Клинические исследования', l3_d5d:'Дизайн исследований, GCP, биомаркеры эпилепсии',
+    l3_d6t:'Телемедицина и AI', l3_d6d:'Цифровые биомаркеры, автоматический анализ ЭЭГ, wearables',
+    l3_d7t:'Редкие синдромы', l3_d7d:'Генетические эпилептические энцефалопатии, орфанные болезни',
+    l3_d8t:'Международные стандарты', l3_d8d:'ILAE Guidelines, Epilepsia, обновления классификаций',
+    l3_d9t:'Обучение и менторство', l3_d9d:'Методология преподавания эпилептологии, программы резидентуры',
+    l3_soon:'Level 3 — Экспертный воркшоп', l3_follow:'Для практикующих эпилептологов. Анонс скоро.',
   },
   kz: {
     nav_goals:'Мақсаттар', nav_program:'Бағдарлама', nav_reviews:'Пікірлер',
@@ -1396,6 +1430,39 @@ var TRANSLATIONS = {
     mtag4:'Педиатриялық эпилептология', mtag5:'Клиникалық оқыту',
     ilae_block:'<strong>Эпилепсияға қарсы халықаралық лига</strong> Терапия жөніндегі комиссияның мүшесі · Жыл сайынғы ILAE конгрестері',
     crb_hint:'Білетінді белгілеңіз — воркшоп не үйрететінін көресіз',
+    crb_done:'Керемет! Сіз базалық деңгейді меңгердіңіз. Level 2 анонсын күтіңіз 🎓',
+    // Level tab buttons
+    lvbtn1:'Level 1 — Негізгі', lvbtn2:'Level 2 — Жетілдірілген', lvbtn3:'Level 3 — Сараптамалық',
+    // Level 1 teaser
+    l1_teaser:'Неврологтарға, педиатрларға және резиденттерге — ILAE базалық құзыреттіліктері',
+    // Hero pills
+    announce_pill:'Жаңа қаланың анонсы — жақында!',
+    // Next city card
+    next_city_lbl:'Келесі қала', next_city_date:'Жақында анонс', next_city_wait:'⏳ Хабарламаны күтіңіз',
+    // Level 2 domains
+    l2_teaser:'Тәжірибелі неврологтарға — тереңдетілген құзыреттіліктер.',
+    l2_d1t:'Жетілдірілген ЭЭГ-диагностика', l2_d1d:'Ұзақ мерзімді ЭЭГ-мониторинг, бейне-ЭЭГ, икталды паттерндер',
+    l2_d2t:'Эпилепсия генетикасы', l2_d2d:'Моногенді эпилепсиялар, генетикалық тестілеу, каналопатиялар',
+    l2_d3t:'Құрылымдық эпилепсиялар', l2_d3d:'МРТ-хаттамалары, фокалды кортикалды дисплазиялар, ісіктер',
+    l2_d4t:'Рефрактерлі эпилепсия', l2_d4d:'Анықтамасы, емдеу стратегиялары, хирургияны бағалау',
+    l2_d5t:'АЭП комбинацияланған терапиясы', l2_d5d:'Рационалды политерапия, фармакокинетика, өзара әрекеттесулер',
+    l2_d6t:'Әйелдердегі эпилепсия', l2_d6d:'Жүктілік, контрацепция, лактация, гормоналды факторлар',
+    l2_d7t:'Нейропсихология', l2_d7d:'Когнитивті бұзылулар, депрессия, эпилепсиядағы үрей',
+    l2_d8t:'Нейростимуляция', l2_d8d:'VNS, DBS, RNS — көрсеткіштер мен пациентті жүргізу',
+    l2_d9t:'Паллиативті көмек', l2_d9d:'Кенеттен қайтыс болу синдромы (SUDEP), паллиативті стратегиялар',
+    l2_soon:'Level 2 воркшоп — жақында', l2_follow:'epilepsyschool.asia сайтындағы анонстарды қадағалаңыз',
+    // Level 3 domains
+    l3_teaser:'Эпилептологтарға — сараптамалық деңгей.',
+    l3_d1t:'Хирургия алдындағы бағалау', l3_d1d:'Инвазивті ЭЭГ-мониторинг, SEEG, нейронавигация',
+    l3_d2t:'Эпилепсия хирургиясы', l3_d2d:'Операция түрлері, көрсеткіштер, нәтижелер, хирургиядан кейінгі жүргізу',
+    l3_d3t:'Педиатриялық эпилептология', l3_d3d:'Драве синдромы, ЛГС, инфантильді спазмдар, кетодиета',
+    l3_d4t:'Аутоиммунды энцефалиттер', l3_d4d:'Anti-NMDA, LGI1, CASPR2 — диагностика және иммунотерапия',
+    l3_d5t:'Клиникалық зерттеулер', l3_d5d:'Зерттеу дизайны, GCP, эпилепсия биомаркерлері',
+    l3_d6t:'Телемедицина және AI', l3_d6d:'Цифрлық биомаркерлер, автоматты ЭЭГ талдауы, wearables',
+    l3_d7t:'Сирек синдромдар', l3_d7d:'Генетикалық эпилептикалық энцефалопатиялар, орфанды аурулар',
+    l3_d8t:'Халықаралық стандарттар', l3_d8d:'ILAE Guidelines, Epilepsia, классификация жаңартулары',
+    l3_d9t:'Оқыту және тәлімгерлік', l3_d9d:'Эпилептологияны оқыту методологиясы, резидентура бағдарламалары',
+    l3_soon:'Level 3 — Сараптамалық воркшоп', l3_follow:'Тәжірибелі эпилептологтарға. Анонс жақында.',
   },
   en: {
     nav_goals:'Goals', nav_program:'Program', nav_reviews:'Reviews',
@@ -1489,6 +1556,39 @@ var TRANSLATIONS = {
     mtag4:'Pediatric epileptology', mtag5:'Clinical education',
     ilae_block:'<strong>International League Against Epilepsy</strong> Member of the Therapeutic Strategies Commission · Annual ILAE Congresses',
     crb_hint:'Check what you know — see what the workshop will teach you',
+    crb_done:'Excellent! You have the basic level. Watch for Level 2 announcement 🎓',
+    // Level tab buttons
+    lvbtn1:'Level 1 — Basic', lvbtn2:'Level 2 — Advanced', lvbtn3:'Level 3 — Expert',
+    // Level 1 teaser
+    l1_teaser:'For neurologists, pediatricians and residents — basic ILAE competencies',
+    // Hero pills
+    announce_pill:'New city announcement — coming soon!',
+    // Next city card
+    next_city_lbl:'Next city', next_city_date:'Announcement coming', next_city_wait:'⏳ Stay tuned',
+    // Level 2 domains
+    l2_teaser:'For practicing neurologists — advanced competencies.',
+    l2_d1t:'Advanced EEG diagnostics', l2_d1d:'Long-term EEG monitoring, video-EEG, ictal patterns',
+    l2_d2t:'Epilepsy genetics', l2_d2d:'Monogenic epilepsies, genetic testing, channelopathies',
+    l2_d3t:'Structural epilepsies', l2_d3d:'MRI protocols, focal cortical dysplasias, tumors',
+    l2_d4t:'Refractory epilepsy', l2_d4d:'Definition, treatment strategies, surgical evaluation',
+    l2_d5t:'Combined AED therapy', l2_d5d:'Rational polytherapy, pharmacokinetics, interactions',
+    l2_d6t:'Epilepsy in women', l2_d6d:'Pregnancy, contraception, lactation, hormonal factors',
+    l2_d7t:'Neuropsychology', l2_d7d:'Cognitive impairment, depression, anxiety in epilepsy',
+    l2_d8t:'Neurostimulation', l2_d8d:'VNS, DBS, RNS — indications and patient management',
+    l2_d9t:'Palliative care', l2_d9d:'Sudden unexpected death (SUDEP), palliative strategies',
+    l2_soon:'Level 2 workshop — coming soon', l2_follow:'Follow announcements at epilepsyschool.asia',
+    // Level 3 domains
+    l3_teaser:'For epileptologists — expert level.',
+    l3_d1t:'Pre-surgical evaluation', l3_d1d:'Invasive EEG monitoring, SEEG, neuronavigation',
+    l3_d2t:'Epilepsy surgery', l3_d2d:'Types of surgery, indications, outcomes, post-surgical management',
+    l3_d3t:'Pediatric epileptology', l3_d3d:'Dravet syndrome, LGS, infantile spasms, ketogenic diet',
+    l3_d4t:'Autoimmune encephalitides', l3_d4d:'Anti-NMDA, LGI1, CASPR2 — diagnosis and immunotherapy',
+    l3_d5t:'Clinical research', l3_d5d:'Study design, GCP, epilepsy biomarkers',
+    l3_d6t:'Telemedicine and AI', l3_d6d:'Digital biomarkers, automated EEG analysis, wearables',
+    l3_d7t:'Rare syndromes', l3_d7d:'Genetic epileptic encephalopathies, orphan diseases',
+    l3_d8t:'International standards', l3_d8d:'ILAE Guidelines, Epilepsia, classification updates',
+    l3_d9t:'Teaching and mentorship', l3_d9d:'Methodology of epileptology teaching, residency programs',
+    l3_soon:'Level 3 — Expert workshop', l3_follow:'For practicing epileptologists. Announcement coming soon.',
   }
 };
 
@@ -1545,7 +1645,24 @@ function setLang(lang) {
     'comp_d7t','comp_d7d','comp_d8t','comp_d8d','comp_d9t','comp_d9d',
     'mfl1','mfl2','mfl3','mfl4',
     'mtag1','mtag2','mtag3','mtag4','mtag5',
-    'ilae_block','crb_hint'
+    'ilae_block','crb_hint',
+    // Level tabs & teasers
+    'lvbtn1','lvbtn2','lvbtn3',
+    'l1_teaser','l2_teaser','l3_teaser',
+    // Hero pills
+    'announce_pill',
+    // Next city card
+    'next_city_lbl','next_city_date','next_city_wait',
+    // Level 2 domains
+    'l2_d1t','l2_d1d','l2_d2t','l2_d2d','l2_d3t','l2_d3d',
+    'l2_d4t','l2_d4d','l2_d5t','l2_d5d','l2_d6t','l2_d6d',
+    'l2_d7t','l2_d7d','l2_d8t','l2_d8d','l2_d9t','l2_d9d',
+    'l2_soon','l2_follow',
+    // Level 3 domains
+    'l3_d1t','l3_d1d','l3_d2t','l3_d2d','l3_d3t','l3_d3d',
+    'l3_d4t','l3_d4d','l3_d5t','l3_d5d','l3_d6t','l3_d6d',
+    'l3_d7t','l3_d7d','l3_d8t','l3_d8d','l3_d9t','l3_d9d',
+    'l3_soon','l3_follow'
   ];
   pairs.forEach(function(k){ setHTML('[data-i18n="'+k+'"]', t[k]||''); });
 
