@@ -961,7 +961,10 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
             </div>
             <h3 style="font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:.5rem">Заявка принята!</h3>
             <p style="font-size:14px;color:var(--gray);margin-bottom:1.25rem">Ваша заявка принята! Мы свяжемся с вами при объявлении нового воркшопа.</p>
-            <div style="display:flex;align-items:center;gap:10px;width:100%;padding:14px;background:#f1f5f9;color:#64748b;font-size:14px;font-weight:600;border-radius:10px;justify-content:center;margin-bottom:10px">⏳ Ссылка для оплаты будет объявлена дополнительно</div>
+            <a href="https://kaspi.kz/pay/epilepsyschool" target="_blank" rel="noopener"
+               style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:#F14635;color:#fff;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;border-radius:10px;text-decoration:none;margin-bottom:10px">
+              Оплатить через Kaspi.kz →
+            </a>
             <a href="certificate.html" target="_blank"
                style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px;background:#F8F9FA;color:#0D1B2A;font-family:'Sora',sans-serif;font-size:13px;font-weight:600;border-radius:10px;text-decoration:none;margin-top:10px;border:1.5px solid #E2E8F0;transition:all .2s"
                onmouseover="this.style.borderColor='#2563EB';this.style.color='#2563EB'" onmouseout="this.style.borderColor='#E2E8F0';this.style.color='#0D1B2A'">
@@ -993,8 +996,30 @@ footer{background:linear-gradient(180deg,#0A1628 0%,#060f1e 100%);border-top:1px
               Сертификат участника · 24 ЗЕ
             </div>
           </div>
-          <div style="font-size:12px;color:rgba(255,255,255,.45);text-align:center;padding:12px;background:rgba(255,255,255,.05);border-radius:10px;line-height:1.5">
-            Оставьте заявку — мы свяжемся с вами<br>при объявлении нового воркшопа
+          <!-- KASPI PAY -->
+          <div style="margin-top:1rem">
+            <div style="font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:.75rem">Оплата участия</div>
+            <a id="kaspi-pay-btn" href="https://kaspi.kz/pay/epilepsyschool" target="_blank" rel="noopener"
+               style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:14px;background:#F14635;color:#fff;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;border-radius:12px;text-decoration:none;transition:opacity .2s"
+               onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">
+              <svg width="20" height="20" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#fff"/><path d="M20 8C13.4 8 8 13.4 8 20s5.4 12 12 12 12-5.4 12-12S26.6 8 20 8zm0 3c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9 4.03-9 9-9zm-1 4v5.17l-3.41 3.42 1.41 1.41L21 21.59V15h-2z" fill="#F14635"/></svg>
+              Оплатить через Kaspi →
+            </a>
+            <div style="margin-top:.75rem;display:flex;justify-content:center">
+              <!-- Kaspi QR — замените ссылку после регистрации на kaspi.kz/pay -->
+              <div style="background:#fff;border-radius:12px;padding:10px;display:inline-block">
+                <img id="kaspi-qr-img"
+                     src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https%3A%2F%2Fkaspi.kz%2Fpay%2Fepilepsyschool&color=F14635&bgcolor=FFFFFF"
+                     width="120" height="120" alt="Kaspi QR"
+                     style="display:block;border-radius:6px">
+              </div>
+            </div>
+            <div style="font-size:11px;color:rgba(255,255,255,.4);text-align:center;margin-top:.6rem;line-height:1.5">
+              Scan QR в приложении Kaspi.kz<br>или нажмите кнопку выше
+            </div>
+            <div style="margin-top:.75rem;font-size:11px;color:rgba(252,211,77,.6);text-align:center;padding:10px;background:rgba(252,211,77,.07);border-radius:8px;line-height:1.5">
+              ⚠️ Стоимость участия объявляется при анонсе воркшопа.<br>Оплата открывается одновременно с датой.
+            </div>
           </div>
         </div>
       </div>
